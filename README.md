@@ -19,6 +19,8 @@ For the multibit tries `art` and `bart` the memory consumption explodes with mor
 
 `bart` has about a factor of 10 lower memory consumption compared to `art`.
 
+`cidrtree` is the most economical in terms of memory consumption, but this is also not a trie but a binary search tree and slower by a magnitude than the other algorithms.
+
 ```
                          │  art/size.bm   │             bart/size.bm             │
                          │     bytes      │    bytes      vs base                │
