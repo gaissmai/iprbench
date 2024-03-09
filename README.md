@@ -1,7 +1,7 @@
-                        *work in progress*
+**work in progress ...**
 
 # iprbench
-benchmarks for some golang IP routing table implementations:
+comparing benchmarks for some golang IP routing table implementations:
 
 ```
 	github.com/tailscale/art
@@ -12,6 +12,13 @@ benchmarks for some golang IP routing table implementations:
 ```
 
 ## size of the routing tables
+
+The Tier1 prefixes (`~1_000_000` **IPv4** and **IPv6** routes) are from a full routing table with typical ISP prefix distribution. In contrast, the RandomPrefixes are equally distributed.
+
+For the multibit tries `art` and `bart` the memory consumption explodes with more than 100_000 randomly distributed **IPv6** prefixes in contrast to the other algorithms, but these two algorithms are much faster than the others.
+
+`bart` has about a factor of 10 lower memory consumption compared to `art`.
+
 ```
                          │  art/size.bm   │             bart/size.bm             │
                          │     bytes      │    bytes      vs base                │
@@ -111,6 +118,9 @@ geomean                       1.947Mi         4.271Mi       +119.39%
 ```
 
 ## update, insert/delete
+
+When it comes to updates, `art` and `bart` are far superior to the other algorithms, only `critbitgo` comes close to playing in the same league 
+
 ```
                              │ art/update.bm │           bart/update.bm            │
                              │    sec/op     │   sec/op     vs base                │
@@ -170,6 +180,9 @@ geomean                              225.9n        60.19n       -73.36%
 ```
 
 ## lookup (longest-prefix-match)
+
+In the lookup, `art` is the champion, closely followed by `bart`. 
+
 ```
                                     │ art/lookup.bm │             bart/lookup.bm             │
                                     │    sec/op     │    sec/op      vs base                 │
