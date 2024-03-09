@@ -1,7 +1,17 @@
-# iprbench
-benchmarks for some golang IP routing table implementations
+                        *work in progress*
 
-## size of the routing table
+# iprbench
+benchmarks for some golang IP routing table implementations:
+
+```
+	github.com/tailscale/art
+	github.com/gaissmai/bart
+	github.com/k-sone/critbitgo
+	github.com/Asphaltt/lpmtrie
+	github.com/gaissmai/cidrtree
+```
+
+## size of the routing tables
 ```
                          │  art/size.bm   │             bart/size.bm             │
                          │     bytes      │    bytes      vs base                │
