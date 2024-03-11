@@ -18,8 +18,10 @@ which is approximately the current ratio in the Internet backbone routers.
 
 ## make your own benchmarks
 
-  `$ make dep`
-  `$ make -B all`
+```
+  $ make dep  
+  $ make -B all
+```
 
 ## size of the routing tables
 
