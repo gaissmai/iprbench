@@ -10,18 +10,27 @@ comparing benchmarks for some golang IP routing table implementations:
 ```
 The ~1_000_000 **Tier1** prefix test set (IPv4 and IPv6 routes) are from a full routing table with typical ISP prefix distribution.
 In comparison, the prefix lengths for the random test sets are equally distributed between 1-32 for IPv4 and 1-128 bits for IPv6,
-the randomly generated _default-routes_ with prefix length 0 have been sorted out, they distorts the lookup times and there is no lookup miss at all.
+the randomly generated _default-routes_ with prefix length 0 have been sorted out, they distorts the lookup times and there is no
+lookup miss at all.
 
-The **RandomPrefixes** without IP versions labeling are composed of a distribution of 4 parts IPv4 to 1 part IPv6 prefixes, which is approximately the current ratio in the Internet backbone routers.
+The **RandomPrefixes** without IP versions labeling are composed of a distribution of 4 parts IPv4 to 1 part IPv6 prefixes,
+which is approximately the current ratio in the Internet backbone routers.
+
+## make your own benchmarks
+
+  `$ make dep`
+  `$ make -B all`
 
 ## size of the routing tables
 
 
-For the multibit tries `art` and `bart` the memory consumption explodes with more than **100_000 randomly distributed IPv6** prefixes in contrast to the other algorithms, but these two algorithms are much faster than the others.
+For the multibit tries `art` and `bart` the memory consumption explodes with more than **100_000 randomly distributed IPv6**
+prefixes in contrast to the other algorithms, but these two algorithms are much faster than the others.
 
 `bart` has about a factor of 10 lower memory consumption compared to `art`.
 
-`cidrtree` is the most economical in terms of memory consumption, but this is also not a trie but a binary search tree and slower by a magnitude than the other algorithms.
+`cidrtree` is the most economical in terms of memory consumption, but this is also not a trie but a binary search tree and
+slower by a magnitude than the other algorithms.
 
 ```
                          │  art/size.bm   │             bart/size.bm             │
