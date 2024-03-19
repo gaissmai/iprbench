@@ -59,77 +59,80 @@ RandomPfx6Size/1_000_000                    1.145Gi ± 0%
 RandomPfxSize/1_000_000                     576.3Mi ± 0%
 geomean                      21.54Mi        4.271Mi       -91.21%
 
-                         │ cidrtree/size.bm │               bart/size.bm               │
-                         │      bytes       │     bytes       vs base                  │
-Tier1PfxSize/100               12.45Ki ± 0%     45.88Ki ± 0%   +268.61% (p=0.000 n=10)
-Tier1PfxSize/1_000             81.51Ki ± 0%    309.91Ki ± 0%   +280.22% (p=0.000 n=10)
-Tier1PfxSize/10_000            784.6Ki ± 0%    1993.1Ki ± 0%   +154.02% (p=0.000 n=10)
-Tier1PfxSize/100_000           7.633Mi ± 0%     7.965Mi ± 0%     +4.36% (p=0.000 n=10)
-Tier1PfxSize/1_000_000         76.30Mi ± 0%     34.68Mi ± 0%    -54.55% (p=0.000 n=10)
-RandomPfx4Size/100             11.58Ki ± 0%     48.23Ki ± 0%   +316.60% (p=0.000 n=10)
-RandomPfx4Size/1_000           81.51Ki ± 0%    335.23Ki ± 0%   +311.29% (p=0.000 n=10)
-RandomPfx4Size/10_000          784.6Ki ± 0%    2677.8Ki ± 0%   +241.28% (p=0.000 n=10)
-RandomPfx4Size/100_000         7.633Mi ± 0%    19.633Mi ± 0%   +157.21% (p=0.000 n=10)
-RandomPfx4Size/1_000_000       76.30Mi ± 0%    117.50Mi ± 0%    +54.00% (p=0.000 n=10)
-RandomPfx6Size/100             11.58Ki ± 0%    164.34Ki ± 0%  +1319.43% (p=0.000 n=10)
-RandomPfx6Size/1_000           81.51Ki ± 0%   1458.51Ki ± 0%  +1689.41% (p=0.000 n=10)
-RandomPfx6Size/10_000          785.0Ki ± 0%   13805.4Ki ± 0%  +1658.71% (p=0.000 n=10)
-RandomPfx6Size/100_000         7.633Mi ± 0%   125.622Mi ± 0%  +1545.83% (p=0.000 n=10)
-RandomPfx6Size/1_000_000       76.30Mi ± 0%   1172.13Mi ± 0%  +1436.26% (p=0.000 n=10)
-RandomPfxSize/100              11.50Ki ± 0%     72.19Ki ± 0%   +527.72% (p=0.000 n=10)
-RandomPfxSize/1_000            76.35Ki ± 0%    745.27Ki ± 0%   +876.10% (p=0.000 n=10)
-RandomPfxSize/10_000           688.8Ki ± 0%    7113.3Ki ± 0%   +932.74% (p=0.000 n=10)
-RandomPfxSize/100_000          6.190Mi ± 0%    64.525Mi ± 0%   +942.42% (p=0.000 n=10)
-RandomPfxSize/1_000_000        56.85Mi ± 0%    576.25Mi ± 0%   +913.63% (p=0.000 n=10)
-geomean                        826.6Ki          4.271Mi        +429.08%
 
-                         │ critbitgo/size.bm │              bart/size.bm               │
-                         │       bytes       │     bytes      vs base                  │
-Tier1PfxSize/100                15.52Ki ± 0%    45.88Ki ± 0%   +195.67% (p=0.000 n=10)
-Tier1PfxSize/1_000              115.2Ki ± 0%    309.9Ki ± 0%   +168.95% (p=0.000 n=10)
-Tier1PfxSize/10_000             1.094Mi ± 0%    1.946Mi ± 0%    +77.99% (p=0.000 n=10)
-Tier1PfxSize/100_000           10.913Mi ± 0%    7.965Mi ± 0%    -27.01% (p=0.000 n=10)
-Tier1PfxSize/1_000_000         109.12Mi ± 0%    34.68Mi ± 0%    -68.22% (p=0.000 n=10)
-RandomPfx4Size/100              14.67Ki ± 0%    48.23Ki ± 0%   +228.75% (p=0.000 n=10)
-RandomPfx4Size/1_000            112.7Ki ± 0%    335.2Ki ± 0%   +197.39% (p=0.000 n=10)
-RandomPfx4Size/10_000           1.071Mi ± 0%    2.615Mi ± 0%   +144.08% (p=0.000 n=10)
-RandomPfx4Size/100_000          10.68Mi ± 0%    19.63Mi ± 0%    +83.75% (p=0.000 n=10)
-RandomPfx4Size/1_000_000        106.8Mi ± 0%    117.5Mi ± 0%    +10.00% (p=0.000 n=10)
-RandomPfx6Size/100              16.22Ki ± 0%   164.34Ki ± 0%   +913.29% (p=0.000 n=10)
-RandomPfx6Size/1_000            128.3Ki ± 0%   1458.5Ki ± 0%  +1036.48% (p=0.000 n=10)
-RandomPfx6Size/10_000           1.224Mi ± 0%   13.482Mi ± 0%  +1001.19% (p=0.000 n=10)
-RandomPfx6Size/100_000          12.21Mi ± 0%   125.62Mi ± 0%   +928.82% (p=0.000 n=10)
-RandomPfx6Size/1_000_000        122.1Mi ± 0%   1172.1Mi ± 0%   +860.18% (p=0.000 n=10)
-RandomPfxSize/100               15.28Ki ± 0%    72.19Ki ± 0%   +372.39% (p=0.000 n=10)
-RandomPfxSize/1_000             113.2Ki ± 0%    745.3Ki ± 0%   +558.48% (p=0.000 n=10)
-RandomPfxSize/10_000            1.014Mi ± 0%    6.947Mi ± 0%   +584.82% (p=0.000 n=10)
-RandomPfxSize/100_000           9.377Mi ± 0%   64.525Mi ± 0%   +588.14% (p=0.000 n=10)
-RandomPfxSize/1_000_000         86.53Mi ± 0%   576.25Mi ± 0%   +565.99% (p=0.000 n=10)
-geomean                         1.165Mi         4.271Mi        +266.74%
 
-                         │ lpmtrie/size.bm │              bart/size.bm              │
-                         │      bytes      │     bytes      vs base                 │
-Tier1PfxSize/100              24.22Ki ± 0%    45.88Ki ± 0%   +89.42% (p=0.000 n=10)
-Tier1PfxSize/1_000            202.3Ki ± 0%    309.9Ki ± 0%   +53.16% (p=0.000 n=10)
-Tier1PfxSize/10_000           1.942Mi ± 0%    1.946Mi ± 0%    +0.23% (p=0.000 n=10)
-Tier1PfxSize/100_000         19.330Mi ± 0%    7.965Mi ± 0%   -58.79% (p=0.000 n=10)
-Tier1PfxSize/1_000_000       189.92Mi ± 0%    34.68Mi ± 0%   -81.74% (p=0.000 n=10)
-RandomPfx4Size/100            23.20Ki ± 0%    48.23Ki ± 0%  +107.88% (p=0.000 n=10)
-RandomPfx4Size/1_000          198.4Ki ± 0%    335.2Ki ± 0%   +68.96% (p=0.000 n=10)
-RandomPfx4Size/10_000         1.895Mi ± 0%    2.615Mi ± 0%   +37.99% (p=0.000 n=10)
-RandomPfx4Size/100_000        18.26Mi ± 0%    19.63Mi ± 0%    +7.52% (p=0.000 n=10)
-RandomPfx4Size/1_000_000      163.5Mi ± 0%    117.5Mi ± 0%   -28.16% (p=0.000 n=10)
-RandomPfx6Size/100            25.53Ki ± 0%   164.34Ki ± 0%  +543.70% (p=0.000 n=10)
-RandomPfx6Size/1_000          221.5Ki ± 0%   1458.5Ki ± 0%  +558.58% (p=0.000 n=10)
-RandomPfx6Size/10_000         2.127Mi ± 0%   13.482Mi ± 0%  +533.75% (p=0.000 n=10)
-RandomPfx6Size/100_000        20.92Mi ± 0%   125.62Mi ± 0%  +500.59% (p=0.000 n=10)
-RandomPfx6Size/1_000_000      204.0Mi ± 0%   1172.1Mi ± 0%  +474.51% (p=0.000 n=10)
-RandomPfxSize/100             23.28Ki ± 0%    72.19Ki ± 0%  +210.07% (p=0.000 n=10)
-RandomPfxSize/1_000           184.9Ki ± 0%    745.3Ki ± 0%  +303.14% (p=0.000 n=10)
-RandomPfxSize/10_000          1.672Mi ± 0%    6.947Mi ± 0%  +315.46% (p=0.000 n=10)
-RandomPfxSize/100_000         15.45Mi ± 0%    64.52Mi ± 0%  +317.73% (p=0.000 n=10)
-RandomPfxSize/1_000_000       142.2Mi ± 0%    576.3Mi ± 0%  +305.21% (p=0.000 n=10)
-geomean                       1.947Mi         4.271Mi       +119.39%
+                         │  bart/size.bm  │           cidrtree/size.bm            │
+                         │     bytes      │    bytes      vs base                 │
+Tier1PfxSize/100             45.88Ki ± 0%   12.45Ki ± 0%   -72.87% (p=0.000 n=10)
+Tier1PfxSize/1_000          309.91Ki ± 0%   81.51Ki ± 0%   -73.70% (p=0.000 n=10)
+Tier1PfxSize/10_000         1993.1Ki ± 0%   784.6Ki ± 0%   -60.63% (p=0.000 n=10)
+Tier1PfxSize/100_000         7.965Mi ± 0%   7.633Mi ± 0%    -4.17% (p=0.000 n=10)
+Tier1PfxSize/1_000_000       34.68Mi ± 0%   76.30Mi ± 0%  +120.03% (p=0.000 n=10)
+RandomPfx4Size/100           48.23Ki ± 0%   11.58Ki ± 0%   -76.00% (p=0.000 n=10)
+RandomPfx4Size/1_000        335.23Ki ± 0%   81.51Ki ± 0%   -75.69% (p=0.000 n=10)
+RandomPfx4Size/10_000       2677.8Ki ± 0%   784.6Ki ± 0%   -70.70% (p=0.000 n=10)
+RandomPfx4Size/100_000      19.633Mi ± 0%   7.633Mi ± 0%   -61.12% (p=0.000 n=10)
+RandomPfx4Size/1_000_000    117.50Mi ± 0%   76.30Mi ± 0%   -35.07% (p=0.000 n=10)
+RandomPfx6Size/100          164.34Ki ± 0%   11.58Ki ± 0%   -92.95% (p=0.000 n=10)
+RandomPfx6Size/1_000       1458.51Ki ± 0%   81.51Ki ± 0%   -94.41% (p=0.000 n=10)
+RandomPfx6Size/10_000      13805.4Ki ± 0%   785.0Ki ± 0%   -94.31% (p=0.000 n=10)
+RandomPfx6Size/100_000     125.622Mi ± 0%   7.633Mi ± 0%   -93.92% (p=0.000 n=10)
+RandomPfx6Size/1_000_000   1172.13Mi ± 0%   76.30Mi ± 0%   -93.49% (p=0.000 n=10)
+RandomPfxSize/100            72.19Ki ± 0%   11.50Ki ± 0%   -84.07% (p=0.000 n=10)
+RandomPfxSize/1_000         745.27Ki ± 0%   76.35Ki ± 0%   -89.76% (p=0.000 n=10)
+RandomPfxSize/10_000        7113.3Ki ± 0%   688.8Ki ± 0%   -90.32% (p=0.000 n=10)
+RandomPfxSize/100_000       64.525Mi ± 0%   6.190Mi ± 0%   -90.41% (p=0.000 n=10)
+RandomPfxSize/1_000_000     576.25Mi ± 0%   56.85Mi ± 0%   -90.13% (p=0.000 n=10)
+geomean                      4.271Mi        826.6Ki        -81.10%
+
+                         │ bart/size.bm  │           critbitgo/size.bm            │
+                         │     bytes     │     bytes      vs base                 │
+Tier1PfxSize/100            45.88Ki ± 0%    15.52Ki ± 0%   -66.18% (p=0.000 n=10)
+Tier1PfxSize/1_000          309.9Ki ± 0%    115.2Ki ± 0%   -62.82% (p=0.000 n=10)
+Tier1PfxSize/10_000         1.946Mi ± 0%    1.094Mi ± 0%   -43.82% (p=0.000 n=10)
+Tier1PfxSize/100_000        7.965Mi ± 0%   10.913Mi ± 0%   +37.01% (p=0.000 n=10)
+Tier1PfxSize/1_000_000      34.68Mi ± 0%   109.12Mi ± 0%  +214.68% (p=0.000 n=10)
+RandomPfx4Size/100          48.23Ki ± 0%    14.67Ki ± 0%   -69.58% (p=0.000 n=10)
+RandomPfx4Size/1_000        335.2Ki ± 0%    112.7Ki ± 0%   -66.37% (p=0.000 n=10)
+RandomPfx4Size/10_000       2.615Mi ± 0%    1.071Mi ± 0%   -59.03% (p=0.000 n=10)
+RandomPfx4Size/100_000      19.63Mi ± 0%    10.68Mi ± 0%   -45.58% (p=0.000 n=10)
+RandomPfx4Size/1_000_000    117.5Mi ± 0%    106.8Mi ± 0%    -9.09% (p=0.000 n=10)
+RandomPfx6Size/100         164.34Ki ± 0%    16.22Ki ± 0%   -90.13% (p=0.000 n=10)
+RandomPfx6Size/1_000       1458.5Ki ± 0%    128.3Ki ± 0%   -91.20% (p=0.000 n=10)
+RandomPfx6Size/10_000      13.482Mi ± 0%    1.224Mi ± 0%   -90.92% (p=0.000 n=10)
+RandomPfx6Size/100_000     125.62Mi ± 0%    12.21Mi ± 0%   -90.28% (p=0.000 n=10)
+RandomPfx6Size/1_000_000   1172.1Mi ± 0%    122.1Mi ± 0%   -89.59% (p=0.000 n=10)
+RandomPfxSize/100           72.19Ki ± 0%    15.28Ki ± 0%   -78.83% (p=0.000 n=10)
+RandomPfxSize/1_000         745.3Ki ± 0%    113.2Ki ± 0%   -84.81% (p=0.000 n=10)
+RandomPfxSize/10_000        6.947Mi ± 0%    1.014Mi ± 0%   -85.40% (p=0.000 n=10)
+RandomPfxSize/100_000      64.525Mi ± 0%    9.377Mi ± 0%   -85.47% (p=0.000 n=10)
+RandomPfxSize/1_000_000    576.25Mi ± 0%    86.53Mi ± 0%   -84.98% (p=0.000 n=10)
+geomean                     4.271Mi         1.165Mi        -72.73%
+
+                         │ bart/size.bm  │            lpmtrie/size.bm             │
+                         │     bytes     │     bytes      vs base                 │
+Tier1PfxSize/100            45.88Ki ± 0%    24.22Ki ± 0%   -47.21% (p=0.000 n=10)
+Tier1PfxSize/1_000          309.9Ki ± 0%    202.3Ki ± 0%   -34.71% (p=0.000 n=10)
+Tier1PfxSize/10_000         1.946Mi ± 0%    1.942Mi ± 0%    -0.22% (p=0.000 n=10)
+Tier1PfxSize/100_000        7.965Mi ± 0%   19.330Mi ± 0%  +142.69% (p=0.000 n=10)
+Tier1PfxSize/1_000_000      34.68Mi ± 0%   189.92Mi ± 0%  +447.70% (p=0.000 n=10)
+RandomPfx4Size/100          48.23Ki ± 0%    23.20Ki ± 0%   -51.90% (p=0.000 n=10)
+RandomPfx4Size/1_000        335.2Ki ± 0%    198.4Ki ± 0%   -40.81% (p=0.000 n=10)
+RandomPfx4Size/10_000       2.615Mi ± 0%    1.895Mi ± 0%   -27.53% (p=0.000 n=10)
+RandomPfx4Size/100_000      19.63Mi ± 0%    18.26Mi ± 0%    -7.00% (p=0.000 n=10)
+RandomPfx4Size/1_000_000    117.5Mi ± 0%    163.5Mi ± 0%   +39.19% (p=0.000 n=10)
+RandomPfx6Size/100         164.34Ki ± 0%    25.53Ki ± 0%   -84.46% (p=0.000 n=10)
+RandomPfx6Size/1_000       1458.5Ki ± 0%    221.5Ki ± 0%   -84.82% (p=0.000 n=10)
+RandomPfx6Size/10_000      13.482Mi ± 0%    2.127Mi ± 0%   -84.22% (p=0.000 n=10)
+RandomPfx6Size/100_000     125.62Mi ± 0%    20.92Mi ± 0%   -83.35% (p=0.000 n=10)
+RandomPfx6Size/1_000_000   1172.1Mi ± 0%    204.0Mi ± 0%   -82.59% (p=0.000 n=10)
+RandomPfxSize/100           72.19Ki ± 0%    23.28Ki ± 0%   -67.75% (p=0.000 n=10)
+RandomPfxSize/1_000         745.3Ki ± 0%    184.9Ki ± 0%   -75.19% (p=0.000 n=10)
+RandomPfxSize/10_000        6.947Mi ± 0%    1.672Mi ± 0%   -75.93% (p=0.000 n=10)
+RandomPfxSize/100_000       64.52Mi ± 0%    15.45Mi ± 0%   -76.06% (p=0.000 n=10)
+RandomPfxSize/1_000_000     576.3Mi ± 0%    142.2Mi ± 0%   -75.32% (p=0.000 n=10)
+geomean                     4.271Mi         1.947Mi        -54.42%
+
 ```
 
 ## update, insert/delete
@@ -151,47 +154,50 @@ Delete/Delete_from_100_000       59.40n ± 1%   59.94n ± 1%        ~ (p=0.079 n
 Delete/Delete_from_1_000_000     58.41n ± 1%   58.76n ± 2%        ~ (p=0.089 n=10)
 geomean                          80.03n        60.19n       -24.78%
 
-                             │ cidrtree/update.bm │           bart/update.bm            │
-                             │       sec/op       │   sec/op     vs base                │
-Insert/Insert_into_100               816.10n ± 0%   67.99n ± 1%  -91.67% (p=0.000 n=10)
-Insert/Insert_into_1_000            1510.00n ± 1%   68.18n ± 1%  -95.49% (p=0.000 n=10)
-Insert/Insert_into_10_000           2068.00n ± 1%   68.48n ± 1%  -96.69% (p=0.000 n=10)
-Insert/Insert_into_100_000          2548.50n ± 1%   70.14n ± 1%  -97.25% (p=0.000 n=10)
-Insert/Insert_into_1_000_000        2461.00n ± 0%   67.59n ± 1%  -97.25% (p=0.000 n=10)
-Delete/Delete_from_100              1524.50n ± 0%   44.97n ± 1%  -97.05% (p=0.000 n=10)
-Delete/Delete_from_1_000            1989.00n ± 1%   44.98n ± 1%  -97.74% (p=0.000 n=10)
-Delete/Delete_from_10_000           3426.00n ± 0%   58.24n ± 1%  -98.30% (p=0.000 n=10)
-Delete/Delete_from_100_000          4769.00n ± 0%   59.94n ± 1%  -98.74% (p=0.000 n=10)
-Delete/Delete_from_1_000_000        4395.00n ± 0%   58.76n ± 2%  -98.66% (p=0.000 n=10)
-geomean                               2.260µ        60.19n       -97.34%
 
-                             │ critbitgo/update.bm │           bart/update.bm            │
-                             │       sec/op        │   sec/op     vs base                │
-Insert/Insert_into_100                107.10n ± 1%   67.99n ± 1%  -36.52% (p=0.000 n=10)
-Insert/Insert_into_1_000              110.05n ± 1%   68.18n ± 1%  -38.05% (p=0.000 n=10)
-Insert/Insert_into_10_000             116.70n ± 1%   68.48n ± 1%  -41.32% (p=0.000 n=10)
-Insert/Insert_into_100_000            117.50n ± 5%   70.14n ± 1%  -40.30% (p=0.000 n=10)
-Insert/Insert_into_1_000_000          136.10n ± 1%   67.59n ± 1%  -50.34% (p=0.000 n=10)
-Delete/Delete_from_100                100.09n ± 2%   44.97n ± 1%  -55.07% (p=0.000 n=10)
-Delete/Delete_from_1_000              107.85n ± 1%   44.98n ± 1%  -58.29% (p=0.000 n=10)
-Delete/Delete_from_10_000             108.90n ± 1%   58.24n ± 1%  -46.52% (p=0.000 n=10)
-Delete/Delete_from_100_000            119.60n ± 2%   59.94n ± 1%  -49.88% (p=0.000 n=10)
-Delete/Delete_from_1_000_000          132.00n ± 1%   58.76n ± 2%  -55.48% (p=0.000 n=10)
-geomean                                115.1n        60.19n       -47.71%
 
-                             │ lpmtrie/update.bm │           bart/update.bm            │
-                             │      sec/op       │   sec/op     vs base                │
-Insert/Insert_into_100              301.35n ± 3%   67.99n ± 1%  -77.44% (p=0.000 n=10)
-Insert/Insert_into_1_000            324.95n ± 1%   68.18n ± 1%  -79.02% (p=0.000 n=10)
-Insert/Insert_into_10_000           373.85n ± 1%   68.48n ± 1%  -81.68% (p=0.000 n=10)
-Insert/Insert_into_100_000          404.60n ± 1%   70.14n ± 1%  -82.66% (p=0.000 n=10)
-Insert/Insert_into_1_000_000        488.30n ± 1%   67.59n ± 1%  -86.16% (p=0.000 n=10)
-Delete/Delete_from_100               72.90n ± 0%   44.97n ± 1%  -38.32% (p=0.000 n=10)
-Delete/Delete_from_1_000             92.51n ± 0%   44.98n ± 1%  -51.38% (p=0.000 n=10)
-Delete/Delete_from_10_000           122.30n ± 1%   58.24n ± 1%  -52.38% (p=0.000 n=10)
-Delete/Delete_from_100_000          183.80n ± 0%   59.94n ± 1%  -67.39% (p=0.000 n=10)
-Delete/Delete_from_1_000_000        316.15n ± 0%   58.76n ± 2%  -81.41% (p=0.000 n=10)
-geomean                              225.9n        60.19n       -73.36%
+                             │ bart/update.bm │           cidrtree/update.bm            │
+                             │     sec/op     │    sec/op      vs base                  │
+Insert/Insert_into_100            67.99n ± 1%    816.10n ± 0%  +1100.32% (p=0.000 n=10)
+Insert/Insert_into_1_000          68.18n ± 1%   1510.00n ± 1%  +2114.89% (p=0.000 n=10)
+Insert/Insert_into_10_000         68.48n ± 1%   2068.00n ± 1%  +2920.08% (p=0.000 n=10)
+Insert/Insert_into_100_000        70.14n ± 1%   2548.50n ± 1%  +3533.19% (p=0.000 n=10)
+Insert/Insert_into_1_000_000      67.59n ± 1%   2461.00n ± 0%  +3541.07% (p=0.000 n=10)
+Delete/Delete_from_100            44.97n ± 1%   1524.50n ± 0%  +3290.41% (p=0.000 n=10)
+Delete/Delete_from_1_000          44.98n ± 1%   1989.00n ± 1%  +4321.97% (p=0.000 n=10)
+Delete/Delete_from_10_000         58.24n ± 1%   3426.00n ± 0%  +5782.55% (p=0.000 n=10)
+Delete/Delete_from_100_000        59.94n ± 1%   4769.00n ± 0%  +7855.63% (p=0.000 n=10)
+Delete/Delete_from_1_000_000      58.76n ± 2%   4395.00n ± 0%  +7379.58% (p=0.000 n=10)
+geomean                           60.19n          2.260µ       +3655.06%
+
+                             │ bart/update.bm │          critbitgo/update.bm          │
+                             │     sec/op     │    sec/op     vs base                 │
+Insert/Insert_into_100            67.99n ± 1%   107.10n ± 1%   +57.52% (p=0.000 n=10)
+Insert/Insert_into_1_000          68.18n ± 1%   110.05n ± 1%   +61.42% (p=0.000 n=10)
+Insert/Insert_into_10_000         68.48n ± 1%   116.70n ± 1%   +70.43% (p=0.000 n=10)
+Insert/Insert_into_100_000        70.14n ± 1%   117.50n ± 5%   +67.51% (p=0.000 n=10)
+Insert/Insert_into_1_000_000      67.59n ± 1%   136.10n ± 1%  +101.36% (p=0.000 n=10)
+Delete/Delete_from_100            44.97n ± 1%   100.09n ± 2%  +122.58% (p=0.000 n=10)
+Delete/Delete_from_1_000          44.98n ± 1%   107.85n ± 1%  +139.77% (p=0.000 n=10)
+Delete/Delete_from_10_000         58.24n ± 1%   108.90n ± 1%   +86.98% (p=0.000 n=10)
+Delete/Delete_from_100_000        59.94n ± 1%   119.60n ± 2%   +99.52% (p=0.000 n=10)
+Delete/Delete_from_1_000_000      58.76n ± 2%   132.00n ± 1%  +124.64% (p=0.000 n=10)
+geomean                           60.19n         115.1n        +91.22%
+
+                             │ bart/update.bm │           lpmtrie/update.bm           │
+                             │     sec/op     │    sec/op     vs base                 │
+Insert/Insert_into_100            67.99n ± 1%   301.35n ± 3%  +343.23% (p=0.000 n=10)
+Insert/Insert_into_1_000          68.18n ± 1%   324.95n ± 1%  +376.64% (p=0.000 n=10)
+Insert/Insert_into_10_000         68.48n ± 1%   373.85n ± 1%  +445.97% (p=0.000 n=10)
+Insert/Insert_into_100_000        70.14n ± 1%   404.60n ± 1%  +476.81% (p=0.000 n=10)
+Insert/Insert_into_1_000_000      67.59n ± 1%   488.30n ± 1%  +622.44% (p=0.000 n=10)
+Delete/Delete_from_100            44.97n ± 1%    72.90n ± 0%   +62.13% (p=0.000 n=10)
+Delete/Delete_from_1_000          44.98n ± 1%    92.51n ± 0%  +105.67% (p=0.000 n=10)
+Delete/Delete_from_10_000         58.24n ± 1%   122.30n ± 1%  +109.99% (p=0.000 n=10)
+Delete/Delete_from_100_000        59.94n ± 1%   183.80n ± 0%  +206.61% (p=0.000 n=10)
+Delete/Delete_from_1_000_000      58.76n ± 2%   316.15n ± 0%  +438.04% (p=0.000 n=10)
+geomean                           60.19n         225.9n       +275.36%
+
 ```
 
 ## lookup (longest-prefix-match)
@@ -201,49 +207,51 @@ In the lookup, `art` is the champion, closely followed by `bart`.
 ```
                                     │ art/lookup.bm │             bart/lookup.bm             │
                                     │    sec/op     │    sec/op      vs base                 │
-LpmTier1Pfxs/RandomMatchIP4            45.23n ± 18%    71.15n ± 22%   +57.31% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMatchIP6            47.50n ± 12%    80.90n ± 33%   +70.30% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMissIP4             29.02n ± 12%    73.08n ± 77%  +151.81% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMissIP6             28.45n ±  1%    28.66n ±  0%    +0.76% (p=0.001 n=10)
-LpmRandomPfxs100_000/RandomMatchIP4    45.23n ± 12%    89.70n ± 17%   +98.35% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMatchIP6    46.99n ± 17%    90.22n ± 22%   +92.01% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMissIP4     32.22n ± 12%   112.20n ± 18%  +248.18% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMissIP6     28.61n ± 19%    94.99n ± 17%  +232.02% (p=0.000 n=10)
-geomean                                36.95n          75.36n        +103.94%
+LpmTier1Pfxs/RandomMatchIP4            46.34n ± 16%    77.22n ± 26%   +66.64% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMatchIP6            46.18n ± 14%    79.11n ± 31%   +71.29% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMissIP4             29.14n ±  7%    82.19n ± 33%  +182.12% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMissIP6             28.82n ±  0%    28.70n ± 47%         ~ (p=0.382 n=10)
+LpmRandomPfxs100_000/RandomMatchIP4    46.23n ± 18%    90.89n ± 24%   +96.61% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMatchIP6    50.70n ± 10%    87.09n ± 28%   +71.80% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMissIP4     30.21n ± 11%   130.35n ± 28%  +331.41% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMissIP6     30.02n ± 16%    94.00n ± 17%  +213.14% (p=0.000 n=10)
+geomean                                37.39n          78.19n        +109.13%
 
-                                    │ cidrtree/lookup.bm │            bart/lookup.bm            │
-                                    │       sec/op       │    sec/op     vs base                │
-LpmTier1Pfxs/RandomMatchIP4               1026.00n ± 37%   71.15n ± 22%  -93.07% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMatchIP6               1057.00n ±  9%   80.90n ± 33%  -92.35% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMissIP4                1214.00n ± 97%   73.08n ± 77%        ~ (p=0.143 n=10)
-LpmTier1Pfxs/RandomMissIP6                  46.15n ±  0%   28.66n ±  0%  -37.89% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMatchIP4       1110.50n ± 50%   89.70n ± 17%  -91.92% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMatchIP6       1334.50n ± 35%   90.22n ± 22%  -93.24% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMissIP4         1124.0n ± 25%   112.2n ± 18%  -90.02% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMissIP6        1316.50n ± 24%   94.99n ± 17%  -92.78% (p=0.000 n=10)
-geomean                                     777.3n         75.36n        -90.30%
 
-                                    │ critbitgo/lookup.bm │            bart/lookup.bm            │
-                                    │       sec/op        │    sec/op     vs base                │
-LpmTier1Pfxs/RandomMatchIP4                 289.90n ± 18%   71.15n ± 22%  -75.46% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMatchIP6                 393.95n ± 17%   80.90n ± 33%  -79.46% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMissIP4                  543.05n ± 42%   73.08n ± 77%  -86.54% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMissIP6                  455.75n ± 43%   28.66n ±  0%  -93.71% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMatchIP4         300.60n ± 25%   89.70n ± 17%  -70.16% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMatchIP6         366.85n ±  7%   90.22n ± 22%  -75.41% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMissIP4           440.8n ± 27%   112.2n ± 18%  -74.55% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMissIP6          408.20n ± 12%   94.99n ± 17%  -76.73% (p=0.000 n=10)
-geomean                                      392.3n         75.36n        -80.79%
 
-                                    │ lpmtrie/lookup.bm │            bart/lookup.bm            │
-                                    │      sec/op       │    sec/op     vs base                │
-LpmTier1Pfxs/RandomMatchIP4               230.20n ± 29%   71.15n ± 22%  -69.09% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMatchIP6               199.45n ± 45%   80.90n ± 33%  -59.44% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMissIP4                188.35n ± 74%   73.08n ± 77%        ~ (p=0.052 n=10)
-LpmTier1Pfxs/RandomMissIP6                 66.91n ± 42%   28.66n ±  0%  -57.16% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMatchIP4       197.85n ± 11%   89.70n ± 17%  -54.66% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMatchIP6       187.90n ± 10%   90.22n ± 22%  -51.98% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMissIP4         215.6n ±  7%   112.2n ± 18%  -47.97% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMissIP6        191.00n ± 16%   94.99n ± 17%  -50.27% (p=0.000 n=10)
-geomean                                    175.2n         75.36n        -56.98%
+                                    │ bart/lookup.bm │            cidrtree/lookup.bm             │
+                                    │     sec/op     │     sec/op       vs base                  │
+LpmTier1Pfxs/RandomMatchIP4             77.22n ± 26%   1002.50n ±  23%  +1198.24% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMatchIP6             79.11n ± 31%   1383.00n ±   8%  +1648.20% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMissIP4              82.19n ± 33%   1311.50n ±  13%  +1495.60% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMissIP6              28.70n ± 47%    490.38n ± 262%  +1608.92% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMatchIP4     90.89n ± 24%   1312.50n ±  26%  +1343.97% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMatchIP6     87.09n ± 28%   1717.00n ±  29%  +1871.41% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMissIP4      130.3n ± 28%    1368.5n ±  19%   +949.87% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMissIP6      94.00n ± 17%   1442.00n ±   8%  +1433.96% (p=0.000 n=10)
+geomean                                 78.19n           1.188µ         +1419.18%
+
+                                    │ bart/lookup.bm │           critbitgo/lookup.bm           │
+                                    │     sec/op     │    sec/op      vs base                  │
+LpmTier1Pfxs/RandomMatchIP4             77.22n ± 26%   315.80n ± 16%   +308.96% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMatchIP6             79.11n ± 31%   432.10n ± 13%   +446.20% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMissIP4              82.19n ± 33%   593.35n ± 46%   +621.88% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMissIP6              28.70n ± 47%   518.75n ± 27%  +1707.81% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMatchIP4     90.89n ± 24%   322.35n ± 20%   +254.64% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMatchIP6     87.09n ± 28%   400.85n ± 21%   +360.24% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMissIP4      130.3n ± 28%    564.9n ± 16%   +333.33% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMissIP6      94.00n ± 17%   479.95n ± 45%   +410.56% (p=0.000 n=10)
+geomean                                 78.19n          442.6n         +465.96%
+
+                                    │ bart/lookup.bm │           lpmtrie/lookup.bm            │
+                                    │     sec/op     │    sec/op      vs base                 │
+LpmTier1Pfxs/RandomMatchIP4             77.22n ± 26%   246.30n ± 17%  +218.96% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMatchIP6             79.11n ± 31%   226.85n ± 67%  +186.75% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMissIP4              82.19n ± 33%   237.45n ± 69%  +188.89% (p=0.007 n=10)
+LpmTier1Pfxs/RandomMissIP6              28.70n ± 47%    83.56n ± 20%  +191.20% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMatchIP4     90.89n ± 24%   274.40n ±  5%  +201.89% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMatchIP6     87.09n ± 28%   213.05n ± 12%  +144.62% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMissIP4      130.3n ± 28%    294.3n ±  4%  +125.78% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMissIP6      94.00n ± 17%   239.00n ± 23%  +154.24% (p=0.000 n=10)
+geomean                                 78.19n          215.0n        +174.90%
 ```

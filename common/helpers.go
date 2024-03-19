@@ -9,6 +9,8 @@ import (
 	"net/netip"
 	"os"
 	"strings"
+
+	"github.com/tailscale/art"
 )
 
 var IntMap = map[int]string{
@@ -36,47 +38,96 @@ func PfxToIPNet(p netip.Prefix) net.IPNet {
 	}
 }
 
-// Tabler, common interface to lpm lookup for all routing tables.
-type Tabler interface {
-	Get(netip.Addr) (any, bool)
-}
-
-// MatchIP returns a random IP covered by the routing table.
-func MatchIP(lpm func(netip.Addr) bool, is4 bool) netip.Addr {
-	var ip netip.Addr
-
-	for {
-		if is4 {
-			ip = RandomAddr4()
-		} else {
-			ip = RandomAddr6()
+// MatchIP4 returns a random IP covered by the routing table.
+func MatchIP4(routes []netip.Prefix) netip.Addr {
+	rt := new(art.Table[struct{}])
+	for _, r := range routes {
+		if r.Addr().Is4() {
+			rt.Insert(r, struct{}{})
 		}
+	}
 
-		if lpm(ip) {
+	i := 0
+	for {
+		ip := RandomAddr4()
+		if _, ok := rt.Get(ip); ok {
 			return ip
+		}
+		i++
+		if i > 20_000_000 {
+			panic("logic error")
 		}
 	}
 }
 
-// MissIP returns a random IP not covered by the routing table.
-func MissIP(lpm func(netip.Addr) bool, is4 bool) netip.Addr {
-	var ip netip.Addr
-
-	for {
-		if is4 {
-			ip = RandomAddr4()
-		} else {
-			ip = RandomAddr6()
+// MatchIP6 returns a random IP covered by the routing table.
+func MatchIP6(routes []netip.Prefix) netip.Addr {
+	rt := new(art.Table[struct{}])
+	for _, r := range routes {
+		if r.Addr().Is6() {
+			rt.Insert(r, struct{}{})
 		}
+	}
 
-		if !lpm(ip) {
+	i := 0
+	for {
+		ip := RandomAddr6()
+		if _, ok := rt.Get(ip); ok {
 			return ip
+		}
+		i++
+		if i > 20_000_000 {
+			panic("logic error")
+		}
+	}
+}
+
+// MissIP4 returns a random IP covered by the routing table.
+func MissIP4(routes []netip.Prefix) netip.Addr {
+	rt := new(art.Table[struct{}])
+	for _, r := range routes {
+		if r.Addr().Is4() {
+			rt.Insert(r, struct{}{})
+		}
+	}
+
+	i := 0
+	for {
+		ip := RandomAddr4()
+		if _, ok := rt.Get(ip); !ok {
+			return ip
+		}
+		i++
+		if i > 20_000_000 {
+			panic("logic error")
+		}
+	}
+}
+
+// MissIP6 returns a random IP covered by the routing table.
+func MissIP6(routes []netip.Prefix) netip.Addr {
+	rt := new(art.Table[struct{}])
+	for _, r := range routes {
+		if r.Addr().Is6() {
+			rt.Insert(r, struct{}{})
+		}
+	}
+
+	i := 0
+	for {
+		ip := RandomAddr6()
+		if _, ok := rt.Get(ip); !ok {
+			return ip
+		}
+		i++
+		if i > 20_000_000 {
+			panic("logic error")
 		}
 	}
 }
 
 // RandomPrefixes returns n randomly generated prefixes without default routes.
-// IPv4 and IPv6 Prefixes are naturally distributed 4:1.
+// IPv6 and IPv6 Prefixes are naturally distributed 4:1.
 func RandomPrefixes(n int) []netip.Prefix {
 	ret := make([]netip.Prefix, 0, n)
 

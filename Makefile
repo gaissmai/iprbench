@@ -7,22 +7,40 @@ dep:
 	go install golang.org/x/perf/cmd/benchstat@latest
 
 size: art/size.bm bart/size.bm cidrtree/size.bm critbitgo/size.bm lpmtrie/size.bm
-	@benchstat -ignore=cpu,pkg,goos,goarch art/size.bm       bart/size.bm
-	@benchstat -ignore=cpu,pkg,goos,goarch cidrtree/size.bm  bart/size.bm
-	@benchstat -ignore=cpu,pkg,goos,goarch critbitgo/size.bm bart/size.bm
-	@benchstat -ignore=cpu,pkg,goos,goarch lpmtrie/size.bm   bart/size.bm
+	@echo
+	@benchstat -ignore=cpu,pkg,goos,goarch art/size.bm   bart/size.bm
+	@echo
+	@echo
+	@echo
+	@benchstat -ignore=cpu,pkg,goos,goarch bart/size.bm  cidrtree/size.bm
+	@echo
+	@benchstat -ignore=cpu,pkg,goos,goarch bart/size.bm  critbitgo/size.bm
+	@echo
+	@benchstat -ignore=cpu,pkg,goos,goarch  bart/size.bm lpmtrie/size.bm
 
 update: art/update.bm bart/update.bm cidrtree/update.bm critbitgo/update.bm lpmtrie/update.bm
-	@benchstat -ignore=cpu,pkg,goos,goarch art/update.bm       bart/update.bm
-	@benchstat -ignore=cpu,pkg,goos,goarch cidrtree/update.bm  bart/update.bm
-	@benchstat -ignore=cpu,pkg,goos,goarch critbitgo/update.bm bart/update.bm
-	@benchstat -ignore=cpu,pkg,goos,goarch lpmtrie/update.bm   bart/update.bm
+	@echo
+	@benchstat -ignore=cpu,pkg,goos,goarch art/update.bm  bart/update.bm
+	@echo
+	@echo
+	@echo
+	@benchstat -ignore=cpu,pkg,goos,goarch bart/update.bm cidrtree/update.bm
+	@echo
+	@benchstat -ignore=cpu,pkg,goos,goarch bart/update.bm critbitgo/update.bm
+	@echo
+	@benchstat -ignore=cpu,pkg,goos,goarch bart/update.bm lpmtrie/update.bm
 
 lookup: art/lookup.bm bart/lookup.bm cidrtree/lookup.bm critbitgo/lookup.bm lpmtrie/lookup.bm
-	@benchstat -ignore=cpu,pkg,goos,goarch art/lookup.bm       bart/lookup.bm
-	@benchstat -ignore=cpu,pkg,goos,goarch cidrtree/lookup.bm  bart/lookup.bm
-	@benchstat -ignore=cpu,pkg,goos,goarch critbitgo/lookup.bm bart/lookup.bm
-	@benchstat -ignore=cpu,pkg,goos,goarch lpmtrie/lookup.bm   bart/lookup.bm
+	@echo
+	@benchstat -ignore=cpu,pkg,goos,goarch art/lookup.bm  bart/lookup.bm
+	@echo
+	@echo
+	@echo
+	@benchstat -ignore=cpu,pkg,goos,goarch bart/lookup.bm cidrtree/lookup.bm
+	@echo
+	@benchstat -ignore=cpu,pkg,goos,goarch bart/lookup.bm critbitgo/lookup.bm
+	@echo
+	@benchstat -ignore=cpu,pkg,goos,goarch bart/lookup.bm lpmtrie/lookup.bm
 
 #
 # benchmarks for lpm lookup

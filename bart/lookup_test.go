@@ -14,25 +14,24 @@ func BenchmarkLpmTier1Pfxs(b *testing.B) {
 	for _, route := range tier1Routes {
 		rt.Insert(route, nil)
 	}
-	lpm := lpmWrapper(rt)
 
 	benchmarks := []struct {
-		name string
-		is4  bool
-		fn   func(func(netip.Addr) bool, bool) netip.Addr
+		name   string
+		routes []netip.Prefix
+		fn     func([]netip.Prefix) netip.Addr
 	}{
-		{"RandomMatchIP4", true, common.MatchIP},
-		{"RandomMatchIP6", false, common.MatchIP},
-		{"RandomMissIP4", true, common.MissIP},
-		{"RandomMissIP6", false, common.MissIP},
+		{"RandomMatchIP4", tier1Routes, common.MatchIP4},
+		{"RandomMatchIP6", tier1Routes, common.MatchIP6},
+		{"RandomMissIP4", tier1Routes, common.MissIP4},
+		{"RandomMissIP6", tier1Routes, common.MissIP6},
 	}
 
 	for _, bm := range benchmarks {
 		b.Run(bm.name, func(b *testing.B) {
-			ip := bm.fn(lpm, bm.is4)
+			ip := bm.fn(bm.routes)
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				sink = lpm(ip)
+				_, sink = rt.Get(ip)
 			}
 		})
 	}
@@ -43,25 +42,24 @@ func BenchmarkLpmRandomPfxs100_000(b *testing.B) {
 	for _, route := range randomRoutes[:100_000] {
 		rt.Insert(route, nil)
 	}
-	lpm := lpmWrapper(rt)
 
 	benchmarks := []struct {
-		name string
-		is4  bool
-		fn   func(func(netip.Addr) bool, bool) netip.Addr
+		name   string
+		routes []netip.Prefix
+		fn     func([]netip.Prefix) netip.Addr
 	}{
-		{"RandomMatchIP4", true, common.MatchIP},
-		{"RandomMatchIP6", false, common.MatchIP},
-		{"RandomMissIP4", true, common.MissIP},
-		{"RandomMissIP6", false, common.MissIP},
+		{"RandomMatchIP4", randomRoutes[:100_000], common.MatchIP4},
+		{"RandomMatchIP6", randomRoutes[:100_000], common.MatchIP6},
+		{"RandomMissIP4", randomRoutes[:100_000], common.MissIP4},
+		{"RandomMissIP6", randomRoutes[:100_000], common.MissIP6},
 	}
 
 	for _, bm := range benchmarks {
 		b.Run(bm.name, func(b *testing.B) {
-			ip := bm.fn(lpm, bm.is4)
+			ip := bm.fn(bm.routes)
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				sink = lpm(ip)
+				_, sink = rt.Get(ip)
 			}
 		})
 	}
