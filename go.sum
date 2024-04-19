@@ -2,8 +2,8 @@ github.com/Asphaltt/lpmtrie v0.0.0-20220205153150-3d814250b8ab h1:hzN25CB5VzeKk3
 github.com/Asphaltt/lpmtrie v0.0.0-20220205153150-3d814250b8ab/go.mod h1:TdNTLzn3VVXKfmHAULK5gY+h/A1gLQ8NnwLB6cSN54g=
 github.com/bits-and-blooms/bitset v1.13.0 h1:bAQ9OPNFYbGHV6Nez0tmNI0RiEu7/hxlYJRUA0wFAVE=
 github.com/bits-and-blooms/bitset v1.13.0/go.mod h1:7hO7Gc7Pp1vODcmWvKMRA9BNmbv6a/7QIWpPxHddWR8=
-github.com/gaissmai/bart v0.4.2 h1:rTkt/YKc874+pOZ2Bhf5mtIexNvlad26RRwb6bdUoZg=
-github.com/gaissmai/bart v0.4.2/go.mod h1:KHeYECXQiBjTzQz/om2tqn3sZF1J7hw9m6z41ftj3fg=
+github.com/gaissmai/bart v0.5.0 h1:LHMrAU7E3R7B7eRtlVYOJb3KiGxVdxabTbxCQmUPz7U=
+github.com/gaissmai/bart v0.5.0/go.mod h1:KHeYECXQiBjTzQz/om2tqn3sZF1J7hw9m6z41ftj3fg=
 github.com/gaissmai/cidrtree v0.5.0 h1:noZ73FM38fRV5Uw28jTcKRTHX/84ylEMT87sVuFqt1Y=
 github.com/gaissmai/cidrtree v0.5.0/go.mod h1:7snMgBXDWPq7v67RtDmGqOt6i4HGEhvFBIbg9nUiQ5k=
 github.com/gaissmai/extnetip v0.4.0 h1:9pNd/Z6QSlkda35bug/IYuPYaPMTYRuqcxPce5Z9TTQ=

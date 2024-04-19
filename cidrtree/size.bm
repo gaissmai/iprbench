@@ -2,16 +2,16 @@ goos: linux
 goarch: amd64
 pkg: local/iprbench/cidrtree
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
-BenchmarkTier1PfxSize/100         	       1	     11016 bytes
-BenchmarkTier1PfxSize/100         	       1	     12744 bytes
-BenchmarkTier1PfxSize/100         	       1	     12744 bytes
-BenchmarkTier1PfxSize/100         	       1	     12744 bytes
-BenchmarkTier1PfxSize/100         	       1	     12744 bytes
-BenchmarkTier1PfxSize/100         	       1	     12744 bytes
-BenchmarkTier1PfxSize/100         	       1	     12744 bytes
-BenchmarkTier1PfxSize/100         	       1	     12744 bytes
-BenchmarkTier1PfxSize/100         	       1	     12744 bytes
-BenchmarkTier1PfxSize/100         	       1	     12744 bytes
+BenchmarkTier1PfxSize/100         	       1	     10920 bytes
+BenchmarkTier1PfxSize/100         	       1	     12648 bytes
+BenchmarkTier1PfxSize/100         	       1	     12648 bytes
+BenchmarkTier1PfxSize/100         	       1	     12648 bytes
+BenchmarkTier1PfxSize/100         	       1	     12648 bytes
+BenchmarkTier1PfxSize/100         	       1	     12648 bytes
+BenchmarkTier1PfxSize/100         	       1	     12648 bytes
+BenchmarkTier1PfxSize/100         	       1	     12648 bytes
+BenchmarkTier1PfxSize/100         	       1	     12648 bytes
+BenchmarkTier1PfxSize/100         	       1	     12648 bytes
 BenchmarkTier1PfxSize/1_000       	       1	     81784 bytes
 BenchmarkTier1PfxSize/1_000       	       1	     83464 bytes
 BenchmarkTier1PfxSize/1_000       	       1	     83464 bytes
@@ -132,16 +132,16 @@ BenchmarkRandomPfx6Size/10_000    	       1	    803816 bytes
 BenchmarkRandomPfx6Size/10_000    	       1	    803816 bytes
 BenchmarkRandomPfx6Size/10_000    	       1	    803816 bytes
 BenchmarkRandomPfx6Size/10_000    	       1	    803816 bytes
-BenchmarkRandomPfx6Size/100_000   	       1	   8001960 bytes
-BenchmarkRandomPfx6Size/100_000   	       1	   8003640 bytes
-BenchmarkRandomPfx6Size/100_000   	       1	   8003640 bytes
-BenchmarkRandomPfx6Size/100_000   	       1	   8003640 bytes
-BenchmarkRandomPfx6Size/100_000   	       1	   8003640 bytes
-BenchmarkRandomPfx6Size/100_000   	       1	   8003640 bytes
-BenchmarkRandomPfx6Size/100_000   	       1	   8003640 bytes
-BenchmarkRandomPfx6Size/100_000   	       1	   8003640 bytes
-BenchmarkRandomPfx6Size/100_000   	       1	   8003640 bytes
-BenchmarkRandomPfx6Size/100_000   	       1	   8003640 bytes
+BenchmarkRandomPfx6Size/100_000   	       1	   8001784 bytes
+BenchmarkRandomPfx6Size/100_000   	       1	   8003464 bytes
+BenchmarkRandomPfx6Size/100_000   	       1	   8003464 bytes
+BenchmarkRandomPfx6Size/100_000   	       1	   8003464 bytes
+BenchmarkRandomPfx6Size/100_000   	       1	   8003464 bytes
+BenchmarkRandomPfx6Size/100_000   	       1	   8003464 bytes
+BenchmarkRandomPfx6Size/100_000   	       1	   8003464 bytes
+BenchmarkRandomPfx6Size/100_000   	       1	   8003464 bytes
+BenchmarkRandomPfx6Size/100_000   	       1	   8003464 bytes
+BenchmarkRandomPfx6Size/100_000   	       1	   8003464 bytes
 BenchmarkRandomPfx6Size/1_000_000 	       1	  80001800 bytes
 BenchmarkRandomPfx6Size/1_000_000 	       1	  80003480 bytes
 BenchmarkRandomPfx6Size/1_000_000 	       1	  80003480 bytes
@@ -152,7 +152,7 @@ BenchmarkRandomPfx6Size/1_000_000 	       1	  80003480 bytes
 BenchmarkRandomPfx6Size/1_000_000 	       1	  80003480 bytes
 BenchmarkRandomPfx6Size/1_000_000 	       1	  80003480 bytes
 BenchmarkRandomPfx6Size/1_000_000 	       1	  80003480 bytes
-BenchmarkRandomPfxSize/100        	       1	     10184 bytes
+BenchmarkRandomPfxSize/100        	       1	     10176 bytes
 BenchmarkRandomPfxSize/100        	       1	     11856 bytes
 BenchmarkRandomPfxSize/100        	       1	     11856 bytes
 BenchmarkRandomPfxSize/100        	       1	     11856 bytes
@@ -203,4 +203,4 @@ BenchmarkRandomPfxSize/1_000_000  	       1	  80003464 bytes
 BenchmarkRandomPfxSize/1_000_000  	       1	  80003464 bytes
 BenchmarkRandomPfxSize/1_000_000  	       1	  80003464 bytes
 PASS
-ok  	local/iprbench/cidrtree	408.868s
+ok  	local/iprbench/cidrtree	368.292s
