@@ -8,33 +8,33 @@ dep:
 
 size: art/size.bm bart/size.bm cidrtree/size.bm critbitgo/size.bm lpmtrie/size.bm
 	@echo
-	@benchstat -ignore=cpu,pkg,goos,goarch bart/size.bm art/size.bm
+	@benchstat -ignore=pkg bart/size.bm art/size.bm
 	@echo
-	@benchstat -ignore=cpu,pkg,goos,goarch bart/size.bm cidrtree/size.bm
+	@benchstat -ignore=pkg bart/size.bm cidrtree/size.bm
 	@echo
-	@benchstat -ignore=cpu,pkg,goos,goarch bart/size.bm critbitgo/size.bm
+	@benchstat -ignore=pkg bart/size.bm critbitgo/size.bm
 	@echo
-	@benchstat -ignore=cpu,pkg,goos,goarch bart/size.bm lpmtrie/size.bm
+	@benchstat -ignore=pkg bart/size.bm lpmtrie/size.bm
 
 update: art/update.bm bart/update.bm cidrtree/update.bm critbitgo/update.bm lpmtrie/update.bm
 	@echo
-	@benchstat -ignore=cpu,pkg,goos,goarch bart/update.bm art/update.bm
+	@benchstat -ignore=pkg bart/update.bm art/update.bm
 	@echo
-	@benchstat -ignore=cpu,pkg,goos,goarch bart/update.bm cidrtree/update.bm
+	@benchstat -ignore=pkg bart/update.bm cidrtree/update.bm
 	@echo
-	@benchstat -ignore=cpu,pkg,goos,goarch bart/update.bm critbitgo/update.bm
+	@benchstat -ignore=pkg bart/update.bm critbitgo/update.bm
 	@echo
-	@benchstat -ignore=cpu,pkg,goos,goarch bart/update.bm lpmtrie/update.bm
+	@benchstat -ignore=pkg bart/update.bm lpmtrie/update.bm
 
 lookup: art/lookup.bm bart/lookup.bm cidrtree/lookup.bm critbitgo/lookup.bm lpmtrie/lookup.bm
 	@echo
-	@benchstat -ignore=cpu,pkg,goos,goarch bart/lookup.bm art/lookup.bm
+	@benchstat -ignore=pkg bart/lookup.bm art/lookup.bm
 	@echo
-	@benchstat -ignore=cpu,pkg,goos,goarch bart/lookup.bm cidrtree/lookup.bm
+	@benchstat -ignore=pkg bart/lookup.bm cidrtree/lookup.bm
 	@echo
-	@benchstat -ignore=cpu,pkg,goos,goarch bart/lookup.bm critbitgo/lookup.bm
+	@benchstat -ignore=pkg bart/lookup.bm critbitgo/lookup.bm
 	@echo
-	@benchstat -ignore=cpu,pkg,goos,goarch bart/lookup.bm lpmtrie/lookup.bm
+	@benchstat -ignore=pkg bart/lookup.bm lpmtrie/lookup.bm
 
 #
 # benchmarks for lpm lookup
