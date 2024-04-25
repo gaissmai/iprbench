@@ -82,7 +82,7 @@ func MatchIP6(routes []netip.Prefix) netip.Addr {
 	}
 }
 
-// MissIP4 returns a random IP covered by the routing table.
+// MissIP4 returns a random IP NOT covered by the routing table.
 func MissIP4(routes []netip.Prefix) netip.Addr {
 	rt := new(art.Table[struct{}])
 	for _, r := range routes {
@@ -104,7 +104,7 @@ func MissIP4(routes []netip.Prefix) netip.Addr {
 	}
 }
 
-// MissIP6 returns a random IP covered by the routing table.
+// MissIP6 returns a random IP NOT covered by the routing table.
 func MissIP6(routes []netip.Prefix) netip.Addr {
 	rt := new(art.Table[struct{}])
 	for _, r := range routes {
