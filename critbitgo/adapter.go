@@ -62,10 +62,3 @@ func (t *Table) Get(ip netip.Addr) (val any, ok bool) {
 	}
 	return val, false
 }
-
-func lpmWrapper(t *Table) func(netip.Addr) bool {
-	return func(ip netip.Addr) bool {
-		_, ok := t.Get(ip)
-		return ok
-	}
-}
