@@ -1,17 +1,17 @@
 goos: linux
 goarch: amd64
 pkg: local/iprbench/cidrtree
-cpu: Intel(R) Core(TM) i5-7500T CPU @ 2.70GHz
-BenchmarkTier1PfxSize/100         	       1	     11040 bytes
-BenchmarkTier1PfxSize/100         	       1	     12768 bytes
-BenchmarkTier1PfxSize/100         	       1	     12768 bytes
-BenchmarkTier1PfxSize/100         	       1	     12768 bytes
-BenchmarkTier1PfxSize/100         	       1	     12768 bytes
-BenchmarkTier1PfxSize/100         	       1	     12768 bytes
-BenchmarkTier1PfxSize/100         	       1	     12768 bytes
-BenchmarkTier1PfxSize/100         	       1	     12768 bytes
-BenchmarkTier1PfxSize/100         	       1	     12768 bytes
-BenchmarkTier1PfxSize/100         	       1	     12768 bytes
+cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
+BenchmarkTier1PfxSize/100         	       1	     11048 bytes
+BenchmarkTier1PfxSize/100         	       1	     12776 bytes
+BenchmarkTier1PfxSize/100         	       1	     12776 bytes
+BenchmarkTier1PfxSize/100         	       1	     12776 bytes
+BenchmarkTier1PfxSize/100         	       1	     12776 bytes
+BenchmarkTier1PfxSize/100         	       1	     12776 bytes
+BenchmarkTier1PfxSize/100         	       1	     12776 bytes
+BenchmarkTier1PfxSize/100         	       1	     12776 bytes
+BenchmarkTier1PfxSize/100         	       1	     12776 bytes
+BenchmarkTier1PfxSize/100         	       1	     12776 bytes
 BenchmarkTier1PfxSize/1_000       	       1	     81784 bytes
 BenchmarkTier1PfxSize/1_000       	       1	     83464 bytes
 BenchmarkTier1PfxSize/1_000       	       1	     83464 bytes
@@ -102,7 +102,7 @@ BenchmarkRandomPfx4Size/1_000_000 	       1	  80003480 bytes
 BenchmarkRandomPfx4Size/1_000_000 	       1	  80003480 bytes
 BenchmarkRandomPfx4Size/1_000_000 	       1	  80003480 bytes
 BenchmarkRandomPfx4Size/1_000_000 	       1	  80003480 bytes
-BenchmarkRandomPfx6Size/100       	       1	     10184 bytes
+BenchmarkRandomPfx6Size/100       	       1	     10176 bytes
 BenchmarkRandomPfx6Size/100       	       1	     11856 bytes
 BenchmarkRandomPfx6Size/100       	       1	     11856 bytes
 BenchmarkRandomPfx6Size/100       	       1	     11856 bytes
@@ -152,7 +152,7 @@ BenchmarkRandomPfx6Size/1_000_000 	       1	  80003480 bytes
 BenchmarkRandomPfx6Size/1_000_000 	       1	  80003480 bytes
 BenchmarkRandomPfx6Size/1_000_000 	       1	  80003480 bytes
 BenchmarkRandomPfx6Size/1_000_000 	       1	  80003480 bytes
-BenchmarkRandomPfxSize/100        	       1	     10176 bytes
+BenchmarkRandomPfxSize/100        	       1	     10184 bytes
 BenchmarkRandomPfxSize/100        	       1	     11856 bytes
 BenchmarkRandomPfxSize/100        	       1	     11856 bytes
 BenchmarkRandomPfxSize/100        	       1	     11856 bytes
@@ -203,4 +203,4 @@ BenchmarkRandomPfxSize/1_000_000  	       1	  80003464 bytes
 BenchmarkRandomPfxSize/1_000_000  	       1	  80003464 bytes
 BenchmarkRandomPfxSize/1_000_000  	       1	  80003464 bytes
 PASS
-ok  	local/iprbench/cidrtree	320.205s
+ok  	local/iprbench/cidrtree	385.472s

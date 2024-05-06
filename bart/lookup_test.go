@@ -30,7 +30,7 @@ func BenchmarkLpmTier1Pfxs(b *testing.B) {
 		b.Run(bm.name, func(b *testing.B) {
 			ip := bm.fn(bm.routes)
 			b.ResetTimer()
-			for i := 0; i < b.N; i++ {
+			for range b.N {
 				_, sink = rt.Lookup(ip)
 			}
 		})
@@ -58,7 +58,7 @@ func BenchmarkLpmRandomPfxs100_000(b *testing.B) {
 		b.Run(bm.name, func(b *testing.B) {
 			ip := bm.fn(bm.routes)
 			b.ResetTimer()
-			for i := 0; i < b.N; i++ {
+			for range b.N {
 				_, sink = rt.Lookup(ip)
 			}
 		})

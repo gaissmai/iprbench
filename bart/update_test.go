@@ -17,7 +17,7 @@ func BenchmarkInsert(b *testing.B) {
 		name := "Insert into " + common.IntMap[k]
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
-			for n := 0; n < b.N; n++ {
+			for range b.N {
 				rt.Insert(probe, nil)
 			}
 		})
@@ -34,7 +34,7 @@ func BenchmarkDelete(b *testing.B) {
 		name := "Delete from " + common.IntMap[k]
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
-			for n := 0; n < b.N; n++ {
+			for range b.N {
 				rt.Delete(probe)
 			}
 		})
