@@ -54,7 +54,7 @@ func MatchIP4(routes []netip.Prefix) netip.Addr {
 			return ip
 		}
 		i++
-		if i > 20_000_000 {
+		if i > 50_000_000 {
 			panic("logic error")
 		}
 	}
@@ -76,7 +76,7 @@ func MatchIP6(routes []netip.Prefix) netip.Addr {
 			return ip
 		}
 		i++
-		if i > 20_000_000 {
+		if i > 50_000_000 {
 			panic("logic error")
 		}
 	}
@@ -98,7 +98,7 @@ func MissIP4(routes []netip.Prefix) netip.Addr {
 			return ip
 		}
 		i++
-		if i > 20_000_000 {
+		if i > 50_000_000 {
 			panic("logic error")
 		}
 	}
@@ -120,7 +120,7 @@ func MissIP6(routes []netip.Prefix) netip.Addr {
 			return ip
 		}
 		i++
-		if i > 20_000_000 {
+		if i > 50_000_000 {
 			panic("logic error")
 		}
 	}

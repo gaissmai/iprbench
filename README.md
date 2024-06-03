@@ -161,60 +161,61 @@ goarch: amd64
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
                                     │ bart/lookup.bm │            art/lookup.bm             │
                                     │     sec/op     │    sec/op     vs base                │
-LpmTier1Pfxs/RandomMatchIP4             61.57n ± 22%   46.12n ± 12%  -25.08% (p=0.005 n=10)
-LpmTier1Pfxs/RandomMatchIP6             59.37n ± 53%   45.26n ± 13%  -23.77% (p=0.023 n=10)
-LpmTier1Pfxs/RandomMissIP4              78.57n ± 46%   28.18n ±  0%  -64.14% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMissIP6              35.29n ±  0%   27.81n ±  0%  -21.21% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMatchIP4     83.09n ±  9%   46.06n ± 12%  -44.57% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMatchIP6     70.59n ± 25%   45.02n ± 17%  -36.22% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMissIP4     110.65n ± 30%   29.87n ±  7%  -73.00% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMissIP6      94.09n ± 20%   29.80n ±  7%  -68.33% (p=0.000 n=10)
-geomean                                 70.62n         36.31n        -48.59%
+LpmTier1Pfxs/RandomMatchIP4             62.66n ± 23%   46.12n ± 12%  -26.39% (p=0.005 n=10)
+LpmTier1Pfxs/RandomMatchIP6             59.30n ± 31%   45.26n ± 13%  -23.68% (p=0.023 n=10)
+LpmTier1Pfxs/RandomMissIP4              77.69n ± 48%   28.18n ±  0%  -63.73% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMissIP6              16.77n ±  0%   27.81n ±  0%  +65.88% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMatchIP4     65.63n ± 33%   46.06n ± 12%  -29.82% (p=0.002 n=10)
+LpmRandomPfxs100_000/RandomMatchIP6     66.71n ± 21%   45.02n ± 17%  -32.51% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMissIP4      99.32n ± 22%   29.87n ±  7%  -69.93% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMissIP6      76.59n ± 25%   29.80n ±  7%  -61.10% (p=0.000 n=10)
+geomean                                 59.69n         36.31n        -39.18%
 
 goos: linux
 goarch: amd64
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
                                     │ bart/lookup.bm │            cidrtree/lookup.bm             │
                                     │     sec/op     │     sec/op       vs base                  │
-LpmTier1Pfxs/RandomMatchIP4             61.57n ± 22%   1177.50n ±  24%  +1812.61% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMatchIP6             59.37n ± 53%   1174.00n ±  19%  +1877.43% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMissIP4              78.57n ± 46%   1321.50n ±  23%  +1581.83% (p=0.002 n=10)
-LpmTier1Pfxs/RandomMissIP6              35.29n ±  0%     67.13n ± 579%    +90.18% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMatchIP4     83.09n ±  9%   1083.50n ±  52%  +1204.01% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMatchIP6     70.59n ± 25%   1519.50n ±  27%  +2052.57% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMissIP4      110.6n ± 30%    1126.5n ±  17%   +918.08% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMissIP6      94.09n ± 20%   1401.50n ±  31%  +1389.61% (p=0.000 n=10)
-geomean                                 70.62n           866.8n         +1127.36%
+LpmTier1Pfxs/RandomMatchIP4             62.66n ± 23%   1177.50n ±  24%  +1779.04% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMatchIP6             59.30n ± 31%   1174.00n ±  19%  +1879.76% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMissIP4              77.69n ± 48%   1321.50n ±  23%  +1601.10% (p=0.002 n=10)
+LpmTier1Pfxs/RandomMissIP6              16.77n ±  0%     67.13n ± 579%   +300.39% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMatchIP4     65.63n ± 33%   1083.50n ±  52%  +1550.92% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMatchIP6     66.71n ± 21%   1519.50n ±  27%  +2177.77% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMissIP4      99.32n ± 22%   1126.50n ±  17%  +1034.21% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMissIP6      76.59n ± 25%   1401.50n ±  31%  +1729.87% (p=0.000 n=10)
+geomean                                 59.69n           866.8n         +1352.16%
 
 goos: linux
 goarch: amd64
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
                                     │ bart/lookup.bm │           critbitgo/lookup.bm           │
                                     │     sec/op     │    sec/op      vs base                  │
-LpmTier1Pfxs/RandomMatchIP4             61.57n ± 22%   352.65n ± 11%   +472.81% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMatchIP6             59.37n ± 53%   509.85n ± 18%   +758.77% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMissIP4              78.57n ± 46%   696.15n ± 40%   +785.97% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMissIP6              35.29n ±  0%   695.45n ± 14%  +1870.39% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMatchIP4     83.09n ±  9%   390.05n ± 39%   +369.43% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMatchIP6     70.59n ± 25%   408.45n ± 18%   +478.62% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMissIP4      110.6n ± 30%    466.3n ± 39%   +321.42% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMissIP6      94.09n ± 20%   454.15n ± 20%   +382.70% (p=0.000 n=10)
-geomean                                 70.62n          482.5n         +583.17%
+LpmTier1Pfxs/RandomMatchIP4             62.66n ± 23%   352.65n ± 11%   +462.75% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMatchIP6             59.30n ± 31%   509.85n ± 18%   +759.78% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMissIP4              77.69n ± 48%   696.15n ± 40%   +796.12% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMissIP6              16.77n ±  0%   695.45n ± 14%  +4048.23% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMatchIP4     65.63n ± 33%   390.05n ± 39%   +494.32% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMatchIP6     66.71n ± 21%   408.45n ± 18%   +512.28% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMissIP4      99.32n ± 22%   466.30n ± 39%   +369.49% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMissIP6      76.59n ± 25%   454.15n ± 20%   +492.96% (p=0.000 n=10)
+geomean                                 59.69n          482.5n         +708.29%
 
 goos: linux
 goarch: amd64
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
                                     │ bart/lookup.bm │           lpmtrie/lookup.bm            │
                                     │     sec/op     │    sec/op      vs base                 │
-LpmTier1Pfxs/RandomMatchIP4             61.57n ± 22%   236.50n ± 16%  +284.15% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMatchIP6             59.37n ± 53%   264.50n ± 58%  +345.51% (p=0.000 n=10)
-LpmTier1Pfxs/RandomMissIP4              78.57n ± 46%   238.90n ± 66%  +204.04% (p=0.004 n=10)
-LpmTier1Pfxs/RandomMissIP6              35.29n ±  0%   106.03n ± 21%  +200.42% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMatchIP4     83.09n ±  9%   259.30n ±  8%  +212.07% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMatchIP6     70.59n ± 25%   206.45n ±  9%  +192.46% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMissIP4      110.6n ± 30%    291.4n ±  7%  +163.40% (p=0.000 n=10)
-LpmRandomPfxs100_000/RandomMissIP6      94.09n ± 20%   230.60n ±  9%  +145.10% (p=0.000 n=10)
-geomean                                 70.62n          221.1n        +213.00%
+LpmTier1Pfxs/RandomMatchIP4             62.66n ± 23%   236.50n ± 16%  +277.40% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMatchIP6             59.30n ± 31%   264.50n ± 58%  +346.04% (p=0.000 n=10)
+LpmTier1Pfxs/RandomMissIP4              77.69n ± 48%   238.90n ± 66%  +207.52% (p=0.004 n=10)
+LpmTier1Pfxs/RandomMissIP6              16.77n ±  0%   106.03n ± 21%  +532.48% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMatchIP4     65.63n ± 33%   259.30n ±  8%  +295.09% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMatchIP6     66.71n ± 21%   206.45n ±  9%  +209.47% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMissIP4      99.32n ± 22%   291.45n ±  7%  +193.45% (p=0.000 n=10)
+LpmRandomPfxs100_000/RandomMissIP6      76.59n ± 25%   230.60n ±  9%  +201.08% (p=0.000 n=10)
+geomean                                 59.69n          221.1n        +270.32%
+
 ```
 
 ## update, insert/delete
@@ -227,67 +228,66 @@ goarch: amd64
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
                              │ bart/update.bm │             art/update.bm             │
                              │     sec/op     │    sec/op     vs base                 │
-Insert/Insert_into_100            53.70n ± 0%   105.60n ± 1%   +96.67% (p=0.000 n=10)
-Insert/Insert_into_1_000          58.78n ± 0%   125.40n ± 1%  +113.36% (p=0.000 n=10)
-Insert/Insert_into_10_000         61.47n ± 0%   129.55n ± 2%  +110.75% (p=0.000 n=10)
-Insert/Insert_into_100_000        53.69n ± 0%   121.75n ± 2%  +126.76% (p=0.000 n=10)
-Insert/Insert_into_1_000_000      53.71n ± 0%   120.70n ± 1%  +124.73% (p=0.000 n=10)
-Delete/Delete_from_100            17.34n ± 0%    34.32n ± 4%   +97.92% (p=0.000 n=10)
-Delete/Delete_from_1_000          42.48n ± 0%    59.12n ± 0%   +39.15% (p=0.000 n=10)
-Delete/Delete_from_10_000         44.23n ± 0%    59.95n ± 0%   +35.54% (p=0.000 n=10)
-Delete/Delete_from_100_000        41.14n ± 0%    58.71n ± 0%   +42.70% (p=0.000 n=10)
-Delete/Delete_from_1_000_000      41.71n ± 0%    58.99n ± 0%   +41.40% (p=0.000 n=10)
-geomean                           44.62n         79.91n        +79.09%
+Insert/Insert_into_100            55.17n ± 1%   105.60n ± 1%   +91.39% (p=0.000 n=10)
+Insert/Insert_into_1_000          54.61n ± 1%   125.40n ± 1%  +129.63% (p=0.000 n=10)
+Insert/Insert_into_10_000         54.70n ± 1%   129.55n ± 2%  +136.86% (p=0.000 n=10)
+Insert/Insert_into_100_000        54.95n ± 5%   121.75n ± 2%  +121.54% (p=0.000 n=10)
+Insert/Insert_into_1_000_000      59.52n ± 2%   120.70n ± 1%  +102.79% (p=0.000 n=10)
+Delete/Delete_from_100            17.59n ± 1%    34.32n ± 4%   +95.17% (p=0.000 n=10)
+Delete/Delete_from_1_000          41.99n ± 1%    59.12n ± 0%   +40.80% (p=0.000 n=10)
+Delete/Delete_from_10_000         43.55n ± 1%    59.95n ± 0%   +37.66% (p=0.000 n=10)
+Delete/Delete_from_100_000        42.92n ± 1%    58.71n ± 0%   +36.76% (p=0.000 n=10)
+Delete/Delete_from_1_000_000      40.76n ± 0%    58.99n ± 0%   +44.73% (p=0.000 n=10)
+geomean                           44.48n         79.91n        +79.65%
 
 goos: linux
 goarch: amd64
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
                              │ bart/update.bm │            cidrtree/update.bm            │
                              │     sec/op     │    sec/op      vs base                   │
-Insert/Insert_into_100            53.70n ± 0%    949.75n ± 0%   +1668.79% (p=0.000 n=10)
-Insert/Insert_into_1_000          58.78n ± 0%   1673.00n ± 0%   +2746.45% (p=0.000 n=10)
-Insert/Insert_into_10_000         61.47n ± 0%   2025.50n ± 0%   +3195.10% (p=0.000 n=10)
-Insert/Insert_into_100_000        53.69n ± 0%   2981.00n ± 0%   +5452.24% (p=0.000 n=10)
-Insert/Insert_into_1_000_000      53.71n ± 0%   3189.00n ± 0%   +5837.44% (p=0.000 n=10)
-Delete/Delete_from_100            17.34n ± 0%   1189.00n ± 0%   +6756.98% (p=0.000 n=10)
-Delete/Delete_from_1_000          42.48n ± 0%   2112.50n ± 0%   +4872.34% (p=0.000 n=10)
-Delete/Delete_from_10_000         44.23n ± 0%   4306.50n ± 0%   +9636.60% (p=0.000 n=10)
-Delete/Delete_from_100_000        41.14n ± 0%   4466.50n ± 0%  +10756.83% (p=0.000 n=10)
-Delete/Delete_from_1_000_000      41.71n ± 0%   4220.00n ± 0%  +10016.27% (p=0.000 n=10)
-geomean                           44.62n          2.396µ        +5270.00%
+Insert/Insert_into_100            55.17n ± 1%    949.75n ± 0%   +1621.34% (p=0.000 n=10)
+Insert/Insert_into_1_000          54.61n ± 1%   1673.00n ± 0%   +2963.54% (p=0.000 n=10)
+Insert/Insert_into_10_000         54.70n ± 1%   2025.50n ± 0%   +3603.26% (p=0.000 n=10)
+Insert/Insert_into_100_000        54.95n ± 5%   2981.00n ± 0%   +5324.44% (p=0.000 n=10)
+Insert/Insert_into_1_000_000      59.52n ± 2%   3189.00n ± 0%   +5257.86% (p=0.000 n=10)
+Delete/Delete_from_100            17.59n ± 1%   1189.00n ± 0%   +6661.44% (p=0.000 n=10)
+Delete/Delete_from_1_000          41.99n ± 1%   2112.50n ± 0%   +4930.96% (p=0.000 n=10)
+Delete/Delete_from_10_000         43.55n ± 1%   4306.50n ± 0%   +9788.63% (p=0.000 n=10)
+Delete/Delete_from_100_000        42.92n ± 1%   4466.50n ± 0%  +10305.36% (p=0.000 n=10)
+Delete/Delete_from_1_000_000      40.76n ± 0%   4220.00n ± 0%  +10254.56% (p=0.000 n=10)
+geomean                           44.48n          2.396µ        +5286.71%
 
 goos: linux
 goarch: amd64
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
                              │ bart/update.bm │          critbitgo/update.bm          │
                              │     sec/op     │    sec/op     vs base                 │
-Insert/Insert_into_100            53.70n ± 0%   109.55n ± 0%  +104.02% (p=0.000 n=10)
-Insert/Insert_into_1_000          58.78n ± 0%   122.00n ± 0%  +107.57% (p=0.000 n=10)
-Insert/Insert_into_10_000         61.47n ± 0%   125.80n ± 0%  +104.65% (p=0.000 n=10)
-Insert/Insert_into_100_000        53.69n ± 0%   154.60n ± 1%  +187.95% (p=0.000 n=10)
-Insert/Insert_into_1_000_000      53.71n ± 0%   179.80n ± 0%  +234.76% (p=0.000 n=10)
-Delete/Delete_from_100            17.34n ± 0%    99.64n ± 0%  +474.63% (p=0.000 n=10)
-Delete/Delete_from_1_000          42.48n ± 0%   110.65n ± 0%  +160.44% (p=0.000 n=10)
-Delete/Delete_from_10_000         44.23n ± 0%   112.40n ± 0%  +154.13% (p=0.000 n=10)
-Delete/Delete_from_100_000        41.14n ± 0%   129.80n ± 1%  +215.51% (p=0.000 n=10)
-Delete/Delete_from_1_000_000      41.71n ± 0%   126.65n ± 1%  +203.61% (p=0.000 n=10)
-geomean                           44.62n         125.3n       +180.76%
+Insert/Insert_into_100            55.17n ± 1%   109.55n ± 0%   +98.55% (p=0.000 n=10)
+Insert/Insert_into_1_000          54.61n ± 1%   122.00n ± 0%  +123.40% (p=0.000 n=10)
+Insert/Insert_into_10_000         54.70n ± 1%   125.80n ± 0%  +130.00% (p=0.000 n=10)
+Insert/Insert_into_100_000        54.95n ± 5%   154.60n ± 1%  +181.32% (p=0.000 n=10)
+Insert/Insert_into_1_000_000      59.52n ± 2%   179.80n ± 0%  +202.08% (p=0.000 n=10)
+Delete/Delete_from_100            17.59n ± 1%    99.64n ± 0%  +466.62% (p=0.000 n=10)
+Delete/Delete_from_1_000          41.99n ± 1%   110.65n ± 0%  +163.52% (p=0.000 n=10)
+Delete/Delete_from_10_000         43.55n ± 1%   112.40n ± 0%  +158.09% (p=0.000 n=10)
+Delete/Delete_from_100_000        42.92n ± 1%   129.80n ± 1%  +202.39% (p=0.000 n=10)
+Delete/Delete_from_1_000_000      40.76n ± 0%   126.65n ± 1%  +210.76% (p=0.000 n=10)
+geomean                           44.48n         125.3n       +181.64%
 
 goos: linux
 goarch: amd64
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
                              │ bart/update.bm │           lpmtrie/update.bm            │
                              │     sec/op     │    sec/op     vs base                  │
-Insert/Insert_into_100            53.70n ± 0%   318.45n ± 1%   +493.07% (p=0.000 n=10)
-Insert/Insert_into_1_000          58.78n ± 0%   348.75n ± 1%   +493.36% (p=0.000 n=10)
-Insert/Insert_into_10_000         61.47n ± 0%   361.75n ± 1%   +488.50% (p=0.000 n=10)
-Insert/Insert_into_100_000        53.69n ± 0%   502.35n ± 1%   +835.65% (p=0.000 n=10)
-Insert/Insert_into_1_000_000      53.71n ± 0%   682.75n ± 1%  +1171.18% (p=0.000 n=10)
-Delete/Delete_from_100            17.34n ± 0%    76.59n ± 0%   +341.67% (p=0.000 n=10)
-Delete/Delete_from_1_000          42.48n ± 0%   125.65n ± 0%   +195.75% (p=0.000 n=10)
-Delete/Delete_from_10_000         44.23n ± 0%   145.25n ± 0%   +228.40% (p=0.000 n=10)
-Delete/Delete_from_100_000        41.14n ± 0%   261.60n ± 2%   +535.88% (p=0.000 n=10)
-Delete/Delete_from_1_000_000      41.71n ± 0%   298.00n ± 0%   +614.37% (p=0.000 n=10)
-geomean                           44.62n         261.6n        +486.30%
-
+Insert/Insert_into_100            55.17n ± 1%   318.45n ± 1%   +477.16% (p=0.000 n=10)
+Insert/Insert_into_1_000          54.61n ± 1%   348.75n ± 1%   +538.62% (p=0.000 n=10)
+Insert/Insert_into_10_000         54.70n ± 1%   361.75n ± 1%   +561.40% (p=0.000 n=10)
+Insert/Insert_into_100_000        54.95n ± 5%   502.35n ± 1%   +814.11% (p=0.000 n=10)
+Insert/Insert_into_1_000_000      59.52n ± 2%   682.75n ± 1%  +1047.09% (p=0.000 n=10)
+Delete/Delete_from_100            17.59n ± 1%    76.59n ± 0%   +335.51% (p=0.000 n=10)
+Delete/Delete_from_1_000          41.99n ± 1%   125.65n ± 0%   +199.24% (p=0.000 n=10)
+Delete/Delete_from_10_000         43.55n ± 1%   145.25n ± 0%   +233.52% (p=0.000 n=10)
+Delete/Delete_from_100_000        42.92n ± 1%   261.60n ± 2%   +509.44% (p=0.000 n=10)
+Delete/Delete_from_1_000_000      40.76n ± 0%   298.00n ± 0%   +631.20% (p=0.000 n=10)
+geomean                           44.48n         261.6n        +488.13%
 ```
