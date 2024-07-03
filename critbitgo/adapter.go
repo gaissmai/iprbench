@@ -47,7 +47,7 @@ func (t *Table) Delete(p netip.Prefix) {
 	}
 }
 
-func (t *Table) Get(ip netip.Addr) (val any, ok bool) {
+func (t *Table) Lookup(ip netip.Addr) (val any, ok bool) {
 	if ip.Is4() {
 		route, val, _ := t.v4.MatchIP(common.AddrToIP(ip))
 		if route != nil {

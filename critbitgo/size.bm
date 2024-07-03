@@ -2,16 +2,16 @@ goos: linux
 goarch: amd64
 pkg: local/iprbench/critbitgo
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
-BenchmarkTier1PfxSize/100         	       1	     14264 bytes
-BenchmarkTier1PfxSize/100         	       1	     16008 bytes
-BenchmarkTier1PfxSize/100         	       1	     16008 bytes
-BenchmarkTier1PfxSize/100         	       1	     16008 bytes
-BenchmarkTier1PfxSize/100         	       1	     16008 bytes
-BenchmarkTier1PfxSize/100         	       1	     16008 bytes
-BenchmarkTier1PfxSize/100         	       1	     16008 bytes
-BenchmarkTier1PfxSize/100         	       1	     16008 bytes
-BenchmarkTier1PfxSize/100         	       1	     16008 bytes
-BenchmarkTier1PfxSize/100         	       1	     16008 bytes
+BenchmarkTier1PfxSize/100         	       1	     14272 bytes
+BenchmarkTier1PfxSize/100         	       1	     16016 bytes
+BenchmarkTier1PfxSize/100         	       1	     16016 bytes
+BenchmarkTier1PfxSize/100         	       1	     16016 bytes
+BenchmarkTier1PfxSize/100         	       1	     16016 bytes
+BenchmarkTier1PfxSize/100         	       1	     16016 bytes
+BenchmarkTier1PfxSize/100         	       1	     16016 bytes
+BenchmarkTier1PfxSize/100         	       1	     16016 bytes
+BenchmarkTier1PfxSize/100         	       1	     16016 bytes
+BenchmarkTier1PfxSize/100         	       1	     16016 bytes
 BenchmarkTier1PfxSize/1_000       	       1	    116296 bytes
 BenchmarkTier1PfxSize/1_000       	       1	    117992 bytes
 BenchmarkTier1PfxSize/1_000       	       1	    117992 bytes
@@ -152,7 +152,7 @@ BenchmarkRandomPfx6Size/1_000_000 	       1	 128003432 bytes
 BenchmarkRandomPfx6Size/1_000_000 	       1	 128003432 bytes
 BenchmarkRandomPfx6Size/1_000_000 	       1	 128003432 bytes
 BenchmarkRandomPfx6Size/1_000_000 	       1	 128003432 bytes
-BenchmarkRandomPfxSize/100        	       1	     13608 bytes
+BenchmarkRandomPfxSize/100        	       1	     13600 bytes
 BenchmarkRandomPfxSize/100        	       1	     15296 bytes
 BenchmarkRandomPfxSize/100        	       1	     15296 bytes
 BenchmarkRandomPfxSize/100        	       1	     15296 bytes
@@ -203,4 +203,4 @@ BenchmarkRandomPfxSize/1_000_000  	       1	 115203384 bytes
 BenchmarkRandomPfxSize/1_000_000  	       1	 115203384 bytes
 BenchmarkRandomPfxSize/1_000_000  	       1	 115203384 bytes
 PASS
-ok  	local/iprbench/critbitgo	107.575s
+ok  	local/iprbench/critbitgo	116.252s

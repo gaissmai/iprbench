@@ -54,7 +54,7 @@ func (t *Table) Delete(p netip.Prefix) {
 	t.v6.Delete(key)
 }
 
-func (t *Table) Get(ip netip.Addr) (val any, ok bool) {
+func (t *Table) Lookup(ip netip.Addr) (val any, ok bool) {
 	key := lpmtrie.Key{
 		PrefixLen: ip.BitLen(),
 		Data:      ip.AsSlice(),

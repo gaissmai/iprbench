@@ -52,7 +52,7 @@ BenchmarkTier1PfxSize/1_000_000   	       1	  80003464 bytes
 BenchmarkTier1PfxSize/1_000_000   	       1	  80003464 bytes
 BenchmarkTier1PfxSize/1_000_000   	       1	  80003464 bytes
 BenchmarkTier1PfxSize/1_000_000   	       1	  80003464 bytes
-BenchmarkRandomPfx4Size/100       	       1	     10176 bytes
+BenchmarkRandomPfx4Size/100       	       1	     10184 bytes
 BenchmarkRandomPfx4Size/100       	       1	     11856 bytes
 BenchmarkRandomPfx4Size/100       	       1	     11856 bytes
 BenchmarkRandomPfx4Size/100       	       1	     11856 bytes
@@ -203,4 +203,4 @@ BenchmarkRandomPfxSize/1_000_000  	       1	  80003464 bytes
 BenchmarkRandomPfxSize/1_000_000  	       1	  80003464 bytes
 BenchmarkRandomPfxSize/1_000_000  	       1	  80003464 bytes
 PASS
-ok  	local/iprbench/cidrtree	349.529s
+ok  	local/iprbench/cidrtree	404.861s
