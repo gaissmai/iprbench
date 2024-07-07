@@ -7,11 +7,22 @@ import (
 	"local/iprbench/common"
 )
 
-func BenchmarkLpmTier1Pfxs(b *testing.B) {
-	rt := NewTable()
+var rt1 = NewTable()
+var rt2 = NewTable()
+
+func init() {
 	for _, route := range tier1Routes {
-		rt.Insert(route, nil)
+		rt1.Insert(route, nil)
 	}
+}
+
+func init() {
+	for _, route := range randomRoutes[:100_000] {
+		rt2.Insert(route, nil)
+	}
+}
+
+func BenchmarkLpmTier1Pfxs(b *testing.B) {
 
 	benchmarks := []struct {
 		name   string
@@ -29,17 +40,13 @@ func BenchmarkLpmTier1Pfxs(b *testing.B) {
 			ip := bm.fn(bm.routes)
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				_, sink = rt.Lookup(ip)
+				_, sink = rt1.Lookup(ip)
 			}
 		})
 	}
 }
 
 func BenchmarkLpmRandomPfxs100_000(b *testing.B) {
-	rt := NewTable()
-	for _, route := range randomRoutes[:100_000] {
-		rt.Insert(route, nil)
-	}
 
 	benchmarks := []struct {
 		name   string
@@ -57,7 +64,7 @@ func BenchmarkLpmRandomPfxs100_000(b *testing.B) {
 			ip := bm.fn(bm.routes)
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				_, sink = rt.Lookup(ip)
+				_, sink = rt2.Lookup(ip)
 			}
 		})
 	}

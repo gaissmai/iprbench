@@ -6,26 +6,25 @@ import (
 
 	"local/iprbench/common"
 
-	"github.com/tailscale/art"
+	"github.com/yl2chen/cidranger"
 )
 
-var rt1 = new(art.Table[any])
-var rt2 = new(art.Table[any])
+var rt1 = cidranger.NewPCTrieRanger()
+var rt2 = cidranger.NewPCTrieRanger()
 
 func init() {
 	for _, route := range tier1Routes {
-		rt1.Insert(route, nil)
+		_ = rt1.Insert(cidranger.NewBasicRangerEntry(common.PfxToIPNet(route)))
 	}
 }
 
 func init() {
 	for _, route := range randomRoutes[:100_000] {
-		rt2.Insert(route, nil)
+		_ = rt2.Insert(cidranger.NewBasicRangerEntry(common.PfxToIPNet(route)))
 	}
 }
 
 func BenchmarkLpmTier1Pfxs(b *testing.B) {
-
 	benchmarks := []struct {
 		name   string
 		routes []netip.Prefix
@@ -39,17 +38,16 @@ func BenchmarkLpmTier1Pfxs(b *testing.B) {
 
 	for _, bm := range benchmarks {
 		b.Run(bm.name, func(b *testing.B) {
-			ip := bm.fn(bm.routes)
+			ip := common.AddrToIP(bm.fn(bm.routes))
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				_, sink = rt1.Get(ip)
+				sink, _ = rt1.ContainingNetworks(ip)
 			}
 		})
 	}
 }
 
 func BenchmarkLpmRandomPfxs100_000(b *testing.B) {
-
 	benchmarks := []struct {
 		name   string
 		routes []netip.Prefix
@@ -63,10 +61,10 @@ func BenchmarkLpmRandomPfxs100_000(b *testing.B) {
 
 	for _, bm := range benchmarks {
 		b.Run(bm.name, func(b *testing.B) {
-			ip := bm.fn(bm.routes)
+			ip := common.AddrToIP(bm.fn(bm.routes))
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				_, sink = rt2.Get(ip)
+				sink, _ = rt2.ContainingNetworks(ip)
 			}
 		})
 	}

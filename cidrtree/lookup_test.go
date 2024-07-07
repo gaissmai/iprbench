@@ -9,12 +9,22 @@ import (
 	"github.com/gaissmai/cidrtree"
 )
 
-func BenchmarkLpmTier1Pfxs(b *testing.B) {
-	rt := new(cidrtree.Table[any])
-	for _, route := range tier1Routes {
-		rt.Insert(route, nil)
-	}
+var rt1 = new(cidrtree.Table[any])
+var rt2 = new(cidrtree.Table[any])
 
+func init() {
+	for _, route := range tier1Routes {
+		rt1.Insert(route, nil)
+	}
+}
+
+func init() {
+	for _, route := range randomRoutes[:100_000] {
+		rt2.Insert(route, nil)
+	}
+}
+
+func BenchmarkLpmTier1Pfxs(b *testing.B) {
 	benchmarks := []struct {
 		name   string
 		routes []netip.Prefix
@@ -31,18 +41,13 @@ func BenchmarkLpmTier1Pfxs(b *testing.B) {
 			ip := bm.fn(bm.routes)
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				_, _, sink = rt.Lookup(ip)
+				_, _, sink = rt1.Lookup(ip)
 			}
 		})
 	}
 }
 
 func BenchmarkLpmRandomPfxs100_000(b *testing.B) {
-	rt := new(cidrtree.Table[any])
-	for _, route := range randomRoutes[:100_000] {
-		rt.Insert(route, nil)
-	}
-
 	benchmarks := []struct {
 		name   string
 		routes []netip.Prefix
@@ -59,7 +64,7 @@ func BenchmarkLpmRandomPfxs100_000(b *testing.B) {
 			ip := bm.fn(bm.routes)
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				_, _, sink = rt.Lookup(ip)
+				_, _, sink = rt2.Lookup(ip)
 			}
 		})
 	}
