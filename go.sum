@@ -6,6 +6,8 @@ github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/gaissmai/bart v0.13.0 h1:pItEhXDVVebUa+i978FfQ7ye8xZc1FrMgs8nJPPWAgA=
 github.com/gaissmai/bart v0.13.0/go.mod h1:qSes2fnJ8hB410BW0ymHUN/eQkuGpTYyJcN8sKMYpJU=
+github.com/gaissmai/bart v0.14.0 h1:JOphkBcPc1ZVDLTDmm7XRmW3a6jKz3YDmhttaEC77uQ=
+github.com/gaissmai/bart v0.14.0/go.mod h1:JCPkH/Xt5bSPCKDc6OpzkhSCeib8BIxu3kthzZwcl6w=
 github.com/gaissmai/cidrtree v0.5.0 h1:noZ73FM38fRV5Uw28jTcKRTHX/84ylEMT87sVuFqt1Y=
 github.com/gaissmai/cidrtree v0.5.0/go.mod h1:7snMgBXDWPq7v67RtDmGqOt6i4HGEhvFBIbg9nUiQ5k=
 github.com/gaissmai/extnetip v0.4.0 h1:9pNd/Z6QSlkda35bug/IYuPYaPMTYRuqcxPce5Z9TTQ=
