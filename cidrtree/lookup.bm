@@ -2,85 +2,85 @@ goos: linux
 goarch: amd64
 pkg: local/iprbench/cidrtree
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
-BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 1428542	      1569 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 2052086	      1157 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 1615820	      1266 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 2132371	       584.1 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 1000000	      1013 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 1232392	       918.0 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 1386300	       732.9 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 1786022	       715.4 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 1321483	      1503 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 1736236	       692.4 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1375192	       918.4 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1316341	       911.7 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1000000	      1062 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1316686	       907.4 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1762838	       881.4 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP6         	  864555	      1222 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1581896	      1018 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1869825	       914.0 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1586474	       883.2 ns/op
-BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1308309	      1064 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP4          	 1357261	       898.4 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP4          	 1000000	      1527 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP4          	 1420473	      1148 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP4          	 1000000	      1438 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP4          	 1000000	      1624 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP4          	32436171	      1054 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP4          	42594030	        28.12 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP4          	32837409	       878.2 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP4          	  690426	      1534 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP4          	32758034	      1216 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP6          	29804710	       419.3 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP6          	 2801510	       421.5 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP6          	29598264	        40.26 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP6          	29761290	        40.24 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP6          	24563641	       419.7 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP6          	29840496	       419.1 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP6          	24812911	       419.0 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP6          	29822466	       419.2 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP6          	29813814	        41.10 ns/op
-BenchmarkLpmTier1Pfxs/RandomMissIP6          	29777832	        40.19 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 1636240	       931.3 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	  820260	      1620 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 1000000	      1344 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 1000000	      1119 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 1000000	      1588 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 1000000	      1655 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 1000000	      1030 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 1914866	       785.2 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 1000000	      1733 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 1000000	      1152 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	 1964162	       833.2 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	 1382541	      1601 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	  863796	      2428 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	 1273700	      1432 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	 1397049	      1066 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	 1000000	      1123 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	 1000000	      1250 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	 1000000	      1851 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	  949897	      1217 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	  859354	      1378 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	 1539572	      1050 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	 1000000	      1212 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	 1000000	      1347 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	 1000000	      1186 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	 1000000	      1453 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	  961968	      1184 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	 1000000	      1189 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	  949833	      1095 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	  987532	      1221 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	 2230328	       629.7 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1000000	      1623 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1395288	       943.8 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1269064	      1442 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1104003	      1075 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1275060	       907.5 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	  947368	      1150 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1371004	       986.0 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1000000	      1219 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1082239	       999.8 ns/op
-BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1078946	      1236 ns/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 1276962	       986.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 2034694	      1496 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 1474069	      1015 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 1393087	      1020 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 1201174	       883.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 1249346	      1045 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 1638909	       773.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 2050707	       678.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 1000000	      1703 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP4         	 1520995	       701.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1000000	      1035 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1827720	       829.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1624974	       875.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1424210	       829.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1433718	       946.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1434200	       828.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1984291	       750.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1771190	       828.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1441674	       829.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMatchIP6         	 1427059	      1199 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP4          	 1000000	      1082 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP4          	32802836	      1312 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP4          	42541746	        28.19 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP4          	42451299	        30.62 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP4          	42584386	       855.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP4          	 1292774	       989.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP4          	32717535	       876.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP4          	 1595836	      1064 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP4          	 1000000	      1159 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP4          	32436570	       860.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP6          	29733745	        40.21 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP6          	29637666	       497.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP6          	29665771	        40.82 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP6          	29790550	        40.23 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP6          	24971278	       502.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP6          	27230785	        40.26 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP6          	29685766	        40.26 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP6          	29697672	        40.19 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP6          	29788980	        40.18 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmTier1Pfxs/RandomMissIP6          	29815990	        40.16 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 1459548	      1274 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	  951138	      1390 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 2253892	       953.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 1791387	       560.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	  955023	      1229 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 2069937	       870.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 1299410	       808.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 1676404	       833.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 1213332	       836.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP4 	 2263363	      1034 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	  960756	      1748 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	  567765	      1877 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	 1000000	      1605 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	 1419720	      1375 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	  605517	      2131 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	  662306	      1890 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	  721348	      2408 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	  747314	      1612 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	 1000000	      1090 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMatchIP6 	 2139230	       976.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	 1577220	       671.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	 3255010	       919.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	 1120982	       982.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	 1000000	      1073 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	 1000000	      1189 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	 1000000	      1052 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	 1295325	       811.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	 1000000	      1121 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	  951837	      1387 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP4  	 1000000	      1199 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1632434	      1456 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1401817	       804.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1088458	      1089 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1105860	      1021 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 3477106	       897.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1287855	      1454 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1328868	      1466 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1000000	      1660 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1000000	      1017 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLpmRandomPfxs100_000/RandomMissIP6  	 1958734	      1266 ns/op	       0 B/op	       0 allocs/op
 PASS
-ok  	local/iprbench/cidrtree	553.967s
+ok  	local/iprbench/cidrtree	588.766s

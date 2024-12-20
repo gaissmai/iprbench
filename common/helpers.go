@@ -25,6 +25,14 @@ var IntMap = map[int]string{
 
 var Prng = rand.New(rand.NewSource(42))
 
+func IPis4(ip net.IP) bool {
+	return ip.To4() != nil
+}
+
+func IPis6(ip net.IP) bool {
+	return ip.To4() == nil && ip.To16() != nil
+}
+
 // AddrToIP converts a netip.Addr to net.IP.
 func AddrToIP(addr netip.Addr) net.IP {
 	return net.IP(addr.AsSlice())

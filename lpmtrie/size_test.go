@@ -18,7 +18,7 @@ func BenchmarkTier1PfxSize(b *testing.B) {
 		b.Run(common.IntMap[k], func(b *testing.B) {
 			for n := 0; n < b.N; n++ {
 				for _, cidr := range tier1Routes[:k] {
-					tree.Insert(cidr, nil)
+					tree.Insert(common.PfxToIPNet(cidr), nil)
 				}
 			}
 			runtime.GC()
@@ -41,7 +41,7 @@ func BenchmarkRandomPfx4Size(b *testing.B) {
 		b.Run(common.IntMap[k], func(b *testing.B) {
 			for n := 0; n < b.N; n++ {
 				for _, cidr := range randomRoutes4[:k] {
-					tree.Insert(cidr, nil)
+					tree.Insert(common.PfxToIPNet(cidr), nil)
 				}
 			}
 			runtime.GC()
@@ -64,7 +64,7 @@ func BenchmarkRandomPfx6Size(b *testing.B) {
 		b.Run(common.IntMap[k], func(b *testing.B) {
 			for n := 0; n < b.N; n++ {
 				for _, cidr := range randomRoutes6[:k] {
-					tree.Insert(cidr, nil)
+					tree.Insert(common.PfxToIPNet(cidr), nil)
 				}
 			}
 			runtime.GC()
@@ -87,7 +87,7 @@ func BenchmarkRandomPfxSize(b *testing.B) {
 		b.Run(common.IntMap[k], func(b *testing.B) {
 			for n := 0; n < b.N; n++ {
 				for _, cidr := range randomRoutes[:k] {
-					tree.Insert(cidr, nil)
+					tree.Insert(common.PfxToIPNet(cidr), nil)
 				}
 			}
 			runtime.GC()

@@ -9,8 +9,10 @@ import (
 	"github.com/yl2chen/cidranger"
 )
 
-var rt1 = cidranger.NewPCTrieRanger()
-var rt2 = cidranger.NewPCTrieRanger()
+var (
+	rt1 = cidranger.NewPCTrieRanger()
+	rt2 = cidranger.NewPCTrieRanger()
+)
 
 func init() {
 	for _, route := range tier1Routes {

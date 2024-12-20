@@ -1,7 +1,7 @@
 package main_test
 
 import (
-	"net/netip"
+	"net"
 
 	"local/iprbench/common"
 
@@ -21,42 +21,40 @@ func NewTable() *Table {
 	}
 }
 
-func (t *Table) Insert(p netip.Prefix, val any) {
-	net := common.PfxToIPNet(p)
-	if p.Addr().Is4() {
-		if err := t.v4.Add(&net, val); err != nil {
+func (t *Table) Insert(pfx net.IPNet, val any) {
+	if common.IPis4(pfx.IP) {
+		if err := t.v4.Add(&pfx, val); err != nil {
 			panic(err)
 		}
 		return
 	}
-	if err := t.v6.Add(&net, val); err != nil {
+	if err := t.v6.Add(&pfx, val); err != nil {
 		panic(err)
 	}
 }
 
-func (t *Table) Delete(p netip.Prefix) {
-	net := common.PfxToIPNet(p)
-	if p.Addr().Is4() {
-		if _, _, err := t.v4.Delete(&net); err != nil {
+func (t *Table) Delete(pfx net.IPNet) {
+	if common.IPis4(pfx.IP) {
+		if _, _, err := t.v4.Delete(&pfx); err != nil {
 			panic(err)
 		}
 		return
 	}
-	if _, _, err := t.v6.Delete(&net); err != nil {
+	if _, _, err := t.v6.Delete(&pfx); err != nil {
 		panic(err)
 	}
 }
 
-func (t *Table) Lookup(ip netip.Addr) (val any, ok bool) {
-	if ip.Is4() {
-		route, val, _ := t.v4.MatchIP(common.AddrToIP(ip))
+func (t *Table) Lookup(ip net.IP) (val any, ok bool) {
+	if common.IPis4(ip) {
+		route, val, _ := t.v4.MatchIP(ip)
 		if route != nil {
 			return val, true
 		}
 		return val, false
 	}
 
-	route, val, _ := t.v6.MatchIP(common.AddrToIP(ip))
+	route, val, _ := t.v6.MatchIP(ip)
 	if route != nil {
 		return val, true
 	}

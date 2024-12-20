@@ -1,8 +1,9 @@
 package main_test
 
 import (
-	"local/iprbench/common"
 	"testing"
+
+	"local/iprbench/common"
 
 	"github.com/tailscale/art"
 )

@@ -9,8 +9,10 @@ import (
 	"github.com/gaissmai/cidrtree"
 )
 
-var rt1 = new(cidrtree.Table[any])
-var rt2 = new(cidrtree.Table[any])
+var (
+	rt1 = new(cidrtree.Table[any])
+	rt2 = new(cidrtree.Table[any])
+)
 
 func init() {
 	for _, route := range tier1Routes {

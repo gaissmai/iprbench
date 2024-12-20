@@ -9,8 +9,10 @@ import (
 	"github.com/gaissmai/bart"
 )
 
-var rt1 = new(bart.Table[any])
-var rt2 = new(bart.Table[any])
+var (
+	rt1 = new(bart.Table[any])
+	rt2 = new(bart.Table[any])
+)
 
 func init() {
 	for _, route := range tier1Routes {
@@ -25,7 +27,6 @@ func init() {
 }
 
 func BenchmarkLpmTier1Pfxs(b *testing.B) {
-
 	benchmarks := []struct {
 		name   string
 		routes []netip.Prefix
@@ -49,7 +50,6 @@ func BenchmarkLpmTier1Pfxs(b *testing.B) {
 }
 
 func BenchmarkLpmRandomPfxs100_000(b *testing.B) {
-
 	benchmarks := []struct {
 		name   string
 		routes []netip.Prefix

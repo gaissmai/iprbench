@@ -46,22 +46,22 @@ lookup: art/lookup.bm bart/lookup.bm cidrtree/lookup.bm critbitgo/lookup.bm lpmt
 # benchmarks for lpm lookup
 #
 art/lookup.bm:
-	cd art &&       go test -run=XXX  -cpu=1 -count=10 -bench=Lpm -timeout=25m | tee lookup.bm
+	cd art &&       go test -run=XXX  -cpu=1 -count=10 -benchmem -bench=Lpm -timeout=25m | tee lookup.bm
 
 bart/lookup.bm:
-	cd bart &&      go test -run=XXX  -cpu=1 -count=10 -bench=Lpm -timeout=25m | tee lookup.bm
+	cd bart &&      go test -run=XXX  -cpu=1 -count=10 -benchmem -bench=Lpm -timeout=25m | tee lookup.bm
 
 cidrtree/lookup.bm:
-	cd cidrtree &&  go test -run=XXX  -cpu=1 -count=10 -bench=Lpm -timeout=25m | tee lookup.bm
+	cd cidrtree &&  go test -run=XXX  -cpu=1 -count=10 -benchmem -bench=Lpm -timeout=25m | tee lookup.bm
 
 critbitgo/lookup.bm:
-	cd critbitgo && go test -run=XXX  -cpu=1 -count=10 -bench=Lpm -timeout=25m | tee lookup.bm
+	cd critbitgo && go test -run=XXX  -cpu=1 -count=10 -benchmem -bench=Lpm -timeout=25m | tee lookup.bm
 
 lpmtrie/lookup.bm:
-	cd lpmtrie &&   go test -run=XXX  -cpu=1 -count=10 -bench=Lpm -timeout=25m | tee lookup.bm
+	cd lpmtrie &&   go test -run=XXX  -cpu=1 -count=10 -benchmem -bench=Lpm -timeout=25m | tee lookup.bm
 
 cidranger/lookup.bm:
-	cd cidranger &&   go test -run=XXX  -cpu=1 -count=10 -bench=Lpm -timeout=25m | tee lookup.bm
+	cd cidranger &&   go test -run=XXX  -cpu=1 -count=10 -benchmem -bench=Lpm -timeout=25m | tee lookup.bm
 
 # TODO more lookup
 

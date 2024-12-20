@@ -1,7 +1,9 @@
 package main_test
 
 import (
-	"net/netip"
+	"net"
+
+	"local/iprbench/common"
 
 	"github.com/Asphaltt/lpmtrie"
 )
@@ -22,45 +24,60 @@ func NewTable() *Table {
 	}
 }
 
-func (t *Table) Insert(p netip.Prefix, val any) {
-	ip := p.Addr()
-	bits := p.Bits()
-
-	key := lpmtrie.Key{
-		PrefixLen: bits,
-		Data:      ip.AsSlice(),
+func (t *Table) Insert(p net.IPNet, val any) {
+	ip := p.IP.To4()
+	if ip == nil {
+		ip = p.IP.To16()
 	}
 
-	if ip.Is4() {
+	ones, _ := p.Mask.Size()
+
+	key := lpmtrie.Key{
+		PrefixLen: ones,
+		Data:      ip,
+	}
+
+	if common.IPis4(ip) {
 		t.v4.Update(key, val)
 		return
 	}
 	t.v6.Update(key, val)
 }
 
-func (t *Table) Delete(p netip.Prefix) {
-	ip := p.Addr()
-	bits := p.Bits()
-
-	key := lpmtrie.Key{
-		PrefixLen: bits,
-		Data:      ip.AsSlice(),
+func (t *Table) Delete(p net.IPNet) {
+	ip := p.IP.To4()
+	if ip == nil {
+		ip = p.IP.To16()
 	}
 
-	if ip.Is4() {
+	ones, _ := p.Mask.Size()
+
+	key := lpmtrie.Key{
+		PrefixLen: ones,
+		Data:      ip,
+	}
+
+	if common.IPis4(ip) {
 		t.v4.Delete(key)
 		return
 	}
 	t.v6.Delete(key)
 }
 
-func (t *Table) Lookup(ip netip.Addr) (val any, ok bool) {
-	key := lpmtrie.Key{
-		PrefixLen: ip.BitLen(),
-		Data:      ip.AsSlice(),
+func (t *Table) Lookup(ip net.IP) (val any, ok bool) {
+	bitLen := 32
+	ipv := ip.To4()
+	if ipv == nil {
+		ipv = ip.To16()
+		bitLen = 128
 	}
 
-	if ip.Is4() {
+	key := lpmtrie.Key{
+		PrefixLen: bitLen,
+		Data:      ipv,
+	}
+
+	if common.IPis4(ip) {
 		return t.v4.Lookup(key)
 	}
 	return t.v6.Lookup(key)
