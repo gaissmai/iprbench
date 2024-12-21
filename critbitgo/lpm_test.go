@@ -5,24 +5,22 @@ import (
 	"testing"
 
 	"local/iprbench/common"
-
-	"github.com/tailscale/art"
 )
 
 var (
-	rt1 = new(art.Table[any])
-	rt2 = new(art.Table[any])
+	rt1 = NewTable()
+	rt2 = NewTable()
 )
 
 func init() {
 	for _, route := range tier1Routes {
-		rt1.Insert(route, nil)
+		rt1.Insert(common.PfxToIPNet(route), nil)
 	}
 }
 
 func init() {
 	for _, route := range randomRoutes[:100_000] {
-		rt2.Insert(route, nil)
+		rt2.Insert(common.PfxToIPNet(route), nil)
 	}
 }
 
@@ -40,10 +38,12 @@ func BenchmarkLpmTier1Pfxs(b *testing.B) {
 
 	for _, bm := range benchmarks {
 		b.Run(bm.name, func(b *testing.B) {
-			ip := bm.fn(bm.routes)
+			netIP := bm.fn(bm.routes)
+			ip := common.AddrToIP(netIP)
+
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				_, sink = rt1.Get(ip)
+				_ = rt1.Contains(ip)
 			}
 		})
 	}
@@ -63,10 +63,11 @@ func BenchmarkLpmRandomPfxs100_000(b *testing.B) {
 
 	for _, bm := range benchmarks {
 		b.Run(bm.name, func(b *testing.B) {
-			ip := bm.fn(bm.routes)
+			netIP := bm.fn(bm.routes)
+			ip := common.AddrToIP(netIP)
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				_, sink = rt2.Get(ip)
+				_ = rt2.Contains(ip)
 			}
 		})
 	}

@@ -1,6 +1,6 @@
 .PHONY: all dep
 
-all: size update lookup
+all: size lpm update
 
 dep:
 	go mod tidy
@@ -18,6 +18,18 @@ size: art/size.bm bart/size.bm cidrtree/size.bm critbitgo/size.bm lpmtrie/size.b
 	@echo
 	@benchstat -ignore=pkg bart/size.bm cidranger/size.bm
 
+lpm: art/lpm.bm bart/lpm.bm cidrtree/lpm.bm critbitgo/lpm.bm lpmtrie/lpm.bm cidranger/lpm.bm
+	@echo
+	@benchstat -ignore=pkg bart/lpm.bm art/lpm.bm
+	@echo
+	@benchstat -ignore=pkg bart/lpm.bm cidrtree/lpm.bm
+	@echo
+	@benchstat -ignore=pkg bart/lpm.bm critbitgo/lpm.bm
+	@echo
+	@benchstat -ignore=pkg bart/lpm.bm lpmtrie/lpm.bm
+	@echo
+	@benchstat -ignore=pkg bart/lpm.bm cidranger/lpm.bm
+
 update: art/update.bm bart/update.bm cidrtree/update.bm critbitgo/update.bm lpmtrie/update.bm cidranger/update.bm
 	@echo
 	@benchstat -ignore=pkg bart/update.bm art/update.bm
@@ -30,40 +42,26 @@ update: art/update.bm bart/update.bm cidrtree/update.bm critbitgo/update.bm lpmt
 	@echo
 	@benchstat -ignore=pkg bart/update.bm cidranger/update.bm
 
-lookup: art/lookup.bm bart/lookup.bm cidrtree/lookup.bm critbitgo/lookup.bm lpmtrie/lookup.bm cidranger/lookup.bm
-	@echo
-	@benchstat -ignore=pkg bart/lookup.bm art/lookup.bm
-	@echo
-	@benchstat -ignore=pkg bart/lookup.bm cidrtree/lookup.bm
-	@echo
-	@benchstat -ignore=pkg bart/lookup.bm critbitgo/lookup.bm
-	@echo
-	@benchstat -ignore=pkg bart/lookup.bm lpmtrie/lookup.bm
-	@echo
-	@benchstat -ignore=pkg bart/lookup.bm cidranger/lookup.bm
-
 #
-# benchmarks for lpm lookup
+# benchmarks for lpm
 #
-art/lookup.bm:
-	cd art &&       go test -run=XXX  -cpu=1 -count=10  -bench=Lpm -timeout=25m | tee lookup.bm
+art/lpm.bm:
+	cd art &&       go test -run=XXX  -cpu=1 -count=10  -bench=Lpm -timeout=25m | tee lpm.bm
 
-bart/lookup.bm:
-	cd bart &&      go test -run=XXX  -cpu=1 -count=10  -bench=Lpm -timeout=25m | tee lookup.bm
+bart/lpm.bm:
+	cd bart &&      go test -run=XXX  -cpu=1 -count=10  -bench=Lpm -timeout=25m | tee lpm.bm
 
-cidrtree/lookup.bm:
-	cd cidrtree &&  go test -run=XXX  -cpu=1 -count=10  -bench=Lpm -timeout=25m | tee lookup.bm
+cidrtree/lpm.bm:
+	cd cidrtree &&  go test -run=XXX  -cpu=1 -count=10  -bench=Lpm -timeout=25m | tee lpm.bm
 
-critbitgo/lookup.bm:
-	cd critbitgo && go test -run=XXX  -cpu=1 -count=10  -bench=Lpm -timeout=25m | tee lookup.bm
+critbitgo/lpm.bm:
+	cd critbitgo && go test -run=XXX  -cpu=1 -count=10  -bench=Lpm -timeout=25m | tee lpm.bm
 
-lpmtrie/lookup.bm:
-	cd lpmtrie &&   go test -run=XXX  -cpu=1 -count=10  -bench=Lpm -timeout=25m | tee lookup.bm
+lpmtrie/lpm.bm:
+	cd lpmtrie &&   go test -run=XXX  -cpu=1 -count=10  -bench=Lpm -timeout=25m | tee lpm.bm
 
-cidranger/lookup.bm:
-	cd cidranger &&   go test -run=XXX  -cpu=1 -count=10 -bench=Lpm -timeout=25m | tee lookup.bm
-
-# TODO more lookup
+cidranger/lpm.bm:
+	cd cidranger &&   go test -run=XXX  -cpu=1 -count=10 -bench=Lpm -timeout=25m | tee lpm.bm
 
 #
 # benchmarks for tree/trie sizes, deterministic -> -benchtime=1x

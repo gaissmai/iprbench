@@ -45,18 +45,12 @@ func (t *Table) Delete(pfx net.IPNet) {
 	}
 }
 
-func (t *Table) Lookup(ip net.IP) (val any, ok bool) {
+func (t *Table) Contains(ip net.IP) bool {
 	if common.IPis4(ip) {
-		route, val, _ := t.v4.MatchIP(ip)
-		if route != nil {
-			return val, true
-		}
-		return val, false
+		ok, _ := t.v4.ContainedIP(ip)
+		return ok
 	}
 
-	route, val, _ := t.v6.MatchIP(ip)
-	if route != nil {
-		return val, true
-	}
-	return val, false
+	ok, _ := t.v6.ContainedIP(ip)
+	return ok
 }

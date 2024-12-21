@@ -6,23 +6,23 @@ import (
 
 	"local/iprbench/common"
 
-	"github.com/gaissmai/cidrtree"
+	"github.com/yl2chen/cidranger"
 )
 
 var (
-	rt1 = new(cidrtree.Table[any])
-	rt2 = new(cidrtree.Table[any])
+	rt1 = cidranger.NewPCTrieRanger()
+	rt2 = cidranger.NewPCTrieRanger()
 )
 
 func init() {
 	for _, route := range tier1Routes {
-		rt1.Insert(route, nil)
+		_ = rt1.Insert(cidranger.NewBasicRangerEntry(common.PfxToIPNet(route)))
 	}
 }
 
 func init() {
 	for _, route := range randomRoutes[:100_000] {
-		rt2.Insert(route, nil)
+		_ = rt2.Insert(cidranger.NewBasicRangerEntry(common.PfxToIPNet(route)))
 	}
 }
 
@@ -40,10 +40,10 @@ func BenchmarkLpmTier1Pfxs(b *testing.B) {
 
 	for _, bm := range benchmarks {
 		b.Run(bm.name, func(b *testing.B) {
-			ip := bm.fn(bm.routes)
+			ip := common.AddrToIP(bm.fn(bm.routes))
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				_, _, sink = rt1.Lookup(ip)
+				_, _ = rt1.Contains(ip)
 			}
 		})
 	}
@@ -63,10 +63,10 @@ func BenchmarkLpmRandomPfxs100_000(b *testing.B) {
 
 	for _, bm := range benchmarks {
 		b.Run(bm.name, func(b *testing.B) {
-			ip := bm.fn(bm.routes)
+			ip := common.AddrToIP(bm.fn(bm.routes))
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				_, _, sink = rt2.Lookup(ip)
+				_, _ = rt2.Contains(ip)
 			}
 		})
 	}
