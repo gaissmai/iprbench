@@ -18,10 +18,8 @@ func BenchmarkTier1PfxSize(b *testing.B) {
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
-			for range b.N {
-				for _, cidr := range tier1Routes[:k] {
-					_ = tree.Insert(cidranger.NewBasicRangerEntry(common.PfxToIPNet(cidr)))
-				}
+			for _, cidr := range tier1Routes[:k] {
+				_ = tree.Insert(cidranger.NewBasicRangerEntry(common.PfxToIPNet(cidr)))
 			}
 			runtime.GC()
 			runtime.ReadMemStats(&endMem)
@@ -41,10 +39,8 @@ func BenchmarkRandomPfx4Size(b *testing.B) {
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
-			for range b.N {
-				for _, cidr := range randomRoutes4[:k] {
-					_ = tree.Insert(cidranger.NewBasicRangerEntry(common.PfxToIPNet(cidr)))
-				}
+			for _, cidr := range randomRoutes4[:k] {
+				_ = tree.Insert(cidranger.NewBasicRangerEntry(common.PfxToIPNet(cidr)))
 			}
 			runtime.GC()
 			runtime.ReadMemStats(&endMem)
@@ -64,10 +60,8 @@ func BenchmarkRandomPfx6Size(b *testing.B) {
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
-			for range b.N {
-				for _, cidr := range randomRoutes6[:k] {
-					_ = tree.Insert(cidranger.NewBasicRangerEntry(common.PfxToIPNet(cidr)))
-				}
+			for _, cidr := range randomRoutes6[:k] {
+				_ = tree.Insert(cidranger.NewBasicRangerEntry(common.PfxToIPNet(cidr)))
 			}
 			runtime.GC()
 			runtime.ReadMemStats(&endMem)
@@ -87,10 +81,8 @@ func BenchmarkRandomPfxSize(b *testing.B) {
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
-			for range b.N {
-				for _, cidr := range randomRoutes[:k] {
-					_ = tree.Insert(cidranger.NewBasicRangerEntry(common.PfxToIPNet(cidr)))
-				}
+			for _, cidr := range randomRoutes[:k] {
+				_ = tree.Insert(cidranger.NewBasicRangerEntry(common.PfxToIPNet(cidr)))
 			}
 			runtime.GC()
 			runtime.ReadMemStats(&endMem)
