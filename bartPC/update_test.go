@@ -6,7 +6,7 @@ import (
 
 	"local/iprbench/common"
 
-	"github.com/tailscale/art"
+	"github.com/gaissmai/bart"
 )
 
 func BenchmarkInsertRandomPfxs(b *testing.B) {
@@ -15,7 +15,7 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 		randomPfxs := common.RandomPrefixes(k)
 
 		b.Run(name, func(b *testing.B) {
-			rt := new(art.Table[any])
+			rt := new(bart.Table[any]).WithPathCompression()
 
 			runtime.GC()
 			b.ResetTimer()
@@ -38,7 +38,7 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 		name := common.IntMap[k]
 
 		b.Run(name, func(b *testing.B) {
-			rt := new(art.Table[any])
+			rt := new(bart.Table[any]).WithPathCompression()
 			for _, route := range randomPfxs {
 				rt.Insert(route, nil)
 			}

@@ -1,44 +1,67 @@
 package main_test
 
 import (
-	"local/iprbench/common"
+	"runtime"
 	"testing"
+
+	"local/iprbench/common"
 
 	"github.com/yl2chen/cidranger"
 )
 
-func BenchmarkInsert(b *testing.B) {
-	for k := 100; k <= 1_000_000; k *= 10 {
-		rt := cidranger.NewPCTrieRanger()
-		for _, route := range tier1Routes[:k] {
-			_ = rt.Insert(cidranger.NewBasicRangerEntry(common.PfxToIPNet(route)))
+func BenchmarkInsertRandomPfxs(b *testing.B) {
+	for _, k := range []int{1_000, 10_000, 100_000, 200_000} {
+		name := common.IntMap[k]
+
+		randomPfxs := common.RandomPrefixes(k)
+		randomRangerEntries := make([]cidranger.RangerEntry, 0, k)
+		for _, pfx := range randomPfxs {
+			randomRangerEntries = append(randomRangerEntries, cidranger.NewBasicRangerEntry(common.PfxToIPNet(pfx)))
 		}
 
-		name := "Insert into " + common.IntMap[k]
 		b.Run(name, func(b *testing.B) {
-			ipNetProbe := common.PfxToIPNet(probe)
+			rt := cidranger.NewPCTrieRanger()
+
+			runtime.GC()
 			b.ResetTimer()
-			for n := 0; n < b.N; n++ {
-				_ = rt.Insert(cidranger.NewBasicRangerEntry(ipNetProbe))
+			for range b.N {
+				for _, route := range randomRangerEntries {
+					rt.Insert(route)
+				}
 			}
+			b.StopTimer()
+			b.ReportMetric(float64(b.Elapsed())/float64(k)/float64(b.N), "ns/route")
+			b.ReportMetric(0, "ns/op")
 		})
 	}
 }
 
-func BenchmarkDelete(b *testing.B) {
-	for k := 100; k <= 1_000_000; k *= 10 {
-		rt := cidranger.NewPCTrieRanger()
-		for _, route := range tier1Routes[:k] {
-			_ = rt.Insert(cidranger.NewBasicRangerEntry(common.PfxToIPNet(route)))
+func BenchmarkDeleteRandomPfxs(b *testing.B) {
+	for _, k := range []int{1_000, 10_000, 100_000, 200_000} {
+		name := common.IntMap[k]
+
+		randomPfxs := common.RandomPrefixes(k)
+		randomRangerEntries := make([]cidranger.RangerEntry, 0, k)
+		for _, pfx := range randomPfxs {
+			randomRangerEntries = append(randomRangerEntries, cidranger.NewBasicRangerEntry(common.PfxToIPNet(pfx)))
 		}
 
-		name := "Delete from " + common.IntMap[k]
-		ipNetProbe := common.PfxToIPNet(probe)
 		b.Run(name, func(b *testing.B) {
-			b.ResetTimer()
-			for n := 0; n < b.N; n++ {
-				sink, _ = rt.Remove(ipNetProbe)
+			rt := cidranger.NewPCTrieRanger()
+			for _, route := range randomRangerEntries {
+				rt.Insert(route)
 			}
+
+			runtime.GC()
+			b.ResetTimer()
+			for range b.N {
+				for _, route := range randomRangerEntries {
+					rt.Remove(route.Network())
+				}
+			}
+			b.StopTimer()
+			b.ReportMetric(float64(b.Elapsed())/float64(k)/float64(b.N), "ns/route")
+			b.ReportMetric(0, "ns/op")
 		})
 	}
 }

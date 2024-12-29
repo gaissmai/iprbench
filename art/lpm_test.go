@@ -9,65 +9,59 @@ import (
 	"github.com/tailscale/art"
 )
 
-var (
-	rt1 = new(art.Table[any])
-	rt2 = new(art.Table[any])
-)
-
-func init() {
-	for _, route := range tier1Routes {
-		rt1.Insert(route, nil)
-	}
-}
-
-func init() {
-	for _, route := range randomRoutes[:100_000] {
-		rt2.Insert(route, nil)
-	}
-}
-
 func BenchmarkLpmTier1Pfxs(b *testing.B) {
 	benchmarks := []struct {
-		name   string
-		routes []netip.Prefix
-		fn     func([]netip.Prefix) netip.Addr
+		name string
+		fn   func([]netip.Prefix) netip.Addr
 	}{
-		{"RandomMatchIP4", tier1Routes, common.MatchIP4},
-		{"RandomMatchIP6", tier1Routes, common.MatchIP6},
-		{"RandomMissIP4", tier1Routes, common.MissIP4},
-		{"RandomMissIP6", tier1Routes, common.MissIP6},
+		{"RandomMatchIP4", common.MatchIP4},
+		{"RandomMatchIP6", common.MatchIP6},
+		{"RandomMissIP4", common.MissIP4},
+		{"RandomMissIP6", common.MissIP6},
+	}
+
+	rt := new(art.Table[any])
+	for _, route := range tier1Routes {
+		rt.Insert(route, nil)
 	}
 
 	for _, bm := range benchmarks {
 		b.Run(bm.name, func(b *testing.B) {
-			ip := bm.fn(bm.routes)
+			ip := bm.fn(tier1Routes)
 			b.ResetTimer()
-			for i := 0; i < b.N; i++ {
-				_, _ = rt1.Get(ip)
+			for range b.N {
+				_, _ = rt.Get(ip)
 			}
 		})
 	}
 }
 
-func BenchmarkLpmRandomPfxs100_000(b *testing.B) {
+func BenchmarkLpmRandomPfxs(b *testing.B) {
 	benchmarks := []struct {
-		name   string
-		routes []netip.Prefix
-		fn     func([]netip.Prefix) netip.Addr
+		name string
+		fn   func([]netip.Prefix) netip.Addr
 	}{
-		{"RandomMatchIP4", randomRoutes[:100_000], common.MatchIP4},
-		{"RandomMatchIP6", randomRoutes[:100_000], common.MatchIP6},
-		{"RandomMissIP4", randomRoutes[:100_000], common.MissIP4},
-		{"RandomMissIP6", randomRoutes[:100_000], common.MissIP6},
+		{"RandomMatchIP4", common.MatchIP4},
+		{"RandomMatchIP6", common.MatchIP6},
+		{"RandomMissIP4", common.MissIP4},
+		{"RandomMissIP6", common.MissIP6},
 	}
 
-	for _, bm := range benchmarks {
-		b.Run(bm.name, func(b *testing.B) {
-			ip := bm.fn(bm.routes)
-			b.ResetTimer()
-			for i := 0; i < b.N; i++ {
-				_, _ = rt2.Get(ip)
+	for _, k := range []int{1_000, 10_000, 100_000} {
+		for _, bm := range benchmarks {
+
+			rt := new(art.Table[any])
+			for _, route := range randomRoutes[:k] {
+				rt.Insert(route, nil)
 			}
-		})
+
+			b.Run(common.IntMap[k]+"/"+bm.name, func(b *testing.B) {
+				ip := bm.fn(randomRoutes[:k]) // get a random matching or missing ip
+				b.ResetTimer()
+				for range b.N {
+					_, _ = rt.Get(ip)
+				}
+			})
+		}
 	}
 }

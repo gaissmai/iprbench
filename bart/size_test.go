@@ -12,8 +12,9 @@ import (
 func BenchmarkTier1PfxSize(b *testing.B) {
 	var startMem, endMem runtime.MemStats
 
-	for k := 100; k <= 1_000_000; k *= 10 {
+	for _, k := range []int{1_000, 10_000, 100_000, 200_000} {
 		tree := new(bart.Table[any])
+
 		runtime.GC()
 		runtime.ReadMemStats(&startMem)
 
@@ -24,7 +25,7 @@ func BenchmarkTier1PfxSize(b *testing.B) {
 			runtime.GC()
 			runtime.ReadMemStats(&endMem)
 
-			b.ReportMetric(float64(endMem.HeapAlloc-startMem.HeapAlloc), "bytes")
+			b.ReportMetric(float64(endMem.HeapAlloc-startMem.HeapAlloc)/(float64(k)), "bytes/route")
 			b.ReportMetric(0, "ns/op")
 		})
 	}
@@ -33,8 +34,9 @@ func BenchmarkTier1PfxSize(b *testing.B) {
 func BenchmarkRandomPfx4Size(b *testing.B) {
 	var startMem, endMem runtime.MemStats
 
-	for k := 100; k <= 1_000_000; k *= 10 {
+	for _, k := range []int{1_000, 10_000, 100_000, 200_000} {
 		tree := new(bart.Table[any])
+
 		runtime.GC()
 		runtime.ReadMemStats(&startMem)
 
@@ -45,7 +47,7 @@ func BenchmarkRandomPfx4Size(b *testing.B) {
 			runtime.GC()
 			runtime.ReadMemStats(&endMem)
 
-			b.ReportMetric(float64(endMem.HeapAlloc-startMem.HeapAlloc), "bytes")
+			b.ReportMetric(float64(endMem.HeapAlloc-startMem.HeapAlloc)/(float64(k)), "bytes/route")
 			b.ReportMetric(0, "ns/op")
 		})
 	}
@@ -54,8 +56,9 @@ func BenchmarkRandomPfx4Size(b *testing.B) {
 func BenchmarkRandomPfx6Size(b *testing.B) {
 	var startMem, endMem runtime.MemStats
 
-	for k := 100; k <= 1_000_000; k *= 10 {
+	for _, k := range []int{1_000, 10_000, 100_000, 200_000} {
 		tree := new(bart.Table[any])
+
 		runtime.GC()
 		runtime.ReadMemStats(&startMem)
 
@@ -66,7 +69,7 @@ func BenchmarkRandomPfx6Size(b *testing.B) {
 			runtime.GC()
 			runtime.ReadMemStats(&endMem)
 
-			b.ReportMetric(float64(endMem.HeapAlloc-startMem.HeapAlloc), "bytes")
+			b.ReportMetric(float64(endMem.HeapAlloc-startMem.HeapAlloc)/(float64(k)), "bytes/route")
 			b.ReportMetric(0, "ns/op")
 		})
 	}
@@ -75,8 +78,9 @@ func BenchmarkRandomPfx6Size(b *testing.B) {
 func BenchmarkRandomPfxSize(b *testing.B) {
 	var startMem, endMem runtime.MemStats
 
-	for k := 100; k <= 1_000_000; k *= 10 {
+	for _, k := range []int{1_000, 10_000, 100_000, 200_000} {
 		tree := new(bart.Table[any])
+
 		runtime.GC()
 		runtime.ReadMemStats(&startMem)
 
@@ -87,7 +91,7 @@ func BenchmarkRandomPfxSize(b *testing.B) {
 			runtime.GC()
 			runtime.ReadMemStats(&endMem)
 
-			b.ReportMetric(float64(endMem.HeapAlloc-startMem.HeapAlloc), "bytes")
+			b.ReportMetric(float64(endMem.HeapAlloc-startMem.HeapAlloc)/(float64(k)), "bytes/route")
 			b.ReportMetric(0, "ns/op")
 		})
 	}

@@ -4,26 +4,35 @@ import (
 	"bufio"
 	"compress/gzip"
 	"log"
-	"math/rand"
+	"math/rand/v2"
 	"net"
 	"net/netip"
 	"os"
 	"strings"
 
-	"github.com/tailscale/art"
+	"github.com/gaissmai/bart"
 )
 
 var IntMap = map[int]string{
 	1:         "1",
+	2:         "2",
+	5:         "5",
 	10:        "10",
+	20:        "20",
+	50:        "50",
 	100:       "100",
+	500:       "500",
 	1_000:     "1_000",
 	10_000:    "10_000",
+	50_000:    "50_000",
 	100_000:   "100_000",
+	200_000:   "200_000",
+	500_000:   "500_000",
 	1_000_000: "1_000_000",
+	2_000_000: "2_000_000",
 }
 
-var Prng = rand.New(rand.NewSource(42))
+var Prng = rand.New(rand.NewPCG(42, 42))
 
 func IPis4(ip net.IP) bool {
 	return ip.To4() != nil
@@ -49,7 +58,7 @@ func PfxToIPNet(p netip.Prefix) net.IPNet {
 // MatchIP4 returns a random IP covered by the routing table.
 // The matching IP is found with the help of the art algorithm, it's the fastest algo.
 func MatchIP4(routes []netip.Prefix) netip.Addr {
-	rt := new(art.Table[struct{}])
+	rt := new(bart.Table[struct{}])
 	for _, r := range routes {
 		if r.Addr().Is4() {
 			rt.Insert(r, struct{}{})
@@ -59,7 +68,7 @@ func MatchIP4(routes []netip.Prefix) netip.Addr {
 	i := 0
 	for {
 		ip := RandomAddr4()
-		if _, ok := rt.Get(ip); ok {
+		if ok := rt.Contains(ip); ok {
 			return ip
 		}
 		i++
@@ -72,7 +81,7 @@ func MatchIP4(routes []netip.Prefix) netip.Addr {
 // MatchIP6 returns a random IP covered by the routing table.
 // The matching IP is found with the help of the art algorithm, it's the fastest algo.
 func MatchIP6(routes []netip.Prefix) netip.Addr {
-	rt := new(art.Table[struct{}])
+	rt := new(bart.Table[struct{}])
 	for _, r := range routes {
 		if r.Addr().Is6() {
 			rt.Insert(r, struct{}{})
@@ -82,7 +91,7 @@ func MatchIP6(routes []netip.Prefix) netip.Addr {
 	i := 0
 	for {
 		ip := RandomAddr6()
-		if _, ok := rt.Get(ip); ok {
+		if ok := rt.Contains(ip); ok {
 			return ip
 		}
 		i++
@@ -95,7 +104,7 @@ func MatchIP6(routes []netip.Prefix) netip.Addr {
 // MissIP4 returns a random IP NOT covered by the routing table.
 // The missing IP is found with the help of the art algorithm, it's the fastest algo.
 func MissIP4(routes []netip.Prefix) netip.Addr {
-	rt := new(art.Table[struct{}])
+	rt := new(bart.Table[struct{}])
 	for _, r := range routes {
 		if r.Addr().Is4() {
 			rt.Insert(r, struct{}{})
@@ -105,7 +114,7 @@ func MissIP4(routes []netip.Prefix) netip.Addr {
 	i := 0
 	for {
 		ip := RandomAddr4()
-		if _, ok := rt.Get(ip); !ok {
+		if ok := rt.Contains(ip); !ok {
 			return ip
 		}
 		i++
@@ -118,7 +127,7 @@ func MissIP4(routes []netip.Prefix) netip.Addr {
 // MissIP6 returns a random IP NOT covered by the routing table.
 // The missing IP is found with the help of the art algorithm, it's the fastest algo.
 func MissIP6(routes []netip.Prefix) netip.Addr {
-	rt := new(art.Table[struct{}])
+	rt := new(bart.Table[struct{}])
 	for _, r := range routes {
 		if r.Addr().Is6() {
 			rt.Insert(r, struct{}{})
@@ -128,7 +137,7 @@ func MissIP6(routes []netip.Prefix) netip.Addr {
 	i := 0
 	for {
 		ip := RandomAddr6()
-		if _, ok := rt.Get(ip); !ok {
+		if ok := rt.Contains(ip); !ok {
 			return ip
 		}
 		i++
@@ -143,8 +152,14 @@ func MissIP6(routes []netip.Prefix) netip.Addr {
 func RandomPrefixes(n int) []netip.Prefix {
 	ret := make([]netip.Prefix, 0, n)
 
-	ret = append(ret, RandomPrefixes4(4*n/5)...)
-	ret = append(ret, RandomPrefixes6(n/5)...)
+	n4 := 4 * n / 5
+	n6 := n / 5
+	for n4+n6 < n {
+		n4++
+	}
+
+	ret = append(ret, RandomPrefixes4(n4)...)
+	ret = append(ret, RandomPrefixes6(n6)...)
 
 	Prng.Shuffle(len(ret), func(i, j int) {
 		ret[i], ret[j] = ret[j], ret[i]
@@ -157,7 +172,7 @@ func RandomPrefixes4(n int) []netip.Prefix {
 	pfxs := map[netip.Prefix]bool{}
 
 	for len(pfxs) < n {
-		bits := Prng.Intn(32)
+		bits := Prng.IntN(32)
 		// skip default routes
 		bits += 1
 		pfx, err := RandomAddr4().Prefix(bits)
@@ -180,7 +195,7 @@ func RandomPrefixes6(n int) []netip.Prefix {
 	pfxs := map[netip.Prefix]bool{}
 
 	for len(pfxs) < n {
-		bits := Prng.Intn(128)
+		bits := Prng.IntN(128)
 		// skip default routes
 		bits += 1
 		pfx, err := RandomAddr6().Prefix(bits)
@@ -201,7 +216,7 @@ func RandomPrefixes6(n int) []netip.Prefix {
 // RandomAddr returns a randomly generated IP address.
 // IPv4 and IPv6 Prefixes are distributed 1:1
 func RandomAddr() netip.Addr {
-	if Prng.Intn(2) == 1 {
+	if Prng.IntN(2) == 1 {
 		return RandomAddr6()
 	}
 	return RandomAddr4()
@@ -210,8 +225,8 @@ func RandomAddr() netip.Addr {
 // RandomAddr4 returns a randomly generated IPv4 address.
 func RandomAddr4() netip.Addr {
 	var b [4]byte
-	if _, err := Prng.Read(b[:]); err != nil {
-		panic(err)
+	for i := range b {
+		b[i] = byte(Prng.Uint32() & 0xff)
 	}
 	return netip.AddrFrom4(b)
 }
@@ -219,8 +234,8 @@ func RandomAddr4() netip.Addr {
 // RandomAddr6 returns a randomly generated IPv6 address.
 func RandomAddr6() netip.Addr {
 	var b [16]byte
-	if _, err := Prng.Read(b[:]); err != nil {
-		panic(err)
+	for i := range b {
+		b[i] = byte(Prng.Uint32() & 0xff)
 	}
 	return netip.AddrFrom16(b)
 }

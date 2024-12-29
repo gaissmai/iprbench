@@ -7,68 +7,61 @@ import (
 	"local/iprbench/common"
 )
 
-var (
-	rt1 = NewTable()
-	rt2 = NewTable()
-)
-
-func init() {
-	for _, route := range tier1Routes {
-		rt1.Insert(common.PfxToIPNet(route), nil)
-	}
-}
-
-func init() {
-	for _, route := range randomRoutes[:100_000] {
-		rt2.Insert(common.PfxToIPNet(route), nil)
-	}
-}
-
 func BenchmarkLpmTier1Pfxs(b *testing.B) {
 	benchmarks := []struct {
-		name   string
-		routes []netip.Prefix
-		fn     func([]netip.Prefix) netip.Addr
+		name string
+		fn   func([]netip.Prefix) netip.Addr
 	}{
-		{"RandomMatchIP4", tier1Routes, common.MatchIP4},
-		{"RandomMatchIP6", tier1Routes, common.MatchIP6},
-		{"RandomMissIP4", tier1Routes, common.MissIP4},
-		{"RandomMissIP6", tier1Routes, common.MissIP6},
+		{"RandomMatchIP4", common.MatchIP4},
+		{"RandomMatchIP6", common.MatchIP6},
+		{"RandomMissIP4", common.MissIP4},
+		{"RandomMissIP6", common.MissIP6},
+	}
+
+	rt := NewTable()
+	for _, route := range tier1Routes {
+		rt.Insert(common.PfxToIPNet(route), nil)
 	}
 
 	for _, bm := range benchmarks {
 		b.Run(bm.name, func(b *testing.B) {
-			netIP := bm.fn(bm.routes)
+			netIP := bm.fn(tier1Routes)
 			ip := common.AddrToIP(netIP)
-
 			b.ResetTimer()
-			for i := 0; i < b.N; i++ {
-				_, _ = rt1.Lookup(ip)
+			for range b.N {
+				_, _ = rt.Lookup(ip)
 			}
 		})
 	}
 }
 
-func BenchmarkLpmRandomPfxs100_000(b *testing.B) {
+func BenchmarkLpmRandomPfxs(b *testing.B) {
 	benchmarks := []struct {
-		name   string
-		routes []netip.Prefix
-		fn     func([]netip.Prefix) netip.Addr
+		name string
+		fn   func([]netip.Prefix) netip.Addr
 	}{
-		{"RandomMatchIP4", randomRoutes[:100_000], common.MatchIP4},
-		{"RandomMatchIP6", randomRoutes[:100_000], common.MatchIP6},
-		{"RandomMissIP4", randomRoutes[:100_000], common.MissIP4},
-		{"RandomMissIP6", randomRoutes[:100_000], common.MissIP6},
+		{"RandomMatchIP4", common.MatchIP4},
+		{"RandomMatchIP6", common.MatchIP6},
+		{"RandomMissIP4", common.MissIP4},
+		{"RandomMissIP6", common.MissIP6},
 	}
 
-	for _, bm := range benchmarks {
-		b.Run(bm.name, func(b *testing.B) {
-			netIP := bm.fn(bm.routes)
-			ip := common.AddrToIP(netIP)
-			b.ResetTimer()
-			for i := 0; i < b.N; i++ {
-				_, _ = rt2.Lookup(ip)
+	for _, k := range []int{1_000, 10_000, 100_000} {
+		for _, bm := range benchmarks {
+
+			rt := NewTable()
+			for _, route := range randomRoutes[:k] {
+				rt.Insert(common.PfxToIPNet(route), nil)
 			}
-		})
+
+			b.Run(common.IntMap[k]+"/"+bm.name, func(b *testing.B) {
+				netIP := bm.fn(randomRoutes[:k]) // get a random matching or missing ip
+				ip := common.AddrToIP(netIP)
+				b.ResetTimer()
+				for range b.N {
+					_, _ = rt.Lookup(ip)
+				}
+			})
+		}
 	}
 }

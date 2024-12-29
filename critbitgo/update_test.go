@@ -1,43 +1,66 @@
 package main_test
 
 import (
+	"net"
+	"runtime"
 	"testing"
 
 	"local/iprbench/common"
 )
 
-func BenchmarkInsert(b *testing.B) {
-	for k := 100; k <= 1_000_000; k *= 10 {
-		rt := NewTable()
-		for _, route := range tier1Routes[:k] {
-			rt.Insert(common.PfxToIPNet(route), nil)
+func BenchmarkInsertRandomPfxs(b *testing.B) {
+	for _, k := range []int{1_000, 10_000, 100_000, 200_000} {
+		name := common.IntMap[k]
+
+		randomPfxs := common.RandomPrefixes(k)
+		randomIPNets := make([]net.IPNet, 0, k)
+		for _, pfx := range randomPfxs {
+			randomIPNets = append(randomIPNets, common.PfxToIPNet(pfx))
 		}
 
-		name := "Insert into " + common.IntMap[k]
-		cidrProbe := common.PfxToIPNet(probe)
 		b.Run(name, func(b *testing.B) {
+			rt := NewTable()
+
+			runtime.GC()
 			b.ResetTimer()
-			for n := 0; n < b.N; n++ {
-				rt.Insert(cidrProbe, nil)
+			for range b.N {
+				for _, route := range randomIPNets {
+					rt.Insert(route, nil)
+				}
 			}
+			b.StopTimer()
+			b.ReportMetric(float64(b.Elapsed())/float64(k)/float64(b.N), "ns/route")
+			b.ReportMetric(0, "ns/op")
 		})
 	}
 }
 
-func BenchmarkDelete(b *testing.B) {
-	for k := 100; k <= 1_000_000; k *= 10 {
-		rt := NewTable()
-		for _, route := range tier1Routes[:k] {
-			rt.Insert(common.PfxToIPNet(route), nil)
+func BenchmarkDeleteRandomPfxs(b *testing.B) {
+	for _, k := range []int{1_000, 10_000, 100_000, 200_000} {
+		name := common.IntMap[k]
+
+		randomPfxs := common.RandomPrefixes(k)
+		randomIPNets := make([]net.IPNet, 0, k)
+		for _, pfx := range randomPfxs {
+			randomIPNets = append(randomIPNets, common.PfxToIPNet(pfx))
 		}
 
-		name := "Delete from " + common.IntMap[k]
-		cidrProbe := common.PfxToIPNet(probe)
 		b.Run(name, func(b *testing.B) {
-			b.ResetTimer()
-			for n := 0; n < b.N; n++ {
-				rt.Delete(cidrProbe)
+			rt := NewTable()
+			for _, route := range randomIPNets {
+				rt.Insert(route, nil)
 			}
+
+			runtime.GC()
+			b.ResetTimer()
+			for range b.N {
+				for _, route := range randomIPNets {
+					rt.Delete(route)
+				}
+			}
+			b.StopTimer()
+			b.ReportMetric(float64(b.Elapsed())/float64(k)/float64(b.N), "ns/route")
+			b.ReportMetric(0, "ns/op")
 		})
 	}
 }
