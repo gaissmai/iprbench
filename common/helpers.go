@@ -147,7 +147,7 @@ func MissIP6(routes []netip.Prefix) netip.Addr {
 	}
 }
 
-// RandomPrefixes returns n randomly generated prefixes without default routes.
+// RandomPrefixes returns n randomly generated prefixes with at least /3..[32,128]
 // IPv4 and IPv6 Prefixes are naturally distributed 4:1.
 func RandomPrefixes(n int) []netip.Prefix {
 	ret := make([]netip.Prefix, 0, n)
@@ -172,9 +172,9 @@ func RandomPrefixes4(n int) []netip.Prefix {
 	pfxs := map[netip.Prefix]bool{}
 
 	for len(pfxs) < n {
-		bits := Prng.IntN(32)
+		bits := Prng.IntN(30)
 		// skip default routes
-		bits += 1
+		bits += 3
 		pfx, err := RandomAddr4().Prefix(bits)
 		if err != nil {
 			panic(err)
@@ -195,9 +195,9 @@ func RandomPrefixes6(n int) []netip.Prefix {
 	pfxs := map[netip.Prefix]bool{}
 
 	for len(pfxs) < n {
-		bits := Prng.IntN(128)
+		bits := Prng.IntN(126)
 		// skip default routes
-		bits += 1
+		bits += 3
 		pfx, err := RandomAddr6().Prefix(bits)
 		if err != nil {
 			panic(err)

@@ -74,24 +74,24 @@ BenchmarkRandomPfx6Size/200_000     	       1	       128.0 bytes/route
 BenchmarkRandomPfx6Size/200_000     	       1	       128.0 bytes/route
 BenchmarkRandomPfx6Size/200_000     	       1	       128.0 bytes/route
 BenchmarkRandomPfx6Size/200_000     	       1	       128.0 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	       117.5 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	       119.2 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	       119.2 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	       119.2 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	       119.2 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	       119.2 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	       117.3 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	       119.0 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	       119.0 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	       119.0 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	       119.0 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	       119.0 bytes/route
+BenchmarkRandomPfxSize/10_000       	       1	       115.3 bytes/route
 BenchmarkRandomPfxSize/10_000       	       1	       115.5 bytes/route
-BenchmarkRandomPfxSize/10_000       	       1	       115.7 bytes/route
-BenchmarkRandomPfxSize/10_000       	       1	       115.7 bytes/route
-BenchmarkRandomPfxSize/10_000       	       1	       115.7 bytes/route
-BenchmarkRandomPfxSize/10_000       	       1	       115.7 bytes/route
-BenchmarkRandomPfxSize/10_000       	       1	       115.7 bytes/route
+BenchmarkRandomPfxSize/10_000       	       1	       115.5 bytes/route
+BenchmarkRandomPfxSize/10_000       	       1	       115.5 bytes/route
+BenchmarkRandomPfxSize/10_000       	       1	       115.5 bytes/route
+BenchmarkRandomPfxSize/10_000       	       1	       115.5 bytes/route
 BenchmarkRandomPfxSize/100_000      	       1	       115.2 bytes/route
-BenchmarkRandomPfxSize/100_000      	       1	       115.3 bytes/route
-BenchmarkRandomPfxSize/100_000      	       1	       115.3 bytes/route
-BenchmarkRandomPfxSize/100_000      	       1	       115.3 bytes/route
-BenchmarkRandomPfxSize/100_000      	       1	       115.3 bytes/route
-BenchmarkRandomPfxSize/100_000      	       1	       115.3 bytes/route
+BenchmarkRandomPfxSize/100_000      	       1	       115.2 bytes/route
+BenchmarkRandomPfxSize/100_000      	       1	       115.2 bytes/route
+BenchmarkRandomPfxSize/100_000      	       1	       115.2 bytes/route
+BenchmarkRandomPfxSize/100_000      	       1	       115.2 bytes/route
+BenchmarkRandomPfxSize/100_000      	       1	       115.2 bytes/route
 BenchmarkRandomPfxSize/200_000      	       1	       115.2 bytes/route
 BenchmarkRandomPfxSize/200_000      	       1	       115.2 bytes/route
 BenchmarkRandomPfxSize/200_000      	       1	       115.2 bytes/route
@@ -99,4 +99,4 @@ BenchmarkRandomPfxSize/200_000      	       1	       115.2 bytes/route
 BenchmarkRandomPfxSize/200_000      	       1	       115.2 bytes/route
 BenchmarkRandomPfxSize/200_000      	       1	       115.2 bytes/route
 PASS
-ok  	local/iprbench/critbitgo	103.207s
+ok  	local/iprbench/critbitgo	26.082s
