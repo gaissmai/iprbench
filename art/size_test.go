@@ -13,13 +13,13 @@ func BenchmarkTier1PfxSize(b *testing.B) {
 	var startMem, endMem runtime.MemStats
 
 	for _, k := range []int{1_000, 10_000, 100_000, 200_000} {
-		tree := new(art.Table[any])
+		tree := new(art.Table[struct{}])
 		runtime.GC()
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
 			for _, cidr := range tier1Routes[:k] {
-				tree.Insert(cidr, nil)
+				tree.Insert(cidr, struct{}{})
 			}
 			runtime.GC()
 			runtime.ReadMemStats(&endMem)
@@ -34,13 +34,13 @@ func BenchmarkRandomPfx4Size(b *testing.B) {
 	var startMem, endMem runtime.MemStats
 
 	for _, k := range []int{1_000, 10_000, 100_000, 200_000} {
-		tree := new(art.Table[any])
+		tree := new(art.Table[struct{}])
 		runtime.GC()
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
 			for _, cidr := range randomRoutes4[:k] {
-				tree.Insert(cidr, nil)
+				tree.Insert(cidr, struct{}{})
 			}
 			runtime.GC()
 			runtime.ReadMemStats(&endMem)
@@ -55,13 +55,13 @@ func BenchmarkRandomPfx6Size(b *testing.B) {
 	var startMem, endMem runtime.MemStats
 
 	for _, k := range []int{1_000, 10_000, 100_000, 200_000} {
-		tree := new(art.Table[any])
+		tree := new(art.Table[struct{}])
 		runtime.GC()
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
 			for _, cidr := range randomRoutes6[:k] {
-				tree.Insert(cidr, nil)
+				tree.Insert(cidr, struct{}{})
 			}
 			runtime.GC()
 			runtime.ReadMemStats(&endMem)
@@ -76,13 +76,13 @@ func BenchmarkRandomPfxSize(b *testing.B) {
 	var startMem, endMem runtime.MemStats
 
 	for _, k := range []int{1_000, 10_000, 100_000, 200_000} {
-		tree := new(art.Table[any])
+		tree := new(art.Table[struct{}])
 		runtime.GC()
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
 			for _, cidr := range randomRoutes[:k] {
-				tree.Insert(cidr, nil)
+				tree.Insert(cidr, struct{}{})
 			}
 			runtime.GC()
 			runtime.ReadMemStats(&endMem)
