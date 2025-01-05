@@ -80,12 +80,12 @@ BenchmarkRandomPfxSize/1_000        	       1	        67.89 bytes/route
 BenchmarkRandomPfxSize/1_000        	       1	        67.89 bytes/route
 BenchmarkRandomPfxSize/1_000        	       1	        67.89 bytes/route
 BenchmarkRandomPfxSize/1_000        	       1	        67.89 bytes/route
-BenchmarkRandomPfxSize/10_000       	       1	        64.20 bytes/route
-BenchmarkRandomPfxSize/10_000       	       1	        64.37 bytes/route
-BenchmarkRandomPfxSize/10_000       	       1	        64.37 bytes/route
-BenchmarkRandomPfxSize/10_000       	       1	        64.37 bytes/route
-BenchmarkRandomPfxSize/10_000       	       1	        64.37 bytes/route
-BenchmarkRandomPfxSize/10_000       	       1	        64.37 bytes/route
+BenchmarkRandomPfxSize/10_000       	       1	        64.22 bytes/route
+BenchmarkRandomPfxSize/10_000       	       1	        64.39 bytes/route
+BenchmarkRandomPfxSize/10_000       	       1	        64.39 bytes/route
+BenchmarkRandomPfxSize/10_000       	       1	        64.39 bytes/route
+BenchmarkRandomPfxSize/10_000       	       1	        64.39 bytes/route
+BenchmarkRandomPfxSize/10_000       	       1	        64.39 bytes/route
 BenchmarkRandomPfxSize/100_000      	       1	        64.02 bytes/route
 BenchmarkRandomPfxSize/100_000      	       1	        64.03 bytes/route
 BenchmarkRandomPfxSize/100_000      	       1	        64.03 bytes/route
@@ -99,4 +99,4 @@ BenchmarkRandomPfxSize/200_000      	       1	        64.02 bytes/route
 BenchmarkRandomPfxSize/200_000      	       1	        64.02 bytes/route
 BenchmarkRandomPfxSize/200_000      	       1	        64.02 bytes/route
 PASS
-ok  	local/iprbench/cidrtree	47.432s
+ok  	local/iprbench/cidrtree	47.370s
