@@ -99,4 +99,4 @@ BenchmarkRandomPfxSize/200_000      	       1	       115.2 bytes/route
 BenchmarkRandomPfxSize/200_000      	       1	       115.2 bytes/route
 BenchmarkRandomPfxSize/200_000      	       1	       115.2 bytes/route
 PASS
-ok  	local/iprbench/critbitgo	26.890s
+ok  	local/iprbench/critbitgo	25.860s

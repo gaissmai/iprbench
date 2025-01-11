@@ -46,22 +46,22 @@ update: art/update.bm bart/update.bm cidrtree/update.bm critbitgo/update.bm lpmt
 # benchmarks for lpm
 #
 art/lpm.bm:
-	cd art &&       go test -run=XXX  -cpu=1 -count=10  -bench=Lpm -timeout=25m | tee lpm.bm
+	cd art &&       go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
 bart/lpm.bm:
-	cd bart &&      go test -run=XXX  -cpu=1 -count=10  -bench=Lpm -timeout=25m | tee lpm.bm
+	cd bart &&      go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
 cidrtree/lpm.bm:
-	cd cidrtree &&  go test -run=XXX  -cpu=1 -count=10  -bench=Lpm -timeout=25m | tee lpm.bm
+	cd cidrtree &&  go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
 critbitgo/lpm.bm:
-	cd critbitgo && go test -run=XXX  -cpu=1 -count=10  -bench=Lpm -timeout=25m | tee lpm.bm
+	cd critbitgo && go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
 lpmtrie/lpm.bm:
-	cd lpmtrie &&   go test -run=XXX  -cpu=1 -count=10  -bench=Lpm -timeout=25m | tee lpm.bm
+	cd lpmtrie &&   go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
 cidranger/lpm.bm:
-	cd cidranger && go test -run=XXX  -cpu=1 -count=10  -bench=Lpm -timeout=25m | tee lpm.bm
+	cd cidranger && go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
 #
 # benchmarks for tree/trie sizes, deterministic -> -benchtime=1x
