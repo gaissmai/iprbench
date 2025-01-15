@@ -1,5 +1,7 @@
 github.com/Asphaltt/lpmtrie v0.0.0-20220205153150-3d814250b8ab h1:hzN25CB5VzeKk3/c1fi1oT03N+5365nVOMPAxixkADY=
 github.com/Asphaltt/lpmtrie v0.0.0-20220205153150-3d814250b8ab/go.mod h1:TdNTLzn3VVXKfmHAULK5gY+h/A1gLQ8NnwLB6cSN54g=
+github.com/aromatt/netipds v0.1.8 h1:UoGFEYr8uUaZGt/3LdcEIo2C0Skg0vZBf9V+2h0Ulhk=
+github.com/aromatt/netipds v0.1.8/go.mod h1:TVWwAV/IghERh+218SzJz1DfixOswt5/BhiOAUs99Hc=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/gaissmai/bart v0.17.5 h1:JTuuHqgcQmfICtM45eJyNP5l2lt2lBrv+sbqysI8BLU=

@@ -8,6 +8,7 @@ comparing benchmarks for some golang IP routing table implementations:
 	github.com/Asphaltt/lpmtrie
 	github.com/gaissmai/cidrtree
 	github.com/yl2chen/cidranger
+	github.com/aromatt/netipds
 ```
 
 The ~1_000_000 **Tier1** prefix test records (IPv4 and IPv6 routes) are from a full routing table with typical
@@ -23,7 +24,7 @@ to 1 part IPv6 prefixes, which is approximately the current ratio in the Interne
 ## make your own benchmarks
 
 ```
-  $ make dep  
+  $ make dep
   $ make -B all   # takes some time!
 ```
 

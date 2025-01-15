@@ -6,7 +6,7 @@ dep:
 	go mod tidy
 	go install golang.org/x/perf/cmd/benchstat@latest
 
-size: art/size.bm bart/size.bm cidrtree/size.bm critbitgo/size.bm lpmtrie/size.bm cidranger/size.bm
+size: art/size.bm bart/size.bm cidrtree/size.bm critbitgo/size.bm lpmtrie/size.bm cidranger/size.bm netipds/size.bm
 	@echo
 	@benchstat -ignore=pkg bart/size.bm   art/size.bm
 	@echo
@@ -17,8 +17,10 @@ size: art/size.bm bart/size.bm cidrtree/size.bm critbitgo/size.bm lpmtrie/size.b
 	@benchstat -ignore=pkg bart/size.bm   lpmtrie/size.bm
 	@echo
 	@benchstat -ignore=pkg bart/size.bm   cidranger/size.bm
+	@echo
+	@benchstat -ignore=pkg bart/size.bm   netipds/size.bm
 
-lpm: art/lpm.bm bart/lpm.bm cidrtree/lpm.bm critbitgo/lpm.bm lpmtrie/lpm.bm cidranger/lpm.bm
+lpm: art/lpm.bm bart/lpm.bm cidrtree/lpm.bm critbitgo/lpm.bm lpmtrie/lpm.bm cidranger/lpm.bm netipds/lpm.bm
 	@echo
 	@benchstat -ignore=pkg bart/lpm.bm   art/lpm.bm
 	@echo
@@ -29,8 +31,10 @@ lpm: art/lpm.bm bart/lpm.bm cidrtree/lpm.bm critbitgo/lpm.bm lpmtrie/lpm.bm cidr
 	@benchstat -ignore=pkg bart/lpm.bm   lpmtrie/lpm.bm
 	@echo
 	@benchstat -ignore=pkg bart/lpm.bm   cidranger/lpm.bm
+	@echo
+	@benchstat -ignore=pkg bart/lpm.bm   netipds/lpm.bm
 
-update: art/update.bm bart/update.bm cidrtree/update.bm critbitgo/update.bm lpmtrie/update.bm cidranger/update.bm
+update: art/update.bm bart/update.bm cidrtree/update.bm critbitgo/update.bm lpmtrie/update.bm cidranger/update.bm netipds/update.bm
 	@echo
 	@benchstat -ignore=pkg bart/update.bm    art/update.bm
 	@echo
@@ -41,6 +45,8 @@ update: art/update.bm bart/update.bm cidrtree/update.bm critbitgo/update.bm lpmt
 	@benchstat -ignore=pkg bart/update.bm    lpmtrie/update.bm
 	@echo
 	@benchstat -ignore=pkg bart/update.bm    cidranger/update.bm
+	@echo
+	@benchstat -ignore=pkg bart/update.bm    netipds/update.bm
 
 #
 # benchmarks for lpm
@@ -63,6 +69,9 @@ lpmtrie/lpm.bm:
 cidranger/lpm.bm:
 	cd cidranger && go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
+netipds/lpm.bm:
+	cd netipds && go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
+
 #
 # benchmarks for tree/trie sizes, deterministic -> -benchtime=1x
 #
@@ -83,6 +92,9 @@ lpmtrie/size.bm:
 
 cidranger/size.bm:
 	cd cidranger && go test -run=XXX  -cpu=1 -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
+
+netipds/size.bm:
+	cd netipds && go test -run=XXX  -cpu=1 -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
 
 #
 # benchmarks for insert/delete
@@ -105,3 +117,6 @@ lpmtrie/update.bm:
 
 cidranger/update.bm:
 	cd cidranger && go test -run=XXX  -cpu=1 -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
+
+netipds/update.bm:
+	cd netipds && go test -run=XXX  -cpu=1 -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
