@@ -1,0 +1,54 @@
+goos: linux
+goarch: amd64
+pkg: local/iprbench/netipds
+cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
+BenchmarkInsertRandomPfxs/1_000         	    5722	       192.7 ns/route
+BenchmarkInsertRandomPfxs/1_000         	    6256	       192.6 ns/route
+BenchmarkInsertRandomPfxs/1_000         	    6243	       196.7 ns/route
+BenchmarkInsertRandomPfxs/1_000         	    6184	       196.2 ns/route
+BenchmarkInsertRandomPfxs/1_000         	    6133	       194.0 ns/route
+BenchmarkInsertRandomPfxs/1_000         	    6196	       191.6 ns/route
+BenchmarkInsertRandomPfxs/10_000        	     387	       313.1 ns/route
+BenchmarkInsertRandomPfxs/10_000        	     380	       313.3 ns/route
+BenchmarkInsertRandomPfxs/10_000        	     381	       330.9 ns/route
+BenchmarkInsertRandomPfxs/10_000        	     379	       322.0 ns/route
+BenchmarkInsertRandomPfxs/10_000        	     380	       316.9 ns/route
+BenchmarkInsertRandomPfxs/10_000        	     367	       339.2 ns/route
+BenchmarkInsertRandomPfxs/100_000       	      19	       752.3 ns/route
+BenchmarkInsertRandomPfxs/100_000       	      15	       707.3 ns/route
+BenchmarkInsertRandomPfxs/100_000       	      18	       764.2 ns/route
+BenchmarkInsertRandomPfxs/100_000       	      16	       760.0 ns/route
+BenchmarkInsertRandomPfxs/100_000       	      19	       714.4 ns/route
+BenchmarkInsertRandomPfxs/100_000       	      15	       783.9 ns/route
+BenchmarkInsertRandomPfxs/200_000       	       6	       928.7 ns/route
+BenchmarkInsertRandomPfxs/200_000       	       6	       927.5 ns/route
+BenchmarkInsertRandomPfxs/200_000       	       6	       946.3 ns/route
+BenchmarkInsertRandomPfxs/200_000       	       6	       936.4 ns/route
+BenchmarkInsertRandomPfxs/200_000       	       9	       693.5 ns/route
+BenchmarkInsertRandomPfxs/200_000       	       9	       681.3 ns/route
+BenchmarkDeleteRandomPfxs/1_000         	    8509	       140.9 ns/route
+BenchmarkDeleteRandomPfxs/1_000         	    8572	       139.2 ns/route
+BenchmarkDeleteRandomPfxs/1_000         	    8535	       139.5 ns/route
+BenchmarkDeleteRandomPfxs/1_000         	    7480	       139.6 ns/route
+BenchmarkDeleteRandomPfxs/1_000         	    8559	       162.0 ns/route
+BenchmarkDeleteRandomPfxs/1_000         	    7426	       142.5 ns/route
+BenchmarkDeleteRandomPfxs/10_000        	     571	       208.3 ns/route
+BenchmarkDeleteRandomPfxs/10_000        	     528	       206.9 ns/route
+BenchmarkDeleteRandomPfxs/10_000        	     570	       207.3 ns/route
+BenchmarkDeleteRandomPfxs/10_000        	     576	       207.0 ns/route
+BenchmarkDeleteRandomPfxs/10_000        	     576	       206.8 ns/route
+BenchmarkDeleteRandomPfxs/10_000        	     579	       206.6 ns/route
+BenchmarkDeleteRandomPfxs/100_000       	      26	       452.3 ns/route
+BenchmarkDeleteRandomPfxs/100_000       	      25	       445.4 ns/route
+BenchmarkDeleteRandomPfxs/100_000       	      26	       470.8 ns/route
+BenchmarkDeleteRandomPfxs/100_000       	      25	       447.4 ns/route
+BenchmarkDeleteRandomPfxs/100_000       	      25	       447.9 ns/route
+BenchmarkDeleteRandomPfxs/100_000       	      26	       446.7 ns/route
+BenchmarkDeleteRandomPfxs/200_000       	       8	       656.8 ns/route
+BenchmarkDeleteRandomPfxs/200_000       	       8	       660.3 ns/route
+BenchmarkDeleteRandomPfxs/200_000       	       8	       657.0 ns/route
+BenchmarkDeleteRandomPfxs/200_000       	       8	       656.8 ns/route
+BenchmarkDeleteRandomPfxs/200_000       	       8	       642.9 ns/route
+BenchmarkDeleteRandomPfxs/200_000       	       8	       645.0 ns/route
+PASS
+ok  	local/iprbench/netipds	87.100s
