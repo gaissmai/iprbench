@@ -4,12 +4,8 @@ github.com/aromatt/netipds v0.1.8 h1:UoGFEYr8uUaZGt/3LdcEIo2C0Skg0vZBf9V+2h0Ulhk
 github.com/aromatt/netipds v0.1.8/go.mod h1:TVWwAV/IghERh+218SzJz1DfixOswt5/BhiOAUs99Hc=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/gaissmai/bart v0.17.5 h1:JTuuHqgcQmfICtM45eJyNP5l2lt2lBrv+sbqysI8BLU=
-github.com/gaissmai/bart v0.17.5/go.mod h1:JCPkH/Xt5bSPCKDc6OpzkhSCeib8BIxu3kthzZwcl6w=
-github.com/gaissmai/bart v0.17.6 h1:0bcToXBoRPcDbFMVflNmYCSyCEh85ttuCN9oC1e8w9Q=
-github.com/gaissmai/bart v0.17.6/go.mod h1:JCPkH/Xt5bSPCKDc6OpzkhSCeib8BIxu3kthzZwcl6w=
-github.com/gaissmai/bart v0.17.7 h1:VSJzZOchbSfBT4X+G3g7uIcmrO+v0iNWgTdtIX+mLc8=
-github.com/gaissmai/bart v0.17.7/go.mod h1:JCPkH/Xt5bSPCKDc6OpzkhSCeib8BIxu3kthzZwcl6w=
+github.com/gaissmai/bart v0.17.10 h1:TY1y++A6N/ESrwRLTRWrnVOrQpZqpOYSVnKMu/FYW6o=
+github.com/gaissmai/bart v0.17.10/go.mod h1:JCPkH/Xt5bSPCKDc6OpzkhSCeib8BIxu3kthzZwcl6w=
 github.com/gaissmai/cidrtree v0.5.0 h1:noZ73FM38fRV5Uw28jTcKRTHX/84ylEMT87sVuFqt1Y=
 github.com/gaissmai/cidrtree v0.5.0/go.mod h1:7snMgBXDWPq7v67RtDmGqOt6i4HGEhvFBIbg9nUiQ5k=
 github.com/gaissmai/extnetip v1.1.0 h1:ZWEPVPUtw1o//CWh69/Eo79gWEKVYB1STrJjpTR4Q7E=

@@ -1,11 +1,11 @@
 module local/iprbench
 
-go 1.23.0
+go 1.23.5
 
 require (
 	github.com/Asphaltt/lpmtrie v0.0.0-20220205153150-3d814250b8ab
 	github.com/aromatt/netipds v0.1.8
-	github.com/gaissmai/bart v0.17.7
+	github.com/gaissmai/bart v0.17.10
 	github.com/gaissmai/cidrtree v0.5.0
 	github.com/k-sone/critbitgo v1.4.0
 	github.com/tailscale/art v0.0.0-20231101034115-3827a3c782e9
