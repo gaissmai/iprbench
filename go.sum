@@ -1,5 +1,7 @@
 github.com/Asphaltt/lpmtrie v0.0.0-20220205153150-3d814250b8ab h1:hzN25CB5VzeKk3/c1fi1oT03N+5365nVOMPAxixkADY=
 github.com/Asphaltt/lpmtrie v0.0.0-20220205153150-3d814250b8ab/go.mod h1:TdNTLzn3VVXKfmHAULK5gY+h/A1gLQ8NnwLB6cSN54g=
+github.com/aclements/go-moremath v0.0.0-20210112150236-f10218a38794 h1:xlwdaKcTNVW4PtpQb8aKA4Pjy0CdJHEqvFbAnvR5m2g=
+github.com/aclements/go-moremath v0.0.0-20210112150236-f10218a38794/go.mod h1:7e+I0LQFUI9AXWxOfsQROs9xPhoJtbsyWcjJqDd4KPY=
 github.com/aromatt/netipds v0.1.8 h1:UoGFEYr8uUaZGt/3LdcEIo2C0Skg0vZBf9V+2h0Ulhk=
 github.com/aromatt/netipds v0.1.8/go.mod h1:TVWwAV/IghERh+218SzJz1DfixOswt5/BhiOAUs99Hc=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
@@ -23,6 +25,8 @@ github.com/tailscale/art v0.0.0-20231101034115-3827a3c782e9 h1:0jZYJEIxi+gRFUVhT
 github.com/tailscale/art v0.0.0-20231101034115-3827a3c782e9/go.mod h1:vqKZQktbl+AhzNtqxc7rSm6t+lvuHd729sHSw/ElykI=
 github.com/yl2chen/cidranger v1.0.2 h1:lbOWZVCG1tCRX4u24kuM1Tb4nHqWkDxwLdoS+SevawU=
 github.com/yl2chen/cidranger v1.0.2/go.mod h1:9U1yz7WPYDwf0vpNWFaeRh0bjwz5RVgRy/9UEQfHl0g=
+golang.org/x/perf v0.0.0-20250210164336-884df5810d28 h1:qf30QczstSuZOhoOeQ2pMe665nSxygR9oF04uVgtek4=
+golang.org/x/perf v0.0.0-20250210164336-884df5810d28/go.mod h1:1RNgVBEvoPEzE+/JNOsrJ+jjnFbzwp1wbnz+wPN1Qh0=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/yaml.v2 v2.2.2 h1:ZCJp+EgiOT7lHqUV2J862kp8Qj64Jo6az82+3Td9dZw=
 gopkg.in/yaml.v2 v2.2.2/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=

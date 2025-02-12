@@ -1,6 +1,6 @@
 module local/iprbench
 
-go 1.23.5
+go 1.24.0
 
 require (
 	github.com/Asphaltt/lpmtrie v0.0.0-20220205153150-3d814250b8ab
@@ -12,4 +12,10 @@ require (
 	github.com/yl2chen/cidranger v1.0.2
 )
 
-require github.com/gaissmai/extnetip v1.1.0 // indirect
+require (
+	github.com/aclements/go-moremath v0.0.0-20210112150236-f10218a38794 // indirect
+	github.com/gaissmai/extnetip v1.1.0 // indirect
+	golang.org/x/perf v0.0.0-20250210164336-884df5810d28 // indirect
+)
+
+tool golang.org/x/perf/cmd/benchstat

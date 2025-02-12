@@ -4,7 +4,7 @@ all: size lpm update
 
 dep:
 	go mod tidy
-	go install golang.org/x/perf/cmd/benchstat@latest
+	go install tool
 
 size: bart/size.bm art/size.bm netipds/size.bm critbitgo/size.bm lpmtrie/size.bm cidranger/size.bm cidrtree/size.bm 
 	@echo
