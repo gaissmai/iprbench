@@ -8,45 +8,45 @@ dep:
 
 size: bart/size.bm art/size.bm netipds/size.bm critbitgo/size.bm lpmtrie/size.bm cidranger/size.bm cidrtree/size.bm 
 	@echo
-	@benchstat -ignore=pkg bart/size.bm   art/size.bm
+	@go tool benchstat -ignore=pkg bart/size.bm   art/size.bm
 	@echo
-	@benchstat -ignore=pkg bart/size.bm   netipds/size.bm
+	@go tool benchstat -ignore=pkg bart/size.bm   netipds/size.bm
 	@echo
-	@benchstat -ignore=pkg bart/size.bm   critbitgo/size.bm
+	@go tool benchstat -ignore=pkg bart/size.bm   critbitgo/size.bm
 	@echo
-	@benchstat -ignore=pkg bart/size.bm   lpmtrie/size.bm
+	@go tool benchstat -ignore=pkg bart/size.bm   lpmtrie/size.bm
 	@echo
-	@benchstat -ignore=pkg bart/size.bm   cidranger/size.bm
+	@go tool benchstat -ignore=pkg bart/size.bm   cidranger/size.bm
 	@echo
-	@benchstat -ignore=pkg bart/size.bm   cidrtree/size.bm
+	@go tool benchstat -ignore=pkg bart/size.bm   cidrtree/size.bm
 
 lpm: bart/lpm.bm art/lpm.bm netipds/lpm.bm critbitgo/lpm.bm lpmtrie/lpm.bm cidranger/lpm.bm cidrtree/lpm.bm
 	@echo
-	@benchstat -ignore=pkg bart/lpm.bm   art/lpm.bm
+	@go tool benchstat -ignore=pkg bart/lpm.bm   art/lpm.bm
 	@echo
-	@benchstat -ignore=pkg bart/lpm.bm   netipds/lpm.bm
+	@go tool benchstat -ignore=pkg bart/lpm.bm   netipds/lpm.bm
 	@echo
-	@benchstat -ignore=pkg bart/lpm.bm   critbitgo/lpm.bm
+	@go tool benchstat -ignore=pkg bart/lpm.bm   critbitgo/lpm.bm
 	@echo
-	@benchstat -ignore=pkg bart/lpm.bm   lpmtrie/lpm.bm
+	@go tool benchstat -ignore=pkg bart/lpm.bm   lpmtrie/lpm.bm
 	@echo
-	@benchstat -ignore=pkg bart/lpm.bm   cidranger/lpm.bm
+	@go tool benchstat -ignore=pkg bart/lpm.bm   cidranger/lpm.bm
 	@echo
-	@benchstat -ignore=pkg bart/lpm.bm   cidrtree/lpm.bm
+	@go tool benchstat -ignore=pkg bart/lpm.bm   cidrtree/lpm.bm
 
 update: bart/update.bm art/update.bm netipds/update.bm critbitgo/update.bm lpmtrie/update.bm cidranger/update.bm cidrtree/update.bm 
 	@echo
-	@benchstat -ignore=pkg bart/update.bm    art/update.bm
+	@go tool benchstat -ignore=pkg bart/update.bm    art/update.bm
 	@echo
-	@benchstat -ignore=pkg bart/update.bm    netipds/update.bm
+	@go tool benchstat -ignore=pkg bart/update.bm    netipds/update.bm
 	@echo
-	@benchstat -ignore=pkg bart/update.bm    critbitgo/update.bm
+	@go tool benchstat -ignore=pkg bart/update.bm    critbitgo/update.bm
 	@echo
-	@benchstat -ignore=pkg bart/update.bm    lpmtrie/update.bm
+	@go tool benchstat -ignore=pkg bart/update.bm    lpmtrie/update.bm
 	@echo
-	@benchstat -ignore=pkg bart/update.bm    cidranger/update.bm
-	@benchstat -ignore=pkg bart/update.bm    cidrtree/update.bm
+	@go tool benchstat -ignore=pkg bart/update.bm    cidranger/update.bm
 	@echo
+	@go tool benchstat -ignore=pkg bart/update.bm    cidrtree/update.bm
 
 #
 # benchmarks for lpm

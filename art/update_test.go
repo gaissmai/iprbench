@@ -18,8 +18,7 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 			rt := new(art.Table[any])
 
 			runtime.GC()
-			b.ResetTimer()
-			for range b.N {
+			for b.Loop() {
 				for _, route := range randomPfxs {
 					rt.Insert(route, nil)
 				}
@@ -44,8 +43,7 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 			}
 
 			runtime.GC()
-			b.ResetTimer()
-			for range b.N {
+			for b.Loop() {
 				for _, route := range randomPfxs {
 					rt.Delete(route)
 				}

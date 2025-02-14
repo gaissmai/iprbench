@@ -4,8 +4,9 @@ import (
 	"net/netip"
 	"testing"
 
-	"github.com/aromatt/netipds"
 	"local/iprbench/common"
+
+	"github.com/aromatt/netipds"
 )
 
 func BenchmarkLpmTier1Pfxs(b *testing.B) {
@@ -29,9 +30,8 @@ func BenchmarkLpmTier1Pfxs(b *testing.B) {
 		b.Run(bm.name, func(b *testing.B) {
 			ip := bm.fn(tier1Routes)
 			pfx := netip.PrefixFrom(ip, ip.BitLen())
-			b.ResetTimer()
-			for range b.N {
-				_ = ps.Encompasses(pfx)
+			for b.Loop() {
+				ps.Encompasses(pfx)
 			}
 		})
 	}
@@ -60,9 +60,8 @@ func BenchmarkLpmRandomPfxs(b *testing.B) {
 			b.Run(common.IntMap[k]+"/"+bm.name, func(b *testing.B) {
 				ip := bm.fn(randomRoutes[:k]) // get a random matching or missing ip
 				pfx := netip.PrefixFrom(ip, ip.BitLen())
-				b.ResetTimer()
-				for range b.N {
-					_ = ps.Encompasses(pfx)
+				for b.Loop() {
+					ps.Encompasses(pfx)
 				}
 			})
 		}

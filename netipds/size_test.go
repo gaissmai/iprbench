@@ -19,7 +19,7 @@ func BenchmarkTier1PfxSize(b *testing.B) {
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
-			for range b.N {
+			for b.Loop() {
 				for _, cidr := range tier1Routes[:k] {
 					psb.Add(cidr)
 				}
@@ -43,7 +43,7 @@ func BenchmarkRandomPfx4Size(b *testing.B) {
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
-			for range b.N {
+			for b.Loop() {
 				for _, cidr := range randomRoutes4[:k] {
 					psb.Add(cidr)
 				}
@@ -67,7 +67,7 @@ func BenchmarkRandomPfx6Size(b *testing.B) {
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
-			for range b.N {
+			for b.Loop() {
 				for _, cidr := range randomRoutes6[:k] {
 					psb.Add(cidr)
 				}
@@ -91,7 +91,7 @@ func BenchmarkRandomPfxSize(b *testing.B) {
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
-			for range b.N {
+			for b.Loop() {
 				for _, cidr := range randomRoutes[:k] {
 					psb.Add(cidr)
 				}

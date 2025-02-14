@@ -11,6 +11,7 @@ import (
 	"strings"
 
 	"github.com/gaissmai/bart"
+	"github.com/gaissmai/extnetip"
 )
 
 var IntMap = map[int]string{
@@ -67,13 +68,21 @@ func MatchIP4(routes []netip.Prefix) netip.Addr {
 
 	i := 0
 	for {
-		ip := RandomAddr4()
+		// choose a random route from input
+		pfx := routes[Prng.IntN(len(routes))]
+		ip := pfx.Addr()
+		if ip.Is6() {
+			continue // wrong IP version
+		}
+
+		// just don't take the start IP
+		ip = ip.Next()
 		if ok := rt.Contains(ip); ok {
 			return ip
 		}
 		i++
 		if i > 500_000_000 {
-			panic("couldn't find a matching IPv4, giving up!")
+			panic("couldn't find a matching IP, giving up!")
 		}
 	}
 }
@@ -90,13 +99,21 @@ func MatchIP6(routes []netip.Prefix) netip.Addr {
 
 	i := 0
 	for {
-		ip := RandomAddr6()
+		// choose a random route from input
+		pfx := routes[Prng.IntN(len(routes))]
+		ip := pfx.Addr()
+		if ip.Is4() {
+			continue // wrong IP version
+		}
+
+		// just don't take the start IP
+		ip = ip.Next()
 		if ok := rt.Contains(ip); ok {
 			return ip
 		}
 		i++
 		if i > 500_000_000 {
-			panic("couldn't find a matching IPv6, giving up!")
+			panic("couldn't find a matching IP, giving up!")
 		}
 	}
 }
@@ -113,13 +130,23 @@ func MissIP4(routes []netip.Prefix) netip.Addr {
 
 	i := 0
 	for {
-		ip := RandomAddr4()
+		// choose a random route from input
+		pfx := routes[Prng.IntN(len(routes))]
+		ip := pfx.Addr()
+		if ip.Is6() {
+			continue // wrong IP version
+		}
+
+		// take last IP from prefix ...
+		_, last := extnetip.Range(pfx)
+		// ... add one
+		ip = last.Next()
 		if ok := rt.Contains(ip); !ok {
 			return ip
 		}
 		i++
 		if i > 500_000_000 {
-			panic("couldn't find a missing IPv4, giving up!")
+			panic("couldn't find a missing IP, giving up!")
 		}
 	}
 }
@@ -136,13 +163,23 @@ func MissIP6(routes []netip.Prefix) netip.Addr {
 
 	i := 0
 	for {
-		ip := RandomAddr6()
+		// choose a random route from input
+		pfx := routes[Prng.IntN(len(routes))]
+		ip := pfx.Addr()
+		if ip.Is4() {
+			continue // wrong IP version
+		}
+
+		// take last IP from prefix ...
+		_, last := extnetip.Range(pfx)
+		// ... add one
+		ip = last.Next()
 		if ok := rt.Contains(ip); !ok {
 			return ip
 		}
 		i++
 		if i > 500_000_000 {
-			panic("couldn't find a missing IPv6, giving up!")
+			panic("couldn't find a missing IP, giving up!")
 		}
 	}
 }
