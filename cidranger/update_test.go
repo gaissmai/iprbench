@@ -28,7 +28,6 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 					rt.Insert(route)
 				}
 			}
-			b.StopTimer()
 			b.ReportMetric(float64(b.Elapsed())/float64(k)/float64(b.N), "ns/route")
 			b.ReportMetric(0, "ns/op")
 		})
@@ -57,7 +56,6 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 					rt.Remove(route.Network())
 				}
 			}
-			b.StopTimer()
 			b.ReportMetric(float64(b.Elapsed())/float64(k)/float64(b.N), "ns/route")
 			b.ReportMetric(0, "ns/op")
 		})
