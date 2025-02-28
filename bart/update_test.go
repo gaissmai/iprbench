@@ -14,10 +14,10 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 		randomPfxs := common.RandomPrefixes(k)
 
 		b.Run(name, func(b *testing.B) {
-			rt := new(bart.Table[any])
+			rt := new(bart.Lite)
 			for b.Loop() {
 				for _, route := range randomPfxs {
-					rt.Insert(route, nil)
+					rt.Insert(route)
 				}
 			}
 			b.ReportMetric(float64(b.Elapsed())/float64(k)/float64(b.N), "ns/route")
@@ -33,9 +33,9 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 		name := common.IntMap[k]
 
 		b.Run(name, func(b *testing.B) {
-			rt := new(bart.Table[any])
+			rt := new(bart.Lite)
 			for _, route := range randomPfxs {
-				rt.Insert(route, nil)
+				rt.Insert(route)
 			}
 
 			for b.Loop() {
