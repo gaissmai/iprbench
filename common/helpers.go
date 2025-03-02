@@ -250,11 +250,6 @@ func RandomRealWorldPrefixes4(n int) []netip.Prefix {
 			continue
 		}
 
-		// skip multicast ...
-		if pfx.Overlaps(mpp("240.0.0.0/8")) {
-			continue
-		}
-
 		if _, ok := set[pfx]; !ok {
 			set[pfx] = pfx
 			pfxs = append(pfxs, pfx)
@@ -281,9 +276,6 @@ func RandomRealWorldPrefixes6(n int) []netip.Prefix {
 
 		// skip non global routes seen in the real world
 		if !pfx.Overlaps(mpp("2000::/3")) {
-			continue
-		}
-		if pfx.Addr().Compare(mpp("2c0f::/16").Addr()) == 1 {
 			continue
 		}
 
