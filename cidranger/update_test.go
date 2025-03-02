@@ -13,7 +13,7 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 	for _, k := range []int{1_000, 10_000, 100_000, 200_000} {
 		name := common.IntMap[k]
 
-		randomPfxs := common.RandomPrefixes(k)
+		randomPfxs := common.RandomRealWorldPrefixes(k)
 		randomRangerEntries := make([]cidranger.RangerEntry, 0, k)
 		for _, pfx := range randomPfxs {
 			randomRangerEntries = append(randomRangerEntries, cidranger.NewBasicRangerEntry(common.PfxToIPNet(pfx)))
@@ -38,7 +38,7 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 	for _, k := range []int{1_000, 10_000, 100_000, 200_000} {
 		name := common.IntMap[k]
 
-		randomPfxs := common.RandomPrefixes(k)
+		randomPfxs := common.RandomRealWorldPrefixes(k)
 		randomRangerEntries := make([]cidranger.RangerEntry, 0, k)
 		for _, pfx := range randomPfxs {
 			randomRangerEntries = append(randomRangerEntries, cidranger.NewBasicRangerEntry(common.PfxToIPNet(pfx)))

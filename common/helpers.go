@@ -33,6 +33,8 @@ var IntMap = map[int]string{
 	2_000_000: "2_000_000",
 }
 
+var mpp = netip.MustParsePrefix
+
 var Prng = rand.New(rand.NewPCG(42, 42))
 
 func IPis4(ip net.IP) bool {
@@ -184,9 +186,9 @@ func MissIP6(routes []netip.Prefix) netip.Addr {
 	}
 }
 
-// RandomPrefixes returns n randomly generated prefixes with at least /3..[32,128]
+// RandomRealWorldPrefixes returns n randomly generated prefixes with TODO
 // IPv4 and IPv6 Prefixes are naturally distributed 4:1.
-func RandomPrefixes(n int) []netip.Prefix {
+func RandomRealWorldPrefixes(n int) []netip.Prefix {
 	ret := make([]netip.Prefix, 0, n)
 
 	n4 := 4 * n / 5
@@ -195,86 +197,13 @@ func RandomPrefixes(n int) []netip.Prefix {
 		n4++
 	}
 
-	ret = append(ret, RandomPrefixes4(n4)...)
-	ret = append(ret, RandomPrefixes6(n6)...)
+	ret = append(ret, RandomRealWorldPrefixes4(n4)...)
+	ret = append(ret, RandomRealWorldPrefixes6(n6)...)
 
 	Prng.Shuffle(len(ret), func(i, j int) {
 		ret[i], ret[j] = ret[j], ret[i]
 	})
 	return ret
-}
-
-// RandomPrefixes4 returns n randomly generated IPv4 prefixes without default route.
-func RandomPrefixes4(n int) []netip.Prefix {
-	pfxs := map[netip.Prefix]bool{}
-
-	for len(pfxs) < n {
-		bits := Prng.IntN(30)
-		// skip default routes
-		bits += 3
-		pfx, err := RandomAddr4().Prefix(bits)
-		if err != nil {
-			panic(err)
-		}
-		pfxs[pfx] = true
-	}
-
-	ret := make([]netip.Prefix, 0, len(pfxs))
-	for pfx := range pfxs {
-		ret = append(ret, pfx)
-	}
-
-	return ret
-}
-
-// RandomPrefixes6 returns n randomly generated IPv6 prefixes without default route.
-func RandomPrefixes6(n int) []netip.Prefix {
-	pfxs := map[netip.Prefix]bool{}
-
-	for len(pfxs) < n {
-		bits := Prng.IntN(126)
-		// skip default routes
-		bits += 3
-		pfx, err := RandomAddr6().Prefix(bits)
-		if err != nil {
-			panic(err)
-		}
-		pfxs[pfx] = true
-	}
-
-	ret := make([]netip.Prefix, 0, len(pfxs))
-	for pfx := range pfxs {
-		ret = append(ret, pfx)
-	}
-
-	return ret
-}
-
-// RandomAddr returns a randomly generated IP address.
-// IPv4 and IPv6 Prefixes are distributed 1:1
-func RandomAddr() netip.Addr {
-	if Prng.IntN(2) == 1 {
-		return RandomAddr6()
-	}
-	return RandomAddr4()
-}
-
-// RandomAddr4 returns a randomly generated IPv4 address.
-func RandomAddr4() netip.Addr {
-	var b [4]byte
-	for i := range b {
-		b[i] = byte(Prng.Uint32() & 0xff)
-	}
-	return netip.AddrFrom4(b)
-}
-
-// RandomAddr6 returns a randomly generated IPv6 address.
-func RandomAddr6() netip.Addr {
-	var b [16]byte
-	for i := range b {
-		b[i] = byte(Prng.Uint32() & 0xff)
-	}
-	return netip.AddrFrom16(b)
 }
 
 func ReadFullTableShuffled(pfxFname string) []netip.Prefix {
@@ -305,4 +234,100 @@ func ReadFullTableShuffled(pfxFname string) []netip.Prefix {
 		ret[i], ret[j] = ret[j], ret[i]
 	})
 	return ret
+}
+
+// #########################################################
+
+func RandomRealWorldPrefixes4(n int) []netip.Prefix {
+	set := map[netip.Prefix]netip.Prefix{}
+	pfxs := make([]netip.Prefix, 0, n)
+
+	for {
+		pfx := randomPrefix4()
+
+		// skip too small or too big masks
+		if pfx.Bits() < 8 && pfx.Bits() > 28 {
+			continue
+		}
+
+		// skip multicast ...
+		if pfx.Overlaps(mpp("240.0.0.0/8")) {
+			continue
+		}
+
+		if _, ok := set[pfx]; !ok {
+			set[pfx] = pfx
+			pfxs = append(pfxs, pfx)
+		}
+
+		if len(set) >= n {
+			break
+		}
+	}
+	return pfxs
+}
+
+func RandomRealWorldPrefixes6(n int) []netip.Prefix {
+	set := map[netip.Prefix]netip.Prefix{}
+	pfxs := make([]netip.Prefix, 0, n)
+
+	for {
+		pfx := randomPrefix6()
+
+		// skip too small or too big masks
+		if pfx.Bits() < 16 || pfx.Bits() > 56 {
+			continue
+		}
+
+		// skip non global routes seen in the real world
+		if !pfx.Overlaps(mpp("2000::/3")) {
+			continue
+		}
+		if pfx.Addr().Compare(mpp("2c0f::/16").Addr()) == 1 {
+			continue
+		}
+
+		if _, ok := set[pfx]; !ok {
+			set[pfx] = pfx
+			pfxs = append(pfxs, pfx)
+		}
+		if len(set) >= n {
+			break
+		}
+	}
+	return pfxs
+}
+
+func randomPrefix4() netip.Prefix {
+	bits := Prng.IntN(33)
+	pfx, err := randomIP4().Prefix(bits)
+	if err != nil {
+		panic(err)
+	}
+	return pfx
+}
+
+func randomPrefix6() netip.Prefix {
+	bits := Prng.IntN(129)
+	pfx, err := randomIP6().Prefix(bits)
+	if err != nil {
+		panic(err)
+	}
+	return pfx
+}
+
+func randomIP4() netip.Addr {
+	var b [4]byte
+	for i := range b {
+		b[i] = byte(Prng.Uint32() & 0xff)
+	}
+	return netip.AddrFrom4(b)
+}
+
+func randomIP6() netip.Addr {
+	var b [16]byte
+	for i := range b {
+		b[i] = byte(Prng.Uint32() & 0xff)
+	}
+	return netip.AddrFrom16(b)
 }
