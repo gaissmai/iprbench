@@ -99,4 +99,4 @@ BenchmarkRandomPfxSize/200_000      	       1	       477.6 bytes/route
 BenchmarkRandomPfxSize/200_000      	       1	       477.6 bytes/route
 BenchmarkRandomPfxSize/200_000      	       1	       477.6 bytes/route
 PASS
-ok  	local/iprbench/cidranger	143.841s
+ok  	local/iprbench/cidranger	135.928s
