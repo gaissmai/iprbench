@@ -99,4 +99,4 @@ BenchmarkRandomPfxSize/200_000      	       1	      4586 bytes/route
 BenchmarkRandomPfxSize/200_000      	       1	      4586 bytes/route
 BenchmarkRandomPfxSize/200_000      	       1	      4586 bytes/route
 PASS
-ok  	local/iprbench/art	58.939s
+ok  	local/iprbench/art	60.254s
