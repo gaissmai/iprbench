@@ -4,6 +4,8 @@ github.com/aclements/go-moremath v0.0.0-20210112150236-f10218a38794 h1:xlwdaKcTN
 github.com/aclements/go-moremath v0.0.0-20210112150236-f10218a38794/go.mod h1:7e+I0LQFUI9AXWxOfsQROs9xPhoJtbsyWcjJqDd4KPY=
 github.com/aromatt/netipds v0.1.8 h1:UoGFEYr8uUaZGt/3LdcEIo2C0Skg0vZBf9V+2h0Ulhk=
 github.com/aromatt/netipds v0.1.8/go.mod h1:TVWwAV/IghERh+218SzJz1DfixOswt5/BhiOAUs99Hc=
+github.com/aromatt/netipds v0.1.9 h1:VmbfQDMwFZFrRP0PWl3xw/+22MU31T/rqxIrROqda2Q=
+github.com/aromatt/netipds v0.1.9/go.mod h1:495wZM0W/P9zQ/QpbEhNxR54H/7I0w7WDZhmX9kRkjM=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/gaissmai/bart v0.20.0 h1:bdZ+LjJzXXLAh8JmEaVgGSfgh6CYtbr22jKvvI/AoOI=
