@@ -59,7 +59,7 @@ func PfxToIPNet(p netip.Prefix) net.IPNet {
 }
 
 // MatchIP4 returns a random IP covered by the routing table.
-// The matching IP is found with the help of the art algorithm, it's the fastest algo.
+// The matching IP is found with the help of the bart algorithm, it's the fastest algo.
 func MatchIP4(routes []netip.Prefix) netip.Addr {
 	rt := new(bart.Table[struct{}])
 	for _, r := range routes {
@@ -90,7 +90,7 @@ func MatchIP4(routes []netip.Prefix) netip.Addr {
 }
 
 // MatchIP6 returns a random IP covered by the routing table.
-// The matching IP is found with the help of the art algorithm, it's the fastest algo.
+// The matching IP is found with the help of the bart algorithm, it's the fastest algo.
 func MatchIP6(routes []netip.Prefix) netip.Addr {
 	rt := new(bart.Table[struct{}])
 	for _, r := range routes {
@@ -121,7 +121,7 @@ func MatchIP6(routes []netip.Prefix) netip.Addr {
 }
 
 // MissIP4 returns a random IP NOT covered by the routing table.
-// The missing IP is found with the help of the art algorithm, it's the fastest algo.
+// The missing IP is found with the help of the bart algorithm, it's the fastest algo.
 func MissIP4(routes []netip.Prefix) netip.Addr {
 	rt := new(bart.Table[struct{}])
 	for _, r := range routes {
@@ -154,7 +154,7 @@ func MissIP4(routes []netip.Prefix) netip.Addr {
 }
 
 // MissIP6 returns a random IP NOT covered by the routing table.
-// The missing IP is found with the help of the art algorithm, it's the fastest algo.
+// The missing IP is found with the help of the bart algorithm, it's the fastest algo.
 func MissIP6(routes []netip.Prefix) netip.Addr {
 	rt := new(bart.Table[struct{}])
 	for _, r := range routes {
