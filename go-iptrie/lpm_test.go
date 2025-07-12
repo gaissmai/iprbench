@@ -28,7 +28,7 @@ func BenchmarkLpmTier1Pfxs(b *testing.B) {
 	for _, bm := range benchmarks {
 		b.Run(bm.name, func(b *testing.B) {
 			ip := bm.fn(tier1Routes)
-			for range b.N {
+			for b.Loop() {
 				rt.Contains(ip)
 			}
 		})
@@ -56,7 +56,7 @@ func BenchmarkLpmRandomPfxs(b *testing.B) {
 
 			b.Run(common.IntMap[k]+"/"+bm.name, func(b *testing.B) {
 				ip := bm.fn(randomRoutes[:k]) // get a random matching or missing ip
-				for range b.N {
+				for b.Loop() {
 					rt.Contains(ip)
 				}
 			})
