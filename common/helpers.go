@@ -143,6 +143,10 @@ func MissIP4(routes []netip.Prefix) netip.Addr {
 		_, last := extnetip.Range(pfx)
 		// ... add one
 		ip = last.Next()
+		if !ip.IsValid() {
+			continue
+		}
+
 		if ok := rt.Contains(ip); !ok {
 			return ip
 		}
@@ -176,6 +180,10 @@ func MissIP6(routes []netip.Prefix) netip.Addr {
 		_, last := extnetip.Range(pfx)
 		// ... add one
 		ip = last.Next()
+		if !ip.IsValid() {
+			continue
+		}
+
 		if ok := rt.Contains(ip); !ok {
 			return ip
 		}
