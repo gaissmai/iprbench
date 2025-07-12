@@ -9,6 +9,7 @@ require (
 	github.com/gaissmai/cidrtree v0.5.0
 	github.com/gaissmai/extnetip v1.1.0
 	github.com/k-sone/critbitgo v1.4.0
+	github.com/phemmer/go-iptrie v0.0.0-20240326174613-ba542f5282c9
 	github.com/tailscale/art v0.0.0-20231101034115-3827a3c782e9
 	github.com/yl2chen/cidranger v1.0.2
 )

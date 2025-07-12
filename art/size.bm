@@ -33,11 +33,11 @@ BenchmarkRandomPfx4Size/1_000       	       1	      5259 bytes/route
 BenchmarkRandomPfx4Size/1_000       	       1	      5259 bytes/route
 BenchmarkRandomPfx4Size/1_000       	       1	      5259 bytes/route
 BenchmarkRandomPfx4Size/10_000      	       1	      4059 bytes/route
-BenchmarkRandomPfx4Size/10_000      	       1	      4059 bytes/route
-BenchmarkRandomPfx4Size/10_000      	       1	      4059 bytes/route
-BenchmarkRandomPfx4Size/10_000      	       1	      4059 bytes/route
-BenchmarkRandomPfx4Size/10_000      	       1	      4059 bytes/route
-BenchmarkRandomPfx4Size/10_000      	       1	      4059 bytes/route
+BenchmarkRandomPfx4Size/10_000      	       1	      4060 bytes/route
+BenchmarkRandomPfx4Size/10_000      	       1	      4060 bytes/route
+BenchmarkRandomPfx4Size/10_000      	       1	      4060 bytes/route
+BenchmarkRandomPfx4Size/10_000      	       1	      4060 bytes/route
+BenchmarkRandomPfx4Size/10_000      	       1	      4060 bytes/route
 BenchmarkRandomPfx4Size/100_000     	       1	      3938 bytes/route
 BenchmarkRandomPfx4Size/100_000     	       1	      3938 bytes/route
 BenchmarkRandomPfx4Size/100_000     	       1	      3938 bytes/route
@@ -75,11 +75,11 @@ BenchmarkRandomPfx6Size/200_000     	       1	      5526 bytes/route
 BenchmarkRandomPfx6Size/200_000     	       1	      5526 bytes/route
 BenchmarkRandomPfx6Size/200_000     	       1	      5526 bytes/route
 BenchmarkRandomPfxSize/1_000        	       1	      7536 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	      7537 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	      7537 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	      7537 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	      7537 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	      7537 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	      7538 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	      7538 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	      7538 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	      7538 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	      7538 bytes/route
 BenchmarkRandomPfxSize/10_000       	       1	      6058 bytes/route
 BenchmarkRandomPfxSize/10_000       	       1	      6058 bytes/route
 BenchmarkRandomPfxSize/10_000       	       1	      6058 bytes/route
@@ -99,4 +99,4 @@ BenchmarkRandomPfxSize/200_000      	       1	      4586 bytes/route
 BenchmarkRandomPfxSize/200_000      	       1	      4586 bytes/route
 BenchmarkRandomPfxSize/200_000      	       1	      4586 bytes/route
 PASS
-ok  	local/iprbench/art	60.254s
+ok  	local/iprbench/art	51.965s

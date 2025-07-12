@@ -2,18 +2,18 @@ goos: linux
 goarch: amd64
 pkg: local/iprbench/critbitgo
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
-BenchmarkTier1PfxSize/1_000         	       1	       117.6 bytes/route
-BenchmarkTier1PfxSize/1_000         	       1	       119.5 bytes/route
-BenchmarkTier1PfxSize/1_000         	       1	       119.5 bytes/route
-BenchmarkTier1PfxSize/1_000         	       1	       119.5 bytes/route
-BenchmarkTier1PfxSize/1_000         	       1	       119.5 bytes/route
-BenchmarkTier1PfxSize/1_000         	       1	       119.5 bytes/route
+BenchmarkTier1PfxSize/1_000         	       1	       117.7 bytes/route
+BenchmarkTier1PfxSize/1_000         	       1	       119.6 bytes/route
+BenchmarkTier1PfxSize/1_000         	       1	       119.6 bytes/route
+BenchmarkTier1PfxSize/1_000         	       1	       119.6 bytes/route
+BenchmarkTier1PfxSize/1_000         	       1	       119.6 bytes/route
+BenchmarkTier1PfxSize/1_000         	       1	       119.6 bytes/route
 BenchmarkTier1PfxSize/10_000        	       1	       114.6 bytes/route
-BenchmarkTier1PfxSize/10_000        	       1	       114.7 bytes/route
-BenchmarkTier1PfxSize/10_000        	       1	       114.7 bytes/route
-BenchmarkTier1PfxSize/10_000        	       1	       114.7 bytes/route
-BenchmarkTier1PfxSize/10_000        	       1	       114.7 bytes/route
-BenchmarkTier1PfxSize/10_000        	       1	       114.7 bytes/route
+BenchmarkTier1PfxSize/10_000        	       1	       114.8 bytes/route
+BenchmarkTier1PfxSize/10_000        	       1	       114.8 bytes/route
+BenchmarkTier1PfxSize/10_000        	       1	       114.8 bytes/route
+BenchmarkTier1PfxSize/10_000        	       1	       114.8 bytes/route
+BenchmarkTier1PfxSize/10_000        	       1	       114.8 bytes/route
 BenchmarkTier1PfxSize/100_000       	       1	       114.4 bytes/route
 BenchmarkTier1PfxSize/100_000       	       1	       114.4 bytes/route
 BenchmarkTier1PfxSize/100_000       	       1	       114.4 bytes/route
@@ -39,11 +39,11 @@ BenchmarkTier1PfxSize/1_000_000     	       1	       114.4 bytes/route
 BenchmarkTier1PfxSize/1_000_000     	       1	       114.4 bytes/route
 BenchmarkTier1PfxSize/1_000_000     	       1	       114.4 bytes/route
 BenchmarkRandomPfx4Size/1_000       	       1	       114.3 bytes/route
-BenchmarkRandomPfx4Size/1_000       	       1	       116.1 bytes/route
-BenchmarkRandomPfx4Size/1_000       	       1	       116.1 bytes/route
-BenchmarkRandomPfx4Size/1_000       	       1	       116.1 bytes/route
-BenchmarkRandomPfx4Size/1_000       	       1	       116.1 bytes/route
-BenchmarkRandomPfx4Size/1_000       	       1	       116.1 bytes/route
+BenchmarkRandomPfx4Size/1_000       	       1	       116.3 bytes/route
+BenchmarkRandomPfx4Size/1_000       	       1	       116.3 bytes/route
+BenchmarkRandomPfx4Size/1_000       	       1	       116.3 bytes/route
+BenchmarkRandomPfx4Size/1_000       	       1	       116.3 bytes/route
+BenchmarkRandomPfx4Size/1_000       	       1	       116.3 bytes/route
 BenchmarkRandomPfx4Size/10_000      	       1	       112.2 bytes/route
 BenchmarkRandomPfx4Size/10_000      	       1	       112.4 bytes/route
 BenchmarkRandomPfx4Size/10_000      	       1	       112.4 bytes/route
@@ -75,11 +75,11 @@ BenchmarkRandomPfx4Size/1_000_000   	       1	       112.0 bytes/route
 BenchmarkRandomPfx4Size/1_000_000   	       1	       112.0 bytes/route
 BenchmarkRandomPfx4Size/1_000_000   	       1	       112.0 bytes/route
 BenchmarkRandomPfx6Size/1_000       	       1	       130.3 bytes/route
-BenchmarkRandomPfx6Size/1_000       	       1	       132.1 bytes/route
-BenchmarkRandomPfx6Size/1_000       	       1	       132.1 bytes/route
-BenchmarkRandomPfx6Size/1_000       	       1	       132.1 bytes/route
-BenchmarkRandomPfx6Size/1_000       	       1	       132.1 bytes/route
-BenchmarkRandomPfx6Size/1_000       	       1	       132.1 bytes/route
+BenchmarkRandomPfx6Size/1_000       	       1	       132.2 bytes/route
+BenchmarkRandomPfx6Size/1_000       	       1	       132.2 bytes/route
+BenchmarkRandomPfx6Size/1_000       	       1	       132.2 bytes/route
+BenchmarkRandomPfx6Size/1_000       	       1	       132.2 bytes/route
+BenchmarkRandomPfx6Size/1_000       	       1	       132.2 bytes/route
 BenchmarkRandomPfx6Size/10_000      	       1	       128.2 bytes/route
 BenchmarkRandomPfx6Size/10_000      	       1	       128.4 bytes/route
 BenchmarkRandomPfx6Size/10_000      	       1	       128.4 bytes/route
@@ -110,12 +110,12 @@ BenchmarkRandomPfx6Size/1_000_000   	       1	       128.0 bytes/route
 BenchmarkRandomPfx6Size/1_000_000   	       1	       128.0 bytes/route
 BenchmarkRandomPfx6Size/1_000_000   	       1	       128.0 bytes/route
 BenchmarkRandomPfx6Size/1_000_000   	       1	       128.0 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	       117.6 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	       119.5 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	       119.5 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	       119.5 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	       119.5 bytes/route
-BenchmarkRandomPfxSize/1_000        	       1	       119.5 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	       117.7 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	       119.6 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	       119.6 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	       119.6 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	       119.6 bytes/route
+BenchmarkRandomPfxSize/1_000        	       1	       119.6 bytes/route
 BenchmarkRandomPfxSize/10_000       	       1	       115.4 bytes/route
 BenchmarkRandomPfxSize/10_000       	       1	       115.6 bytes/route
 BenchmarkRandomPfxSize/10_000       	       1	       115.6 bytes/route
@@ -147,4 +147,4 @@ BenchmarkRandomPfxSize/1_000_000    	       1	       115.2 bytes/route
 BenchmarkRandomPfxSize/1_000_000    	       1	       115.2 bytes/route
 BenchmarkRandomPfxSize/1_000_000    	       1	       115.2 bytes/route
 PASS
-ok  	local/iprbench/critbitgo	110.157s
+ok  	local/iprbench/critbitgo	84.935s
