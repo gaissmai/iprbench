@@ -55,12 +55,13 @@ func (t *Table[V]) Delete(pfx netip.Prefix) {
 func (t *Table[V]) Lookup(ip netip.Addr) (val V, ok bool) {
 	if ip.Is4() {
 		addr := patricia.NewIPv4AddressFromBytes(ip.AsSlice(), 32)
+		// switch order of return values
 		ok, val = t.v4.FindDeepestTag(addr)
 		return
 	}
 	addr := patricia.NewIPv6Address(ip.AsSlice(), 128)
 
-	// switch order
+	// switch order of return values
 	ok, val = t.v6.FindDeepestTag(addr)
 	return
 }
