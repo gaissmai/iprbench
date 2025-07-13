@@ -10,6 +10,7 @@ comparing benchmarks for some golang IP routing table implementations:
 	github.com/yl2chen/cidranger
 	github.com/gaissmai/cidrtree
 	github.com/phemmer/go-iptrie 
+	github.com/kentik/patricia
 ```
 
 The ~1_000_000 **Tier1** prefix test records (IPv4 and IPv6 routes) are from a full Internet

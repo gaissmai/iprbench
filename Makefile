@@ -6,7 +6,8 @@ dep:
 	go mod tidy
 	go install tool
 
-size: bart/size.bm art/size.bm netipds/size.bm critbitgo/size.bm lpmtrie/size.bm cidranger/size.bm cidrtree/size.bm go-iptrie/size.bm 
+size: bart/size.bm art/size.bm netipds/size.bm critbitgo/size.bm lpmtrie/size.bm cidranger/size.bm \
+	cidrtree/size.bm go-iptrie/size.bm kentik-patricia/size.bm
 	@echo
 	@go tool benchstat -ignore=pkg bart/size.bm   art/size.bm
 	@echo
@@ -21,8 +22,11 @@ size: bart/size.bm art/size.bm netipds/size.bm critbitgo/size.bm lpmtrie/size.bm
 	@go tool benchstat -ignore=pkg bart/size.bm   cidrtree/size.bm
 	@echo
 	@go tool benchstat -ignore=pkg bart/size.bm   go-iptrie/size.bm
+	@echo
+	@go tool benchstat -ignore=pkg bart/size.bm   kentik-patricia/size.bm
 
-lpm: bart/lpm.bm art/lpm.bm netipds/lpm.bm critbitgo/lpm.bm lpmtrie/lpm.bm cidranger/lpm.bm cidrtree/lpm.bm go-iptrie/lpm.bm
+lpm: bart/lpm.bm art/lpm.bm netipds/lpm.bm critbitgo/lpm.bm lpmtrie/lpm.bm cidranger/lpm.bm cidrtree/lpm.bm \
+	go-iptrie/lpm.bm kentik-patricia/lpm.bm
 	@echo
 	@go tool benchstat -ignore=pkg bart/lpm.bm   art/lpm.bm
 	@echo
@@ -37,8 +41,12 @@ lpm: bart/lpm.bm art/lpm.bm netipds/lpm.bm critbitgo/lpm.bm lpmtrie/lpm.bm cidra
 	@go tool benchstat -ignore=pkg bart/lpm.bm   cidrtree/lpm.bm
 	@echo
 	@go tool benchstat -ignore=pkg bart/lpm.bm   go-iptrie/lpm.bm
+	@echo
+	@go tool benchstat -ignore=pkg bart/lpm.bm   kentik-patricia/lpm.bm
 
-update: bart/update.bm art/update.bm netipds/update.bm critbitgo/update.bm lpmtrie/update.bm cidranger/update.bm cidrtree/update.bm go-iptrie/update.bm 
+
+update: bart/update.bm art/update.bm netipds/update.bm critbitgo/update.bm lpmtrie/update.bm cidranger/update.bm \
+	cidrtree/update.bm go-iptrie/update.bm kentik-patricia/update.bm
 	@echo
 	@go tool benchstat -ignore=pkg bart/update.bm    art/update.bm
 	@echo
@@ -53,6 +61,8 @@ update: bart/update.bm art/update.bm netipds/update.bm critbitgo/update.bm lpmtr
 	@go tool benchstat -ignore=pkg bart/update.bm    cidrtree/update.bm
 	@echo
 	@go tool benchstat -ignore=pkg bart/update.bm    go-iptrie/update.bm
+	@echo
+	@go tool benchstat -ignore=pkg bart/update.bm    kentik-patricia/update.bm
 
 #
 # benchmarks for lpm
@@ -81,6 +91,9 @@ cidrtree/lpm.bm:
 go-iptrie/lpm.bm:
 	cd go-iptrie &&  go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
+kentik-patricia/lpm.bm:
+	cd kentik-patricia &&  go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
+
 #
 # benchmarks for tree/trie sizes, deterministic -> -benchtime=1x
 #
@@ -107,6 +120,9 @@ cidrtree/size.bm:
 
 go-iptrie/size.bm:
 	cd go-iptrie &&  go test -run=XXX  -cpu=1 -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
+
+kentik-patricia/size.bm:
+	cd kentik-patricia &&  go test -run=XXX  -cpu=1 -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
 
 #
 # benchmarks for insert/delete
@@ -135,4 +151,7 @@ cidrtree/update.bm:
 
 go-iptrie/update.bm:
 	cd go-iptrie &&  go test -run=XXX  -cpu=1 -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
+
+kentik-patricia/update.bm:
+	cd kentik-patricia &&  go test -run=XXX  -cpu=1 -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
 
