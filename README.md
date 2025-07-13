@@ -197,6 +197,29 @@ LpmRandomPfxs/100_000/RandomMatchIP6   25.71n ±  0%   160.75n ±  4%   +525.24%
 LpmRandomPfxs/100_000/RandomMissIP4    18.32n ± 39%   175.65n ±  5%   +858.79% (p=0.000 n=20)
 LpmRandomPfxs/100_000/RandomMissIP6    25.71n ±  0%   162.35n ±  6%   +531.47% (p=0.000 n=20)
 geomean                                19.83n          152.8n         +670.46%
+
+goos: linux
+goarch: amd64
+cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
+                                     │ bart/lpm.bm  │         kentik-patricia/lpm.bm          │
+                                     │    sec/op    │    sec/op      vs base                  │
+LpmTier1Pfxs/RandomMatchIP4            16.38n ±  5%   181.05n ±  9%  +1004.97% (p=0.000 n=20)
+LpmTier1Pfxs/RandomMatchIP6            28.70n ± 30%   259.65n ± 22%   +804.55% (p=0.000 n=20)
+LpmTier1Pfxs/RandomMissIP4             18.61n ±  0%   143.75n ±  5%   +672.23% (p=0.000 n=20)
+LpmTier1Pfxs/RandomMissIP6             29.07n ± 36%   166.80n ± 13%   +473.79% (p=0.000 n=20)
+LpmRandomPfxs/1_000/RandomMatchIP4     16.54n ±  0%    81.81n ±  8%   +394.44% (p=0.000 n=20)
+LpmRandomPfxs/1_000/RandomMatchIP6     19.24n ±  0%    99.82n ± 16%   +418.81% (p=0.000 n=20)
+LpmRandomPfxs/1_000/RandomMissIP4      16.59n ±  9%    68.03n ±  5%   +310.07% (p=0.000 n=20)
+LpmRandomPfxs/1_000/RandomMissIP6      19.23n ±  0%    78.61n ± 11%   +308.81% (p=0.000 n=20)
+LpmRandomPfxs/10_000/RandomMatchIP4    18.19n ±  0%   105.90n ±  7%   +482.19% (p=0.000 n=20)
+LpmRandomPfxs/10_000/RandomMatchIP6    19.25n ±  0%   124.70n ±  3%   +547.79% (p=0.000 n=20)
+LpmRandomPfxs/10_000/RandomMissIP4     18.16n ±  0%    93.60n ±  4%   +415.45% (p=0.000 n=20)
+LpmRandomPfxs/10_000/RandomMissIP6     19.27n ± 33%   108.40n ±  4%   +462.68% (p=0.000 n=20)
+LpmRandomPfxs/100_000/RandomMatchIP4   14.88n ± 41%   134.00n ±  8%   +800.24% (p=0.000 n=20)
+LpmRandomPfxs/100_000/RandomMatchIP6   25.71n ±  0%   153.60n ±  3%   +497.43% (p=0.000 n=20)
+LpmRandomPfxs/100_000/RandomMissIP4    18.32n ± 39%   109.45n ±  5%   +497.43% (p=0.000 n=20)
+LpmRandomPfxs/100_000/RandomMissIP6    25.71n ±  0%   136.70n ±  6%   +431.70% (p=0.000 n=20)
+geomean                                19.83n          120.7n         +508.78%
 ```
 
 ## size of the routing tables
@@ -428,6 +451,37 @@ RandomPfxSize/200_000        65.49 ± 0%   138.70 ± 0%  +111.79% (p=0.002 n=6)
 RandomPfxSize/500_000        47.95 ± 0%   128.80 ± 0%  +168.61% (p=0.002 n=6)
 RandomPfxSize/1_000_000      39.50 ± 0%   120.50 ± 0%  +205.06% (p=0.002 n=6)
 geomean                      56.09         141.8       +152.79%
+
+goos: linux
+goarch: amd64
+cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
+                         │ bart/size.bm │       kentik-patricia/size.bm       │
+                         │ bytes/route  │ bytes/route  vs base                │
+Tier1PfxSize/1_000           104.1 ± 2%    145.4 ± 1%   +39.67% (p=0.002 n=6)
+Tier1PfxSize/10_000          76.06 ± 0%   200.20 ± 0%  +163.21% (p=0.002 n=6)
+Tier1PfxSize/100_000         41.17 ± 0%   164.00 ± 0%  +298.35% (p=0.002 n=6)
+Tier1PfxSize/200_000         32.85 ± 0%   164.00 ± 0%  +399.24% (p=0.002 n=6)
+Tier1PfxSize/500_000         25.19 ± 0%   144.50 ± 0%  +473.64% (p=0.002 n=6)
+Tier1PfxSize/1_000_000       21.39 ± 0%   144.50 ± 0%  +575.55% (p=0.002 n=6)
+RandomPfx4Size/1_000         74.64 ± 3%   140.70 ± 1%   +88.50% (p=0.002 n=6)
+RandomPfx4Size/10_000        48.26 ± 0%   109.60 ± 0%  +127.10% (p=0.002 n=6)
+RandomPfx4Size/100_000       59.57 ± 0%   139.80 ± 0%  +134.68% (p=0.002 n=6)
+RandomPfx4Size/200_000       52.51 ± 0%   139.80 ± 0%  +166.24% (p=0.002 n=6)
+RandomPfx4Size/500_000       37.84 ± 0%   139.70 ± 0%  +269.19% (p=0.002 n=6)
+RandomPfx4Size/1_000_000     31.83 ± 0%   139.80 ± 0%  +339.21% (p=0.002 n=6)
+RandomPfx6Size/1_000         82.67 ± 2%   157.10 ± 1%   +90.03% (p=0.002 n=6)
+RandomPfx6Size/10_000        98.87 ± 0%   201.30 ± 0%  +103.60% (p=0.002 n=6)
+RandomPfx6Size/100_000       67.59 ± 0%   160.80 ± 0%  +137.91% (p=0.002 n=6)
+RandomPfx6Size/200_000       64.96 ± 0%   160.80 ± 0%  +147.54% (p=0.002 n=6)
+RandomPfx6Size/500_000       67.62 ± 0%   156.30 ± 0%  +131.14% (p=0.002 n=6)
+RandomPfx6Size/1_000_000     73.74 ± 0%   156.50 ± 0%  +112.23% (p=0.002 n=6)
+RandomPfxSize/1_000          98.98 ± 2%   144.50 ± 1%   +45.99% (p=0.002 n=6)
+RandomPfxSize/10_000         71.38 ± 0%   140.20 ± 0%   +96.41% (p=0.002 n=6)
+RandomPfxSize/100_000        76.54 ± 0%   180.00 ± 0%  +135.17% (p=0.002 n=6)
+RandomPfxSize/200_000        65.49 ± 0%   180.00 ± 0%  +174.85% (p=0.002 n=6)
+RandomPfxSize/500_000        47.95 ± 0%   144.00 ± 0%  +200.31% (p=0.002 n=6)
+RandomPfxSize/1_000_000      39.50 ± 0%   144.00 ± 0%  +264.56% (p=0.002 n=6)
+geomean                      56.09         152.8       +172.40%
 ```
 
 ## update, insert/delete
@@ -539,4 +593,19 @@ DeleteRandomPfxs/10_000      16.80n ±  0%    18.65n ± 2%   +10.98% (p=0.002 n=
 DeleteRandomPfxs/100_000     17.07n ±  1%    19.78n ± 2%   +15.84% (p=0.002 n=6)
 DeleteRandomPfxs/200_000     17.62n ±  0%    21.07n ± 3%   +19.55% (p=0.002 n=6)
 geomean                      30.91n          82.25n       +166.13%
+
+goos: linux
+goarch: amd64
+cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
+                         │ bart/update.bm │      kentik-patricia/update.bm       │
+                         │   sec/route    │  sec/route    vs base                │
+InsertRandomPfxs/1_000       30.43n ±  3%   190.60n ± 1%  +526.36% (p=0.002 n=6)
+InsertRandomPfxs/10_000      36.54n ±  3%   286.70n ± 0%  +684.62% (p=0.002 n=6)
+InsertRandomPfxs/100_000     76.37n ± 10%   559.15n ± 0%  +632.16% (p=0.002 n=6)
+InsertRandomPfxs/200_000     115.7n ±  1%    704.1n ± 1%  +508.56% (p=0.002 n=6)
+DeleteRandomPfxs/1_000       16.75n ±  0%    13.03n ± 0%   -22.23% (p=0.002 n=6)
+DeleteRandomPfxs/10_000      16.80n ±  0%    15.05n ± 0%   -10.44% (p=0.002 n=6)
+DeleteRandomPfxs/100_000     17.07n ±  1%    16.33n ± 0%    -4.36% (p=0.002 n=6)
+DeleteRandomPfxs/200_000     17.62n ±  0%    19.04n ± 1%    +8.03% (p=0.002 n=6)
+geomean                      30.91n          77.58n       +151.00%
 ```
