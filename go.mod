@@ -1,6 +1,6 @@
 module local/iprbench
 
-go 1.24.0
+go 1.25.0
 
 require (
 	github.com/Asphaltt/lpmtrie v0.0.0-20220205153150-3d814250b8ab
