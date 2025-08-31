@@ -26,7 +26,7 @@ of 4 parts IPv4 to 1 part IPv6 random prefixes, which is approximately the curre
 
 ```
   $ # set the proper cpu feature flags, e.g.
-  $ export GOAMD64='v2'
+  $ export GOAMD64=v3
 
   $ make dep
   $ make -B all   # takes some time!
