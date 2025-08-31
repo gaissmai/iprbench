@@ -14,8 +14,10 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 		randomPfxs := common.RandomRealWorldPrefixes(k)
 
 		b.Run(name, func(b *testing.B) {
-			rt := new(bart.Lite)
 			for b.Loop() {
+				rt := new(bart.Lite)
+
+				b.StartTimer()
 				for _, route := range randomPfxs {
 					rt.Insert(route)
 				}
@@ -33,12 +35,13 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 		name := common.IntMap[k]
 
 		b.Run(name, func(b *testing.B) {
-			rt := new(bart.Lite)
-			for _, route := range randomPfxs {
-				rt.Insert(route)
-			}
-
 			for b.Loop() {
+				rt := new(bart.Lite)
+				for _, route := range randomPfxs {
+					rt.Insert(route)
+				}
+
+				b.StartTimer()
 				for _, route := range randomPfxs {
 					rt.Delete(route)
 				}

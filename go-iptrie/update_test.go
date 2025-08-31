@@ -14,8 +14,10 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 		randomPfxs := common.RandomRealWorldPrefixes(k)
 
 		b.Run(name, func(b *testing.B) {
-			rt := iptrie.NewTrie()
 			for b.Loop() {
+				rt := iptrie.NewTrie()
+
+				b.StartTimer()
 				for _, route := range randomPfxs {
 					rt.Insert(route, nil)
 				}
@@ -33,12 +35,13 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 		name := common.IntMap[k]
 
 		b.Run(name, func(b *testing.B) {
-			rt := iptrie.NewTrie()
-			for _, route := range randomPfxs {
-				rt.Insert(route, nil)
-			}
-
 			for b.Loop() {
+				rt := iptrie.NewTrie()
+				for _, route := range randomPfxs {
+					rt.Insert(route, nil)
+				}
+
+				b.StartTimer()
 				for _, route := range randomPfxs {
 					rt.Remove(route)
 				}

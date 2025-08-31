@@ -1,7 +1,6 @@
 package main_test
 
 import (
-	"runtime"
 	"testing"
 
 	"local/iprbench/common"
@@ -15,10 +14,10 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 		randomPfxs := common.RandomRealWorldPrefixes(k)
 
 		b.Run(name, func(b *testing.B) {
-			psb := new(netipds.PrefixSetBuilder)
-
-			runtime.GC()
 			for b.Loop() {
+				psb := new(netipds.PrefixSetBuilder)
+
+				b.StartTimer()
 				for _, route := range randomPfxs {
 					psb.Add(route)
 				}
@@ -36,13 +35,13 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 		name := common.IntMap[k]
 
 		b.Run(name, func(b *testing.B) {
-			psb := new(netipds.PrefixSetBuilder)
-			for _, route := range randomPfxs {
-				psb.Add(route)
-			}
-
-			runtime.GC()
 			for b.Loop() {
+				psb := new(netipds.PrefixSetBuilder)
+				for _, route := range randomPfxs {
+					psb.Add(route)
+				}
+
+				b.StartTimer()
 				for _, route := range randomPfxs {
 					psb.Remove(route)
 				}

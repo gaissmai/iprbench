@@ -2,7 +2,6 @@ package main_test
 
 import (
 	"net"
-	"runtime"
 	"testing"
 
 	"local/iprbench/common"
@@ -19,10 +18,10 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 		}
 
 		b.Run(name, func(b *testing.B) {
-			rt := NewTable()
-
-			runtime.GC()
 			for b.Loop() {
+				rt := NewTable()
+
+				b.StartTimer()
 				for _, route := range randomIPNets {
 					rt.Insert(route, nil)
 				}
@@ -44,13 +43,13 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 		}
 
 		b.Run(name, func(b *testing.B) {
-			rt := NewTable()
-			for _, route := range randomIPNets {
-				rt.Insert(route, nil)
-			}
-
-			runtime.GC()
 			for b.Loop() {
+				rt := NewTable()
+				for _, route := range randomIPNets {
+					rt.Insert(route, nil)
+				}
+
+				b.StartTimer()
 				for _, route := range randomIPNets {
 					rt.Delete(route)
 				}

@@ -1,7 +1,6 @@
 package main_test
 
 import (
-	"runtime"
 	"testing"
 
 	"local/iprbench/common"
@@ -15,10 +14,10 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 		randomPfxs := common.RandomRealWorldPrefixes(k)
 
 		b.Run(name, func(b *testing.B) {
-			rt := new(cidrtree.Table[any])
-
-			runtime.GC()
 			for b.Loop() {
+				rt := new(cidrtree.Table[any])
+
+				b.StartTimer()
 				for _, route := range randomPfxs {
 					rt.Insert(route, nil)
 				}
@@ -36,13 +35,13 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 		name := common.IntMap[k]
 
 		b.Run(name, func(b *testing.B) {
-			rt := new(cidrtree.Table[any])
-			for _, route := range randomPfxs {
-				rt.Insert(route, nil)
-			}
-
-			runtime.GC()
 			for b.Loop() {
+				rt := new(cidrtree.Table[any])
+				for _, route := range randomPfxs {
+					rt.Insert(route, nil)
+				}
+
+				b.StartTimer()
 				for _, route := range randomPfxs {
 					rt.Delete(route)
 				}

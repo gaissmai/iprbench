@@ -492,120 +492,120 @@ geomean                      56.09         152.8       +172.40%
 goos: linux
 goarch: amd64
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
-                         │ bart/update.bm │              art/update.bm              │
-                         │   sec/route    │   sec/route     vs base                 │
-InsertRandomPfxs/1_000       30.43n ±  3%    296.85n ±  2%   +875.52% (p=0.002 n=6)
-InsertRandomPfxs/10_000      36.54n ±  3%    415.30n ±  3%  +1036.56% (p=0.002 n=6)
-InsertRandomPfxs/100_000     76.37n ± 10%   1463.50n ± 11%  +1816.33% (p=0.002 n=6)
-InsertRandomPfxs/200_000     115.7n ±  1%    1275.5n ± 40%  +1002.42% (p=0.002 n=6)
-DeleteRandomPfxs/1_000       16.75n ±  0%     16.43n ±  1%     -1.94% (p=0.002 n=6)
-DeleteRandomPfxs/10_000      16.80n ±  0%     16.23n ±  0%     -3.39% (p=0.002 n=6)
-DeleteRandomPfxs/100_000     17.07n ±  1%     16.69n ±  0%     -2.25% (p=0.002 n=6)
-DeleteRandomPfxs/200_000     17.62n ±  0%     17.80n ±  0%     +0.96% (p=0.002 n=6)
-geomean                      30.91n           107.8n         +248.78%
+                         │ bart/update.bm │             art/update.bm              │
+                         │   sec/route    │   sec/route    vs base                 │
+InsertRandomPfxs/1_000       245.6n ±  5%   2941.5n ± 11%  +1097.92% (p=0.002 n=6)
+InsertRandomPfxs/10_000      177.8n ±  3%   2290.0n ±  2%  +1188.33% (p=0.002 n=6)
+InsertRandomPfxs/100_000     266.4n ±  1%   2944.0n ± 72%  +1004.90% (p=0.002 n=6)
+InsertRandomPfxs/200_000     269.7n ±  3%   2983.0n ±  7%  +1006.25% (p=0.002 n=6)
+DeleteRandomPfxs/1_000       386.2n ±  4%   3367.5n ±  5%   +771.84% (p=0.002 n=6)
+DeleteRandomPfxs/10_000      248.6n ±  3%   3266.5n ±  3%  +1214.22% (p=0.002 n=6)
+DeleteRandomPfxs/100_000     454.9n ± 12%   4125.5n ± 27%   +806.80% (p=0.002 n=6)
+DeleteRandomPfxs/200_000     487.6n ± 14%   3924.5n ± 12%   +704.78% (p=0.002 n=6)
+geomean                      300.7n          3.183µ         +958.62%
 
 goos: linux
 goarch: amd64
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
-                         │ bart/update.bm │           netipds/update.bm           │
-                         │   sec/route    │  sec/route    vs base                 │
-InsertRandomPfxs/1_000       30.43n ±  3%   152.10n ± 1%   +399.84% (p=0.002 n=6)
-InsertRandomPfxs/10_000      36.54n ±  3%   215.00n ± 0%   +488.40% (p=0.002 n=6)
-InsertRandomPfxs/100_000     76.37n ± 10%   331.20n ± 2%   +333.68% (p=0.002 n=6)
-InsertRandomPfxs/200_000     115.7n ±  1%    434.8n ± 1%   +275.76% (p=0.002 n=6)
-DeleteRandomPfxs/1_000       16.75n ±  0%   133.45n ± 0%   +696.48% (p=0.002 n=6)
-DeleteRandomPfxs/10_000      16.80n ±  0%   190.15n ± 0%  +1031.51% (p=0.002 n=6)
-DeleteRandomPfxs/100_000     17.07n ±  1%   290.50n ± 1%  +1601.32% (p=0.002 n=6)
-DeleteRandomPfxs/200_000     17.62n ±  0%   389.00n ± 0%  +2107.09% (p=0.002 n=6)
-geomean                      30.91n          246.2n        +696.62%
+                         │ bart/update.bm │          netipds/update.bm           │
+                         │   sec/route    │  sec/route    vs base                │
+InsertRandomPfxs/1_000       245.6n ±  5%   268.0n ±  4%    +9.14% (p=0.002 n=6)
+InsertRandomPfxs/10_000      177.8n ±  3%   324.4n ±  4%   +82.50% (p=0.002 n=6)
+InsertRandomPfxs/100_000     266.4n ±  1%   426.2n ±  3%   +59.95% (p=0.002 n=6)
+InsertRandomPfxs/200_000     269.7n ±  3%   538.1n ±  6%   +99.54% (p=0.002 n=6)
+DeleteRandomPfxs/1_000       386.2n ±  4%   402.7n ±  6%    +4.26% (p=0.002 n=6)
+DeleteRandomPfxs/10_000      248.6n ±  3%   546.6n ± 11%  +119.90% (p=0.002 n=6)
+DeleteRandomPfxs/100_000     454.9n ± 12%   689.6n ± 20%   +51.59% (p=0.002 n=6)
+DeleteRandomPfxs/200_000     487.6n ± 14%   853.5n ±  5%   +75.01% (p=0.002 n=6)
+geomean                      300.7n         474.8n         +57.91%
 
 goos: linux
 goarch: amd64
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
                          │ bart/update.bm │         critbitgo/update.bm          │
                          │   sec/route    │  sec/route    vs base                │
-InsertRandomPfxs/1_000       30.43n ±  3%   160.55n ± 3%  +427.60% (p=0.002 n=6)
-InsertRandomPfxs/10_000      36.54n ±  3%   233.35n ± 4%  +538.62% (p=0.002 n=6)
-InsertRandomPfxs/100_000     76.37n ± 10%   444.20n ± 4%  +481.64% (p=0.002 n=6)
-InsertRandomPfxs/200_000     115.7n ±  1%    586.7n ± 2%  +407.09% (p=0.002 n=6)
-DeleteRandomPfxs/1_000       16.75n ±  0%    67.66n ± 1%  +303.79% (p=0.002 n=6)
-DeleteRandomPfxs/10_000      16.80n ±  0%    70.05n ± 0%  +316.84% (p=0.002 n=6)
-DeleteRandomPfxs/100_000     17.07n ±  1%    72.76n ± 1%  +326.12% (p=0.002 n=6)
-DeleteRandomPfxs/200_000     17.62n ±  0%    77.56n ± 3%  +340.03% (p=0.002 n=6)
-geomean                      30.91n          150.3n       +386.47%
+InsertRandomPfxs/1_000       245.6n ±  5%    357.4n ± 2%   +45.57% (p=0.002 n=6)
+InsertRandomPfxs/10_000      177.8n ±  3%    446.1n ± 4%  +150.97% (p=0.002 n=6)
+InsertRandomPfxs/100_000     266.4n ±  1%    606.2n ± 2%  +127.49% (p=0.002 n=6)
+InsertRandomPfxs/200_000     269.7n ±  3%    797.6n ± 3%  +195.81% (p=0.002 n=6)
+DeleteRandomPfxs/1_000       386.2n ±  4%    511.6n ± 4%   +32.47% (p=0.002 n=6)
+DeleteRandomPfxs/10_000      248.6n ±  3%    618.1n ± 1%  +148.70% (p=0.002 n=6)
+DeleteRandomPfxs/100_000     454.9n ± 12%   1056.0n ± 2%  +132.11% (p=0.002 n=6)
+DeleteRandomPfxs/200_000     487.6n ± 14%   1268.5n ± 4%  +160.13% (p=0.002 n=6)
+geomean                      300.7n          652.0n       +116.85%
 
 goos: linux
 goarch: amd64
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
-                         │ bart/update.bm │           lpmtrie/update.bm           │
-                         │   sec/route    │  sec/route    vs base                 │
-InsertRandomPfxs/1_000       30.43n ±  3%   356.10n ± 3%  +1070.23% (p=0.002 n=6)
-InsertRandomPfxs/10_000      36.54n ±  3%   470.30n ± 3%  +1187.08% (p=0.002 n=6)
-InsertRandomPfxs/100_000     76.37n ± 10%   867.05n ± 4%  +1035.33% (p=0.002 n=6)
-InsertRandomPfxs/200_000     115.7n ±  1%   1100.5n ± 4%   +851.17% (p=0.002 n=6)
-DeleteRandomPfxs/1_000       16.75n ±  0%    72.61n ± 0%   +333.36% (p=0.002 n=6)
-DeleteRandomPfxs/10_000      16.80n ±  0%   131.65n ± 1%   +683.40% (p=0.002 n=6)
-DeleteRandomPfxs/100_000     17.07n ±  1%   294.55n ± 0%  +1625.04% (p=0.002 n=6)
-DeleteRandomPfxs/200_000     17.62n ±  0%   419.50n ± 1%  +2280.14% (p=0.002 n=6)
-geomean                      30.91n          342.4n       +1007.74%
+                         │ bart/update.bm │          lpmtrie/update.bm           │
+                         │   sec/route    │  sec/route    vs base                │
+InsertRandomPfxs/1_000       245.6n ±  5%    538.3n ± 3%  +119.22% (p=0.002 n=6)
+InsertRandomPfxs/10_000      177.8n ±  3%    617.9n ± 1%  +247.65% (p=0.002 n=6)
+InsertRandomPfxs/100_000     266.4n ±  1%    835.8n ± 3%  +213.70% (p=0.002 n=6)
+InsertRandomPfxs/200_000     269.7n ±  3%   1038.5n ± 4%  +285.13% (p=0.002 n=6)
+DeleteRandomPfxs/1_000       386.2n ±  4%    687.0n ± 5%   +77.85% (p=0.002 n=6)
+DeleteRandomPfxs/10_000      248.6n ±  3%    845.4n ± 6%  +240.11% (p=0.002 n=6)
+DeleteRandomPfxs/100_000     454.9n ± 12%   1526.5n ± 3%  +235.53% (p=0.002 n=6)
+DeleteRandomPfxs/200_000     487.6n ± 14%   1709.0n ± 1%  +250.46% (p=0.002 n=6)
+geomean                      300.7n          901.8n       +199.93%
 
 goos: linux
 goarch: amd64
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
-                         │ bart/update.bm │           cidranger/update.bm           │
-                         │   sec/route    │   sec/route    vs base                  │
-InsertRandomPfxs/1_000       30.43n ±  3%   4471.00n ± 3%  +14592.74% (p=0.002 n=6)
-InsertRandomPfxs/10_000      36.54n ±  3%   6153.50n ± 3%  +16740.45% (p=0.002 n=6)
-InsertRandomPfxs/100_000     76.37n ± 10%   8694.00n ± 3%  +11284.05% (p=0.002 n=6)
-InsertRandomPfxs/200_000     115.7n ±  1%    9740.0n ± 5%   +8318.32% (p=0.002 n=6)
-DeleteRandomPfxs/1_000       16.75n ±  0%     86.48n ± 3%    +416.11% (p=0.002 n=6)
-DeleteRandomPfxs/10_000      16.80n ±  0%     88.25n ± 2%    +425.17% (p=0.002 n=6)
-DeleteRandomPfxs/100_000     17.07n ±  1%    110.35n ± 1%    +546.27% (p=0.002 n=6)
-DeleteRandomPfxs/200_000     17.62n ±  0%    152.55n ± 0%    +765.53% (p=0.002 n=6)
-geomean                      30.91n           860.0n        +2682.69%
-
-goos: linux
-goarch: amd64
-cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
-                         │ bart/update.bm │           cidrtree/update.bm           │
+                         │ bart/update.bm │          cidranger/update.bm           │
                          │   sec/route    │   sec/route    vs base                 │
-InsertRandomPfxs/1_000       30.43n ±  3%   1232.50n ± 3%  +3950.28% (p=0.002 n=6)
-InsertRandomPfxs/10_000      36.54n ±  3%   1829.00n ± 1%  +4905.47% (p=0.002 n=6)
-InsertRandomPfxs/100_000     76.37n ± 10%   2749.50n ± 2%  +3500.24% (p=0.002 n=6)
-InsertRandomPfxs/200_000     115.7n ±  1%    3247.5n ± 3%  +2706.83% (p=0.002 n=6)
-DeleteRandomPfxs/1_000       16.75n ±  0%     14.68n ± 0%    -12.38% (p=0.002 n=6)
-DeleteRandomPfxs/10_000      16.80n ±  0%     14.94n ± 0%    -11.07% (p=0.002 n=6)
-DeleteRandomPfxs/100_000     17.07n ±  1%     22.20n ± 4%    +30.01% (p=0.002 n=6)
-DeleteRandomPfxs/200_000     17.62n ±  0%     83.23n ± 5%   +372.26% (p=0.002 n=6)
-geomean                      30.91n           231.2n        +648.02%
+InsertRandomPfxs/1_000       245.6n ±  5%    4975.0n ± 1%  +1926.06% (p=0.002 n=6)
+InsertRandomPfxs/10_000      177.8n ±  3%    6117.0n ± 2%  +3341.35% (p=0.002 n=6)
+InsertRandomPfxs/100_000     266.4n ±  1%    9244.0n ± 3%  +3369.32% (p=0.002 n=6)
+InsertRandomPfxs/200_000     269.7n ±  3%    9906.5n ± 4%  +3573.84% (p=0.002 n=6)
+DeleteRandomPfxs/1_000       386.2n ±  4%    5556.5n ± 4%  +1338.58% (p=0.002 n=6)
+DeleteRandomPfxs/10_000      248.6n ±  3%    7282.5n ± 4%  +2829.99% (p=0.002 n=6)
+DeleteRandomPfxs/100_000     454.9n ± 12%   11649.0n ± 2%  +2460.50% (p=0.002 n=6)
+DeleteRandomPfxs/200_000     487.6n ± 14%   13645.0n ± 2%  +2698.11% (p=0.002 n=6)
+geomean                      300.7n           8.066µ       +2582.82%
+
+goos: linux
+goarch: amd64
+cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
+                         │ bart/update.bm │          cidrtree/update.bm           │
+                         │   sec/route    │  sec/route    vs base                 │
+InsertRandomPfxs/1_000       245.6n ±  5%    988.2n ± 0%   +302.46% (p=0.002 n=6)
+InsertRandomPfxs/10_000      177.8n ±  3%   1523.0n ± 1%   +756.82% (p=0.002 n=6)
+InsertRandomPfxs/100_000     266.4n ±  1%   2315.0n ± 2%   +768.83% (p=0.002 n=6)
+InsertRandomPfxs/200_000     269.7n ±  3%   2868.5n ± 2%   +963.79% (p=0.002 n=6)
+DeleteRandomPfxs/1_000       386.2n ±  4%   2406.0n ± 1%   +522.91% (p=0.002 n=6)
+DeleteRandomPfxs/10_000      248.6n ±  3%   3888.5n ± 1%  +1464.47% (p=0.002 n=6)
+DeleteRandomPfxs/100_000     454.9n ± 12%   5959.0n ± 2%  +1209.81% (p=0.002 n=6)
+DeleteRandomPfxs/200_000     487.6n ± 14%   7220.5n ± 2%  +1380.67% (p=0.002 n=6)
+geomean                      300.7n          2.822µ        +838.61%
 
 goos: linux
 goarch: amd64
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
                          │ bart/update.bm │         go-iptrie/update.bm          │
                          │   sec/route    │  sec/route    vs base                │
-InsertRandomPfxs/1_000       30.43n ±  3%   184.50n ± 6%  +506.31% (p=0.002 n=6)
-InsertRandomPfxs/10_000      36.54n ±  3%   260.30n ± 3%  +612.37% (p=0.002 n=6)
-InsertRandomPfxs/100_000     76.37n ± 10%   490.85n ± 8%  +542.73% (p=0.002 n=6)
-InsertRandomPfxs/200_000     115.7n ±  1%    616.1n ± 6%  +432.50% (p=0.002 n=6)
-DeleteRandomPfxs/1_000       16.75n ±  0%    18.55n ± 1%   +10.74% (p=0.002 n=6)
-DeleteRandomPfxs/10_000      16.80n ±  0%    18.65n ± 2%   +10.98% (p=0.002 n=6)
-DeleteRandomPfxs/100_000     17.07n ±  1%    19.78n ± 2%   +15.84% (p=0.002 n=6)
-DeleteRandomPfxs/200_000     17.62n ±  0%    21.07n ± 3%   +19.55% (p=0.002 n=6)
-geomean                      30.91n          82.25n       +166.13%
+InsertRandomPfxs/1_000       245.6n ±  5%    316.5n ± 3%   +28.89% (p=0.002 n=6)
+InsertRandomPfxs/10_000      177.8n ±  3%    375.5n ± 1%  +111.22% (p=0.002 n=6)
+InsertRandomPfxs/100_000     266.4n ±  1%    569.9n ± 3%  +113.91% (p=0.002 n=6)
+InsertRandomPfxs/200_000     269.7n ±  3%    660.1n ± 3%  +144.82% (p=0.002 n=6)
+DeleteRandomPfxs/1_000       386.2n ±  4%    481.8n ± 2%   +24.72% (p=0.002 n=6)
+DeleteRandomPfxs/10_000      248.6n ±  3%    609.0n ± 4%  +145.04% (p=0.002 n=6)
+DeleteRandomPfxs/100_000     454.9n ± 12%   1034.5n ± 3%  +127.39% (p=0.002 n=6)
+DeleteRandomPfxs/200_000     487.6n ± 14%   1351.0n ± 3%  +177.04% (p=0.002 n=6)
+geomean                      300.7n          606.6n       +101.75%
 
 goos: linux
 goarch: amd64
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
                          │ bart/update.bm │      kentik-patricia/update.bm       │
                          │   sec/route    │  sec/route    vs base                │
-InsertRandomPfxs/1_000       30.43n ±  3%   190.60n ± 1%  +526.36% (p=0.002 n=6)
-InsertRandomPfxs/10_000      36.54n ±  3%   286.70n ± 0%  +684.62% (p=0.002 n=6)
-InsertRandomPfxs/100_000     76.37n ± 10%   559.15n ± 0%  +632.16% (p=0.002 n=6)
-InsertRandomPfxs/200_000     115.7n ±  1%    704.1n ± 1%  +508.56% (p=0.002 n=6)
-DeleteRandomPfxs/1_000       16.75n ±  0%    13.03n ± 0%   -22.23% (p=0.002 n=6)
-DeleteRandomPfxs/10_000      16.80n ±  0%    15.05n ± 0%   -10.44% (p=0.002 n=6)
-DeleteRandomPfxs/100_000     17.07n ±  1%    16.33n ± 0%    -4.36% (p=0.002 n=6)
-DeleteRandomPfxs/200_000     17.62n ±  0%    19.04n ± 1%    +8.03% (p=0.002 n=6)
-geomean                      30.91n          77.58n       +151.00%
+InsertRandomPfxs/1_000       245.6n ±  5%    331.4n ± 1%   +34.96% (p=0.002 n=6)
+InsertRandomPfxs/10_000      177.8n ±  3%    430.6n ± 1%  +142.25% (p=0.002 n=6)
+InsertRandomPfxs/100_000     266.4n ±  1%    636.0n ± 5%  +138.71% (p=0.002 n=6)
+InsertRandomPfxs/200_000     269.7n ±  3%    761.0n ± 2%  +182.22% (p=0.002 n=6)
+DeleteRandomPfxs/1_000       386.2n ±  4%    721.2n ± 2%   +86.72% (p=0.002 n=6)
+DeleteRandomPfxs/10_000      248.6n ±  3%    916.6n ± 2%  +268.80% (p=0.002 n=6)
+DeleteRandomPfxs/100_000     454.9n ± 12%   1423.0n ± 4%  +212.78% (p=0.002 n=6)
+DeleteRandomPfxs/200_000     487.6n ± 14%   1714.0n ± 2%  +251.48% (p=0.002 n=6)
+geomean                      300.7n          760.1n       +152.79%
 ```

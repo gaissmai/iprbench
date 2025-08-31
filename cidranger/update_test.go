@@ -1,7 +1,6 @@
 package main_test
 
 import (
-	"runtime"
 	"testing"
 
 	"local/iprbench/common"
@@ -20,10 +19,10 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 		}
 
 		b.Run(name, func(b *testing.B) {
-			rt := cidranger.NewPCTrieRanger()
-
-			runtime.GC()
 			for b.Loop() {
+				rt := cidranger.NewPCTrieRanger()
+
+				b.StartTimer()
 				for _, route := range randomRangerEntries {
 					rt.Insert(route)
 				}
@@ -45,13 +44,13 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 		}
 
 		b.Run(name, func(b *testing.B) {
-			rt := cidranger.NewPCTrieRanger()
-			for _, route := range randomRangerEntries {
-				rt.Insert(route)
-			}
-
-			runtime.GC()
 			for b.Loop() {
+				rt := cidranger.NewPCTrieRanger()
+				for _, route := range randomRangerEntries {
+					rt.Insert(route)
+				}
+
+				b.StartTimer()
 				for _, route := range randomRangerEntries {
 					rt.Remove(route.Network())
 				}
