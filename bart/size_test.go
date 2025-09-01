@@ -13,14 +13,14 @@ func BenchmarkTier1PfxSize(b *testing.B) {
 	var startMem, endMem runtime.MemStats
 
 	for _, k := range []int{1_000, 10_000, 100_000, 200_000, 500_000, 1_000_000} {
-		tree := new(bart.Lite)
+		tree := new(bart.Table[any])
 
 		runtime.GC()
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
 			for _, cidr := range tier1Routes[:k] {
-				tree.Insert(cidr)
+				tree.Insert(cidr, nil)
 			}
 			runtime.GC()
 			runtime.ReadMemStats(&endMem)
@@ -35,14 +35,14 @@ func BenchmarkRandomPfx4Size(b *testing.B) {
 	var startMem, endMem runtime.MemStats
 
 	for _, k := range []int{1_000, 10_000, 100_000, 200_000, 500_000, 1_000_000} {
-		tree := new(bart.Lite)
+		tree := new(bart.Table[any])
 
 		runtime.GC()
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
 			for _, cidr := range randomRoutes4[:k] {
-				tree.Insert(cidr)
+				tree.Insert(cidr, nil)
 			}
 			runtime.GC()
 			runtime.ReadMemStats(&endMem)
@@ -57,14 +57,14 @@ func BenchmarkRandomPfx6Size(b *testing.B) {
 	var startMem, endMem runtime.MemStats
 
 	for _, k := range []int{1_000, 10_000, 100_000, 200_000, 500_000, 1_000_000} {
-		tree := new(bart.Lite)
+		tree := new(bart.Table[any])
 
 		runtime.GC()
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
 			for _, cidr := range randomRoutes6[:k] {
-				tree.Insert(cidr)
+				tree.Insert(cidr, nil)
 			}
 			runtime.GC()
 			runtime.ReadMemStats(&endMem)
@@ -79,14 +79,14 @@ func BenchmarkRandomPfxSize(b *testing.B) {
 	var startMem, endMem runtime.MemStats
 
 	for _, k := range []int{1_000, 10_000, 100_000, 200_000, 500_000, 1_000_000} {
-		tree := new(bart.Lite)
+		tree := new(bart.Table[any])
 
 		runtime.GC()
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
 			for _, cidr := range randomRoutes[:k] {
-				tree.Insert(cidr)
+				tree.Insert(cidr, nil)
 			}
 			runtime.GC()
 			runtime.ReadMemStats(&endMem)

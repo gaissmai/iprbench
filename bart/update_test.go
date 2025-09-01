@@ -15,9 +15,9 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 
 		b.Run(name, func(b *testing.B) {
 			for b.Loop() {
-				rt := new(bart.Lite)
+				rt := new(bart.Table[any])
 				for _, route := range randomPfxs {
-					rt.Insert(route)
+					rt.Insert(route, nil)
 				}
 			}
 			b.ReportMetric(float64(b.Elapsed())/float64(k)/float64(b.N), "ns/route")
@@ -35,9 +35,9 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			for b.Loop() {
 				b.StopTimer()
-				rt := new(bart.Lite)
+				rt := new(bart.Table[any])
 				for _, route := range randomPfxs {
-					rt.Insert(route)
+					rt.Insert(route, nil)
 				}
 				b.StartTimer()
 

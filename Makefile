@@ -6,8 +6,10 @@ dep:
 	go mod tidy
 	go install tool
 
-size: bart/size.bm art/size.bm netipds/size.bm critbitgo/size.bm lpmtrie/size.bm cidranger/size.bm \
-	cidrtree/size.bm go-iptrie/size.bm kentik-patricia/size.bm
+size: bart/size.bm fat/size.bm art/size.bm netipds/size.bm critbitgo/size.bm lpmtrie/size.bm \
+	cidranger/size.bm cidrtree/size.bm go-iptrie/size.bm kentik-patricia/size.bm
+	@echo
+	@go tool benchstat -ignore=pkg bart/size.bm   fat/size.bm
 	@echo
 	@go tool benchstat -ignore=pkg bart/size.bm   art/size.bm
 	@echo
@@ -25,8 +27,10 @@ size: bart/size.bm art/size.bm netipds/size.bm critbitgo/size.bm lpmtrie/size.bm
 	@echo
 	@go tool benchstat -ignore=pkg bart/size.bm   kentik-patricia/size.bm
 
-lpm: bart/lpm.bm art/lpm.bm netipds/lpm.bm critbitgo/lpm.bm lpmtrie/lpm.bm cidranger/lpm.bm cidrtree/lpm.bm \
-	go-iptrie/lpm.bm kentik-patricia/lpm.bm
+lpm: bart/lpm.bm fat/lpm.bm art/lpm.bm netipds/lpm.bm critbitgo/lpm.bm lpmtrie/lpm.bm \
+	cidranger/lpm.bm cidrtree/lpm.bm go-iptrie/lpm.bm kentik-patricia/lpm.bm
+	@echo
+	@go tool benchstat -ignore=pkg bart/lpm.bm   fat/lpm.bm
 	@echo
 	@go tool benchstat -ignore=pkg bart/lpm.bm   art/lpm.bm
 	@echo
@@ -45,8 +49,10 @@ lpm: bart/lpm.bm art/lpm.bm netipds/lpm.bm critbitgo/lpm.bm lpmtrie/lpm.bm cidra
 	@go tool benchstat -ignore=pkg bart/lpm.bm   kentik-patricia/lpm.bm
 
 
-update: bart/update.bm art/update.bm netipds/update.bm critbitgo/update.bm lpmtrie/update.bm cidranger/update.bm \
-	cidrtree/update.bm go-iptrie/update.bm kentik-patricia/update.bm
+update: bart/update.bm fat/update.bm art/update.bm netipds/update.bm critbitgo/update.bm lpmtrie/update.bm \
+	cidranger/update.bm cidrtree/update.bm go-iptrie/update.bm kentik-patricia/update.bm
+	@echo
+	@go tool benchstat -ignore=pkg bart/update.bm    fat/update.bm
 	@echo
 	@go tool benchstat -ignore=pkg bart/update.bm    art/update.bm
 	@echo
@@ -69,6 +75,9 @@ update: bart/update.bm art/update.bm netipds/update.bm critbitgo/update.bm lpmtr
 #
 bart/lpm.bm:
 	cd bart &&      go test -run=XXX  -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
+
+fat/lpm.bm:
+	cd fat &&       go test -run=XXX  -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
 art/lpm.bm:
 	cd art &&       go test -run=XXX  -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
@@ -100,6 +109,9 @@ kentik-patricia/lpm.bm:
 bart/size.bm:
 	cd bart &&      go test -run=XXX  -count=6 -bench=Size -benchtime=1x -timeout=25m   | tee size.bm
 
+fat/size.bm:
+	cd fat &&       go test -run=XXX  -count=6 -bench=Size -benchtime=1x -timeout=25m   | tee size.bm
+
 art/size.bm:
 	cd art &&       go test -run=XXX  -count=6 -bench=Size -benchtime=1x -timeout=25m   | tee size.bm
 
@@ -130,6 +142,9 @@ kentik-patricia/size.bm:
 
 bart/update.bm:
 	cd bart &&      go test -run=XXX  -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
+
+fat/update.bm:
+	cd fat &&       go test -run=XXX  -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
 
 art/update.bm:
 	cd art &&       go test -run=XXX  -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm

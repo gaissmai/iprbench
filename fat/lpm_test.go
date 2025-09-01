@@ -6,7 +6,7 @@ import (
 
 	"local/iprbench/common"
 
-	"github.com/phemmer/go-iptrie"
+	"github.com/gaissmai/bart"
 )
 
 func BenchmarkLpmTier1Pfxs(b *testing.B) {
@@ -20,7 +20,7 @@ func BenchmarkLpmTier1Pfxs(b *testing.B) {
 		{"RandomMissIP6", common.MissIP6},
 	}
 
-	rt := iptrie.NewTrie()
+	rt := new(bart.Fat[any])
 	for _, route := range tier1Routes {
 		rt.Insert(route, nil)
 	}
@@ -49,7 +49,7 @@ func BenchmarkLpmRandomPfxs(b *testing.B) {
 	for _, k := range []int{1_000, 10_000, 100_000} {
 		for _, bm := range benchmarks {
 
-			rt := iptrie.NewTrie()
+			rt := new(bart.Fat[any])
 			for _, route := range randomRoutes[:k] {
 				rt.Insert(route, nil)
 			}
