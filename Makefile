@@ -68,90 +68,90 @@ update: bart/update.bm art/update.bm netipds/update.bm critbitgo/update.bm lpmtr
 # benchmarks for lpm
 #
 bart/lpm.bm:
-	cd bart &&      go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
+	cd bart &&      go test -run=XXX  -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
 art/lpm.bm:
-	cd art &&       go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
+	cd art &&       go test -run=XXX  -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
 netipds/lpm.bm:
-	cd netipds && go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
+	cd netipds && go test -run=XXX  -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
 critbitgo/lpm.bm:
-	cd critbitgo && go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
+	cd critbitgo && go test -run=XXX  -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
 lpmtrie/lpm.bm:
-	cd lpmtrie &&   go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
+	cd lpmtrie &&   go test -run=XXX  -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
 cidranger/lpm.bm:
-	cd cidranger && go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
+	cd cidranger && go test -run=XXX  -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
 cidrtree/lpm.bm:
-	cd cidrtree &&  go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
+	cd cidrtree &&  go test -run=XXX  -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
 go-iptrie/lpm.bm:
-	cd go-iptrie &&  go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
+	cd go-iptrie &&  go test -run=XXX  -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
 kentik-patricia/lpm.bm:
-	cd kentik-patricia &&  go test -run=XXX  -cpu=1 -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
+	cd kentik-patricia &&  go test -run=XXX  -count=20  -bench=Lpm -timeout=25m | tee lpm.bm
 
 #
 # benchmarks for tree/trie sizes, deterministic -> -benchtime=1x
 #
 bart/size.bm:
-	cd bart &&      go test -run=XXX  -cpu=1 -count=6 -bench=Size -benchtime=1x -timeout=25m   | tee size.bm
+	cd bart &&      go test -run=XXX  -count=6 -bench=Size -benchtime=1x -timeout=25m   | tee size.bm
 
 art/size.bm:
-	cd art &&       go test -run=XXX  -cpu=1 -count=6 -bench=Size -benchtime=1x -timeout=25m   | tee size.bm
+	cd art &&       go test -run=XXX  -count=6 -bench=Size -benchtime=1x -timeout=25m   | tee size.bm
 
 netipds/size.bm:
-	cd netipds && go test -run=XXX  -cpu=1 -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
+	cd netipds && go test -run=XXX  -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
 
 critbitgo/size.bm:
-	cd critbitgo && go test -run=XXX  -cpu=1 -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
+	cd critbitgo && go test -run=XXX  -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
 
 lpmtrie/size.bm:
-	cd lpmtrie &&   go test -run=XXX  -cpu=1 -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
+	cd lpmtrie &&   go test -run=XXX  -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
 
 cidranger/size.bm:
-	cd cidranger && go test -run=XXX  -cpu=1 -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
+	cd cidranger && go test -run=XXX  -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
 
 cidrtree/size.bm:
-	cd cidrtree &&  go test -run=XXX  -cpu=1 -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
+	cd cidrtree &&  go test -run=XXX  -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
 
 go-iptrie/size.bm:
-	cd go-iptrie &&  go test -run=XXX  -cpu=1 -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
+	cd go-iptrie &&  go test -run=XXX  -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
 
 kentik-patricia/size.bm:
-	cd kentik-patricia &&  go test -run=XXX  -cpu=1 -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
+	cd kentik-patricia &&  go test -run=XXX  -count=6 -bench=Size -benchtime=1x -timeout=25m | tee size.bm
 
 #
 # benchmarks for insert/delete
 #
 
 bart/update.bm:
-	cd bart &&      go test -run=XXX  -cpu=1 -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
+	cd bart &&      go test -run=XXX  -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
 
 art/update.bm:
-	cd art &&       go test -run=XXX  -cpu=1 -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
+	cd art &&       go test -run=XXX  -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
 
 netipds/update.bm:
-	cd netipds && go test -run=XXX  -cpu=1 -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
+	cd netipds && go test -run=XXX  -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
 
 critbitgo/update.bm:
-	cd critbitgo && go test -run=XXX  -cpu=1 -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
+	cd critbitgo && go test -run=XXX  -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
 
 lpmtrie/update.bm:
-	cd lpmtrie &&   go test -run=XXX  -cpu=1 -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
+	cd lpmtrie &&   go test -run=XXX  -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
 
 cidranger/update.bm:
-	cd cidranger && go test -run=XXX  -cpu=1 -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
+	cd cidranger && go test -run=XXX  -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
 
 cidrtree/update.bm:
-	cd cidrtree &&  go test -run=XXX  -cpu=1 -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
+	cd cidrtree &&  go test -run=XXX  -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
 
 go-iptrie/update.bm:
-	cd go-iptrie &&  go test -run=XXX  -cpu=1 -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
+	cd go-iptrie &&  go test -run=XXX  -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
 
 kentik-patricia/update.bm:
-	cd kentik-patricia &&  go test -run=XXX  -cpu=1 -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
+	cd kentik-patricia &&  go test -run=XXX  -count=6 -bench='Insert|Delete' -timeout=25m | tee update.bm
 

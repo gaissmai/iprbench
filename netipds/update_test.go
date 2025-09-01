@@ -16,8 +16,6 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			for b.Loop() {
 				psb := new(netipds.PrefixSetBuilder)
-
-				b.StartTimer()
 				for _, route := range randomPfxs {
 					psb.Add(route)
 				}
@@ -36,12 +34,13 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 
 		b.Run(name, func(b *testing.B) {
 			for b.Loop() {
+				b.StopTimer()
 				psb := new(netipds.PrefixSetBuilder)
 				for _, route := range randomPfxs {
 					psb.Add(route)
 				}
-
 				b.StartTimer()
+
 				for _, route := range randomPfxs {
 					psb.Remove(route)
 				}

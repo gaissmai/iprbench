@@ -21,8 +21,6 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			for b.Loop() {
 				rt := cidranger.NewPCTrieRanger()
-
-				b.StartTimer()
 				for _, route := range randomRangerEntries {
 					rt.Insert(route)
 				}
@@ -45,12 +43,13 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 
 		b.Run(name, func(b *testing.B) {
 			for b.Loop() {
+				b.StopTimer()
 				rt := cidranger.NewPCTrieRanger()
 				for _, route := range randomRangerEntries {
 					rt.Insert(route)
 				}
-
 				b.StartTimer()
+
 				for _, route := range randomRangerEntries {
 					rt.Remove(route.Network())
 				}

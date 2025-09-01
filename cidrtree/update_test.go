@@ -16,8 +16,6 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			for b.Loop() {
 				rt := new(cidrtree.Table[any])
-
-				b.StartTimer()
 				for _, route := range randomPfxs {
 					rt.Insert(route, nil)
 				}
@@ -36,12 +34,13 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 
 		b.Run(name, func(b *testing.B) {
 			for b.Loop() {
+				b.StopTimer()
 				rt := new(cidrtree.Table[any])
 				for _, route := range randomPfxs {
 					rt.Insert(route, nil)
 				}
-
 				b.StartTimer()
+
 				for _, route := range randomPfxs {
 					rt.Delete(route)
 				}

@@ -20,8 +20,6 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			for b.Loop() {
 				rt := NewTable()
-
-				b.StartTimer()
 				for _, route := range randomIPNets {
 					rt.Insert(route, nil)
 				}
@@ -44,12 +42,13 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 
 		b.Run(name, func(b *testing.B) {
 			for b.Loop() {
+				b.StopTimer()
 				rt := NewTable()
 				for _, route := range randomIPNets {
 					rt.Insert(route, nil)
 				}
-
 				b.StartTimer()
+
 				for _, route := range randomIPNets {
 					rt.Delete(route)
 				}

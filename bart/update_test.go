@@ -16,8 +16,6 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			for b.Loop() {
 				rt := new(bart.Lite)
-
-				b.StartTimer()
 				for _, route := range randomPfxs {
 					rt.Insert(route)
 				}
@@ -36,12 +34,13 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 
 		b.Run(name, func(b *testing.B) {
 			for b.Loop() {
+				b.StopTimer()
 				rt := new(bart.Lite)
 				for _, route := range randomPfxs {
 					rt.Insert(route)
 				}
-
 				b.StartTimer()
+
 				for _, route := range randomPfxs {
 					rt.Delete(route)
 				}
