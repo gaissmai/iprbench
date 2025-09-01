@@ -5,7 +5,7 @@ import (
 
 	"local/iprbench/common"
 
-	"github.com/phemmer/go-iptrie"
+	"github.com/gaissmai/bart"
 )
 
 func BenchmarkInsertRandomPfxs(b *testing.B) {
@@ -15,7 +15,7 @@ func BenchmarkInsertRandomPfxs(b *testing.B) {
 
 		b.Run(name, func(b *testing.B) {
 			for b.Loop() {
-				rt := iptrie.NewTrie()
+				rt := new(bart.Fat[any])
 				for _, route := range randomPfxs {
 					rt.Insert(route, nil)
 				}
@@ -35,14 +35,14 @@ func BenchmarkDeleteRandomPfxs(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			for b.Loop() {
 				b.StopTimer()
-				rt := iptrie.NewTrie()
+				rt := new(bart.Fat[any])
 				for _, route := range randomPfxs {
 					rt.Insert(route, nil)
 				}
 				b.StartTimer()
 
 				for _, route := range randomPfxs {
-					rt.Remove(route)
+					rt.Delete(route)
 				}
 			}
 			b.ReportMetric(float64(b.Elapsed())/float64(k)/float64(b.N), "ns/route")

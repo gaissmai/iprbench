@@ -20,9 +20,9 @@ func BenchmarkLpmTier1Pfxs(b *testing.B) {
 		{"RandomMissIP6", common.MissIP6},
 	}
 
-	rt := new(bart.Lite)
+	rt := new(bart.Table[any])
 	for _, route := range tier1Routes {
-		rt.Insert(route)
+		rt.Insert(route, nil)
 	}
 
 	for _, bm := range benchmarks {
@@ -49,9 +49,9 @@ func BenchmarkLpmRandomPfxs(b *testing.B) {
 	for _, k := range []int{1_000, 10_000, 100_000} {
 		for _, bm := range benchmarks {
 
-			rt := new(bart.Lite)
+			rt := new(bart.Table[any])
 			for _, route := range randomRoutes[:k] {
-				rt.Insert(route)
+				rt.Insert(route, nil)
 			}
 
 			b.Run(common.IntMap[k]+"/"+bm.name, func(b *testing.B) {
