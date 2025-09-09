@@ -3,14 +3,23 @@ on:
   push:
     branches: ["main", "devel"]
     paths:
-    - '**.go'
-    - '**.yml'
+      - '**.go'
+      - '**.yml'
+      - '**.yaml'
   pull_request:
-    branches: ["main"]  
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
     strategy:
+      fail-fast: false
       matrix:
         go-version: ['stable']
         os: [ubuntu-latest, macos-latest]
@@ -19,9 +28,10 @@ jobs:
       - uses: actions/setup-go@v6
         with:
           go-version: stable
+          cache: true
       - uses: actions/checkout@v5
-      - run: go test -v ./...      
-  
+      - run: go test -v ./...
+
   linting:
     runs-on: ubuntu-latest
     steps:
@@ -29,7 +39,8 @@ jobs:
       - uses: actions/setup-go@v6
         with:
           go-version: stable
-          
+          cache: true
+
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v8
         with:
