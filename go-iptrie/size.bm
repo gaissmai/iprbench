@@ -2,12 +2,12 @@ goos: linux
 goarch: amd64
 pkg: local/iprbench/go-iptrie
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
-BenchmarkTier1PfxSize/1_000-8         	       1	       163.0 bytes/route
-BenchmarkTier1PfxSize/1_000-8         	       1	       165.0 bytes/route
-BenchmarkTier1PfxSize/1_000-8         	       1	       165.0 bytes/route
-BenchmarkTier1PfxSize/1_000-8         	       1	       165.0 bytes/route
-BenchmarkTier1PfxSize/1_000-8         	       1	       165.0 bytes/route
-BenchmarkTier1PfxSize/1_000-8         	       1	       165.0 bytes/route
+BenchmarkTier1PfxSize/1_000-8         	       1	       168.6 bytes/route
+BenchmarkTier1PfxSize/1_000-8         	       1	       170.6 bytes/route
+BenchmarkTier1PfxSize/1_000-8         	       1	       170.6 bytes/route
+BenchmarkTier1PfxSize/1_000-8         	       1	       170.6 bytes/route
+BenchmarkTier1PfxSize/1_000-8         	       1	       170.6 bytes/route
+BenchmarkTier1PfxSize/1_000-8         	       1	       170.6 bytes/route
 BenchmarkTier1PfxSize/10_000-8        	       1	       159.6 bytes/route
 BenchmarkTier1PfxSize/10_000-8        	       1	       159.8 bytes/route
 BenchmarkTier1PfxSize/10_000-8        	       1	       159.8 bytes/route
@@ -116,12 +116,12 @@ BenchmarkRandomPfxSize/1_000-8        	       1	       163.7 bytes/route
 BenchmarkRandomPfxSize/1_000-8        	       1	       163.7 bytes/route
 BenchmarkRandomPfxSize/1_000-8        	       1	       163.7 bytes/route
 BenchmarkRandomPfxSize/1_000-8        	       1	       163.7 bytes/route
-BenchmarkRandomPfxSize/10_000-8       	       1	       156.8 bytes/route
-BenchmarkRandomPfxSize/10_000-8       	       1	       157.0 bytes/route
-BenchmarkRandomPfxSize/10_000-8       	       1	       157.0 bytes/route
-BenchmarkRandomPfxSize/10_000-8       	       1	       157.0 bytes/route
-BenchmarkRandomPfxSize/10_000-8       	       1	       157.0 bytes/route
-BenchmarkRandomPfxSize/10_000-8       	       1	       157.0 bytes/route
+BenchmarkRandomPfxSize/10_000-8       	       1	       156.7 bytes/route
+BenchmarkRandomPfxSize/10_000-8       	       1	       156.9 bytes/route
+BenchmarkRandomPfxSize/10_000-8       	       1	       156.9 bytes/route
+BenchmarkRandomPfxSize/10_000-8       	       1	       156.9 bytes/route
+BenchmarkRandomPfxSize/10_000-8       	       1	       156.9 bytes/route
+BenchmarkRandomPfxSize/10_000-8       	       1	       156.9 bytes/route
 BenchmarkRandomPfxSize/100_000-8      	       1	       145.0 bytes/route
 BenchmarkRandomPfxSize/100_000-8      	       1	       145.1 bytes/route
 BenchmarkRandomPfxSize/100_000-8      	       1	       145.1 bytes/route
@@ -147,4 +147,4 @@ BenchmarkRandomPfxSize/1_000_000-8    	       1	       120.5 bytes/route
 BenchmarkRandomPfxSize/1_000_000-8    	       1	       120.5 bytes/route
 BenchmarkRandomPfxSize/1_000_000-8    	       1	       120.5 bytes/route
 PASS
-ok  	local/iprbench/go-iptrie	74.460s
+ok  	local/iprbench/go-iptrie	61.063s

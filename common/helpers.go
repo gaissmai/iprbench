@@ -219,11 +219,13 @@ func ReadFullTableShuffled(pfxFname string) []netip.Prefix {
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer file.Close()
 
 	rgz, err := gzip.NewReader(file)
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer rgz.Close()
 
 	var ret []netip.Prefix
 	scanner := bufio.NewScanner(rgz)
@@ -247,7 +249,7 @@ func ReadFullTableShuffled(pfxFname string) []netip.Prefix {
 // #########################################################
 
 func RandomRealWorldPrefixes4(n int) []netip.Prefix {
-	set := map[netip.Prefix]netip.Prefix{}
+	set := make(map[netip.Prefix]struct{})
 	pfxs := make([]netip.Prefix, 0, n)
 
 	for {
@@ -259,7 +261,7 @@ func RandomRealWorldPrefixes4(n int) []netip.Prefix {
 		}
 
 		if _, ok := set[pfx]; !ok {
-			set[pfx] = pfx
+			set[pfx] = struct{}{}
 			pfxs = append(pfxs, pfx)
 		}
 
@@ -271,7 +273,7 @@ func RandomRealWorldPrefixes4(n int) []netip.Prefix {
 }
 
 func RandomRealWorldPrefixes6(n int) []netip.Prefix {
-	set := map[netip.Prefix]netip.Prefix{}
+	set := make(map[netip.Prefix]struct{})
 	pfxs := make([]netip.Prefix, 0, n)
 
 	for {
@@ -288,7 +290,7 @@ func RandomRealWorldPrefixes6(n int) []netip.Prefix {
 		}
 
 		if _, ok := set[pfx]; !ok {
-			set[pfx] = pfx
+			set[pfx] = struct{}{}
 			pfxs = append(pfxs, pfx)
 		}
 		if len(set) >= n {
