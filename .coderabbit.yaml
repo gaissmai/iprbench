@@ -104,9 +104,3 @@ knowledge_base:
   mcp:
     usage: auto
     disabled_servers: []
-code_generation:
-  docstrings:
-    language: en-US
-    path_instructions: []
-  unit_tests:
-    path_instructions: []
