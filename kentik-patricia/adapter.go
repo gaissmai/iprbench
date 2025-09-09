@@ -33,7 +33,6 @@ func (t *Table[V]) Insert(pfx netip.Prefix, val V) {
 	}
 	addr := patricia.NewIPv6Address(ip.AsSlice(), uint(pfx.Bits()))
 	t.v6.Set(addr, val)
-	return
 }
 
 func (t *Table[V]) Delete(pfx netip.Prefix) {
@@ -49,7 +48,6 @@ func (t *Table[V]) Delete(pfx netip.Prefix) {
 	}
 	addr := patricia.NewIPv6Address(ip.AsSlice(), uint(pfx.Bits()))
 	t.v6.Delete(addr, matchFunc, zero)
-	return
 }
 
 func (t *Table[V]) Lookup(ip netip.Addr) (val V, ok bool) {
