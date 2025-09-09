@@ -19,11 +19,15 @@ func BenchmarkTier1PfxSize(b *testing.B) {
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
+			once := false
 			for b.Loop() {
+				if once {
+					break // force benchtime=1x
+				}
 				for _, cidr := range tier1Routes[:k] {
 					tree.Insert(cidr)
 				}
-				break // force benchtime=1x
+				once = true
 			}
 
 			runtime.GC()
@@ -45,11 +49,15 @@ func BenchmarkRandomPfx4Size(b *testing.B) {
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
+			once := false
 			for b.Loop() {
+				if once {
+					break // force benchtime=1x
+				}
 				for _, cidr := range randomRoutes4[:k] {
 					tree.Insert(cidr)
 				}
-				break // force benchtime=1x
+				once = true
 			}
 
 			runtime.GC()
@@ -71,11 +79,15 @@ func BenchmarkRandomPfx6Size(b *testing.B) {
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
+			once := false
 			for b.Loop() {
+				if once {
+					break // force benchtime=1x
+				}
 				for _, cidr := range randomRoutes6[:k] {
 					tree.Insert(cidr)
 				}
-				break // force benchtime=1x
+				once = true
 			}
 
 			runtime.GC()
@@ -97,11 +109,15 @@ func BenchmarkRandomPfxSize(b *testing.B) {
 		runtime.ReadMemStats(&startMem)
 
 		b.Run(common.IntMap[k], func(b *testing.B) {
+			once := false
 			for b.Loop() {
+				if once {
+					break // force benchtime=1x
+				}
 				for _, cidr := range randomRoutes[:k] {
 					tree.Insert(cidr)
 				}
-				break // force benchtime=1x
+				once = true
 			}
 
 			runtime.GC()
