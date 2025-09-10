@@ -26,12 +26,12 @@ BenchmarkTier1PfxSize/200_000-8       	       1	      1098 bytes/route
 BenchmarkTier1PfxSize/200_000-8       	       1	      1098 bytes/route
 BenchmarkTier1PfxSize/200_000-8       	       1	      1098 bytes/route
 BenchmarkTier1PfxSize/200_000-8       	       1	      1098 bytes/route
-BenchmarkRandomPfx4Size/1_000-8       	       1	      5257 bytes/route
-BenchmarkRandomPfx4Size/1_000-8       	       1	      5259 bytes/route
-BenchmarkRandomPfx4Size/1_000-8       	       1	      5259 bytes/route
-BenchmarkRandomPfx4Size/1_000-8       	       1	      5259 bytes/route
-BenchmarkRandomPfx4Size/1_000-8       	       1	      5259 bytes/route
-BenchmarkRandomPfx4Size/1_000-8       	       1	      5259 bytes/route
+BenchmarkRandomPfx4Size/1_000-8       	       1	      5258 bytes/route
+BenchmarkRandomPfx4Size/1_000-8       	       1	      5260 bytes/route
+BenchmarkRandomPfx4Size/1_000-8       	       1	      5260 bytes/route
+BenchmarkRandomPfx4Size/1_000-8       	       1	      5260 bytes/route
+BenchmarkRandomPfx4Size/1_000-8       	       1	      5260 bytes/route
+BenchmarkRandomPfx4Size/1_000-8       	       1	      5260 bytes/route
 BenchmarkRandomPfx4Size/10_000-8      	       1	      4059 bytes/route
 BenchmarkRandomPfx4Size/10_000-8      	       1	      4059 bytes/route
 BenchmarkRandomPfx4Size/10_000-8      	       1	      4059 bytes/route
@@ -99,4 +99,4 @@ BenchmarkRandomPfxSize/200_000-8      	       1	      4586 bytes/route
 BenchmarkRandomPfxSize/200_000-8      	       1	      4586 bytes/route
 BenchmarkRandomPfxSize/200_000-8      	       1	      4586 bytes/route
 PASS
-ok  	local/iprbench/art	25.440s
+ok  	local/iprbench/art	24.654s

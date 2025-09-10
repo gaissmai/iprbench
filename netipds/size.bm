@@ -2,12 +2,12 @@ goos: linux
 goarch: amd64
 pkg: local/iprbench/netipds
 cpu: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
-BenchmarkTier1PfxSize/1_000-8         	       1	        71.94 bytes/route
-BenchmarkTier1PfxSize/1_000-8         	       1	        73.97 bytes/route
-BenchmarkTier1PfxSize/1_000-8         	       1	        73.98 bytes/route
-BenchmarkTier1PfxSize/1_000-8         	       1	        73.98 bytes/route
-BenchmarkTier1PfxSize/1_000-8         	       1	        73.98 bytes/route
-BenchmarkTier1PfxSize/1_000-8         	       1	        74.00 bytes/route
+BenchmarkTier1PfxSize/1_000-8         	       1	        72.06 bytes/route
+BenchmarkTier1PfxSize/1_000-8         	       1	        74.06 bytes/route
+BenchmarkTier1PfxSize/1_000-8         	       1	        74.10 bytes/route
+BenchmarkTier1PfxSize/1_000-8         	       1	        74.11 bytes/route
+BenchmarkTier1PfxSize/1_000-8         	       1	        74.13 bytes/route
+BenchmarkTier1PfxSize/1_000-8         	       1	        74.13 bytes/route
 BenchmarkTier1PfxSize/10_000-8        	       1	        68.63 bytes/route
 BenchmarkTier1PfxSize/10_000-8        	       1	        68.83 bytes/route
 BenchmarkTier1PfxSize/10_000-8        	       1	        68.83 bytes/route
@@ -104,24 +104,24 @@ BenchmarkRandomPfx6Size/500_000-8     	       1	        84.11 bytes/route
 BenchmarkRandomPfx6Size/500_000-8     	       1	        84.11 bytes/route
 BenchmarkRandomPfx6Size/500_000-8     	       1	        84.11 bytes/route
 BenchmarkRandomPfx6Size/500_000-8     	       1	        84.11 bytes/route
-BenchmarkRandomPfx6Size/1_000_000-8   	       1	        83.22 bytes/route
 BenchmarkRandomPfx6Size/1_000_000-8   	       1	        83.23 bytes/route
 BenchmarkRandomPfx6Size/1_000_000-8   	       1	        83.23 bytes/route
 BenchmarkRandomPfx6Size/1_000_000-8   	       1	        83.23 bytes/route
 BenchmarkRandomPfx6Size/1_000_000-8   	       1	        83.23 bytes/route
 BenchmarkRandomPfx6Size/1_000_000-8   	       1	        83.23 bytes/route
-BenchmarkRandomPfxSize/1_000-8        	       1	        73.29 bytes/route
-BenchmarkRandomPfxSize/1_000-8        	       1	        75.25 bytes/route
-BenchmarkRandomPfxSize/1_000-8        	       1	        75.25 bytes/route
-BenchmarkRandomPfxSize/1_000-8        	       1	        75.25 bytes/route
-BenchmarkRandomPfxSize/1_000-8        	       1	        75.25 bytes/route
-BenchmarkRandomPfxSize/1_000-8        	       1	        75.25 bytes/route
-BenchmarkRandomPfxSize/10_000-8       	       1	        69.10 bytes/route
-BenchmarkRandomPfxSize/10_000-8       	       1	        69.29 bytes/route
-BenchmarkRandomPfxSize/10_000-8       	       1	        69.29 bytes/route
-BenchmarkRandomPfxSize/10_000-8       	       1	        69.29 bytes/route
-BenchmarkRandomPfxSize/10_000-8       	       1	        69.29 bytes/route
-BenchmarkRandomPfxSize/10_000-8       	       1	        69.29 bytes/route
+BenchmarkRandomPfx6Size/1_000_000-8   	       1	        83.23 bytes/route
+BenchmarkRandomPfxSize/1_000-8        	       1	        72.84 bytes/route
+BenchmarkRandomPfxSize/1_000-8        	       1	        74.80 bytes/route
+BenchmarkRandomPfxSize/1_000-8        	       1	        74.80 bytes/route
+BenchmarkRandomPfxSize/1_000-8        	       1	        74.80 bytes/route
+BenchmarkRandomPfxSize/1_000-8        	       1	        74.80 bytes/route
+BenchmarkRandomPfxSize/1_000-8        	       1	        74.80 bytes/route
+BenchmarkRandomPfxSize/10_000-8       	       1	        69.14 bytes/route
+BenchmarkRandomPfxSize/10_000-8       	       1	        69.34 bytes/route
+BenchmarkRandomPfxSize/10_000-8       	       1	        69.34 bytes/route
+BenchmarkRandomPfxSize/10_000-8       	       1	        69.34 bytes/route
+BenchmarkRandomPfxSize/10_000-8       	       1	        69.34 bytes/route
+BenchmarkRandomPfxSize/10_000-8       	       1	        69.34 bytes/route
 BenchmarkRandomPfxSize/100_000-8      	       1	        64.26 bytes/route
 BenchmarkRandomPfxSize/100_000-8      	       1	        64.28 bytes/route
 BenchmarkRandomPfxSize/100_000-8      	       1	        64.28 bytes/route
@@ -147,4 +147,4 @@ BenchmarkRandomPfxSize/1_000_000-8    	       1	        53.93 bytes/route
 BenchmarkRandomPfxSize/1_000_000-8    	       1	        53.93 bytes/route
 BenchmarkRandomPfxSize/1_000_000-8    	       1	        53.93 bytes/route
 PASS
-ok  	local/iprbench/netipds	58.638s
+ok  	local/iprbench/netipds	49.724s
