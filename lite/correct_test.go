@@ -12,9 +12,9 @@ func TestMatchIP(t *testing.T) {
 	t.Parallel()
 	pfxs := common.RandomRealWorldPrefixes(10_000)
 
-	rt := new(bart.Fat[any])
+	rt := new(bart.Lite)
 	for _, route := range pfxs {
-		rt.Insert(route, nil)
+		rt.Insert(route)
 	}
 
 	t.Run("IPv4", func(t *testing.T) {
@@ -42,9 +42,9 @@ func TestMissIP(t *testing.T) {
 	t.Parallel()
 	pfxs := common.RandomRealWorldPrefixes(10_000)
 
-	rt := new(bart.Fat[any])
+	rt := new(bart.Lite)
 	for _, route := range pfxs {
-		rt.Insert(route, nil)
+		rt.Insert(route)
 	}
 
 	t.Run("IPv4", func(t *testing.T) {
