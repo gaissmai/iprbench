@@ -6,8 +6,8 @@ github.com/aromatt/netipds v0.1.9 h1:VmbfQDMwFZFrRP0PWl3xw/+22MU31T/rqxIrROqda2Q
 github.com/aromatt/netipds v0.1.9/go.mod h1:495wZM0W/P9zQ/QpbEhNxR54H/7I0w7WDZhmX9kRkjM=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/gaissmai/bart v0.25.2-0.20251016212958-81ce6744b9e0 h1:M+IXz7FoCzQLgw9ykFFWL9+U1sxRyLHICnsYotmiIPw=
-github.com/gaissmai/bart v0.25.2-0.20251016212958-81ce6744b9e0/go.mod h1:GREWQfTLRWz/c5FTOsIw+KkscuFkIV5t8Rp7Nd1Td5c=
+github.com/gaissmai/bart v0.26.0 h1:xOZ57E9hJLBiQaSyeZa9wgWhGuzfGACgqp4BE77OkO0=
+github.com/gaissmai/bart v0.26.0/go.mod h1:GREWQfTLRWz/c5FTOsIw+KkscuFkIV5t8Rp7Nd1Td5c=
 github.com/gaissmai/extnetip v1.3.1 h1:e8xa3hJG/+6NevjZXVkC60WBLypNjH/ugEy4kaPoKAU=
 github.com/gaissmai/extnetip v1.3.1/go.mod h1:PepswGWH0GJ4XSdiY7bY2EaEPpCQs7OaYcySeW525fg=
 github.com/k-sone/critbitgo v1.4.0 h1:l71cTyBGeh6X5ATh6Fibgw3+rtNT80BA0uNNWgkPrbE=
