@@ -5,7 +5,7 @@ go 1.25.0
 require (
 	github.com/Asphaltt/lpmtrie v0.0.0-20220205153150-3d814250b8ab
 	github.com/aromatt/netipds v0.1.9
-	github.com/gaissmai/bart v0.25.2-0.20251016212958-81ce6744b9e0
+	github.com/gaissmai/bart v0.26.0
 	github.com/gaissmai/extnetip v1.3.1
 	github.com/k-sone/critbitgo v1.4.0
 	github.com/kentik/patricia v1.2.1
