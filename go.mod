@@ -8,7 +8,7 @@ require (
 	github.com/gaissmai/bart v0.26.0
 	github.com/gaissmai/extnetip v1.3.1
 	github.com/k-sone/critbitgo v1.4.0
-	github.com/kentik/patricia v1.2.1
+	github.com/kentik/patricia v1.2.2
 )
 
 require (
