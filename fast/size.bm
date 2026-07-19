@@ -1,7 +1,7 @@
-goos: linux
-goarch: amd64
+goos: darwin
+goarch: arm64
 pkg: local/iprbench/fast
-cpu: AMD Ryzen 7 PRO 4750U with Radeon Graphics
+cpu: Apple M4 Max
 BenchmarkTier1PfxSize/1_000         	       1	       170.2 bytes/route
 BenchmarkTier1PfxSize/1_000         	       1	       172.2 bytes/route
 BenchmarkTier1PfxSize/1_000         	       1	       172.2 bytes/route
@@ -147,4 +147,4 @@ BenchmarkRandomPfxSize/1_000_000    	       1	        74.51 bytes/route
 BenchmarkRandomPfxSize/1_000_000    	       1	        74.51 bytes/route
 BenchmarkRandomPfxSize/1_000_000    	       1	        74.51 bytes/route
 PASS
-ok  	local/iprbench/fast	34.598s
+ok  	local/iprbench/fast	13.236s

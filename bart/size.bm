@@ -1,7 +1,7 @@
-goos: linux
-goarch: amd64
+goos: darwin
+goarch: arm64
 pkg: local/iprbench/bart
-cpu: AMD Ryzen 7 PRO 4750U with Radeon Graphics
+cpu: Apple M4 Max
 BenchmarkTier1PfxSize/1_000         	       1	       103.3 bytes/route
 BenchmarkTier1PfxSize/1_000         	       1	       105.3 bytes/route
 BenchmarkTier1PfxSize/1_000         	       1	       105.3 bytes/route
@@ -147,4 +147,4 @@ BenchmarkRandomPfxSize/1_000_000    	       1	        52.03 bytes/route
 BenchmarkRandomPfxSize/1_000_000    	       1	        52.03 bytes/route
 BenchmarkRandomPfxSize/1_000_000    	       1	        52.03 bytes/route
 PASS
-ok  	local/iprbench/bart	31.405s
+ok  	local/iprbench/bart	12.431s

@@ -1,7 +1,7 @@
-goos: linux
-goarch: amd64
+goos: darwin
+goarch: arm64
 pkg: local/iprbench/lpmtrie
-cpu: AMD Ryzen 7 PRO 4750U with Radeon Graphics
+cpu: Apple M4 Max
 BenchmarkTier1PfxSize/1_000         	       1	       204.3 bytes/route
 BenchmarkTier1PfxSize/1_000         	       1	       215.6 bytes/route
 BenchmarkTier1PfxSize/1_000         	       1	       215.6 bytes/route
@@ -147,4 +147,4 @@ BenchmarkRandomPfxSize/1_000_000    	       1	       181.4 bytes/route
 BenchmarkRandomPfxSize/1_000_000    	       1	       181.4 bytes/route
 BenchmarkRandomPfxSize/1_000_000    	       1	       181.4 bytes/route
 PASS
-ok  	local/iprbench/lpmtrie	112.789s
+ok  	local/iprbench/lpmtrie	50.599s

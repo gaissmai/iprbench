@@ -1,7 +1,7 @@
-goos: linux
-goarch: amd64
+goos: darwin
+goarch: arm64
 pkg: local/iprbench/kentik-patricia
-cpu: AMD Ryzen 7 PRO 4750U with Radeon Graphics
+cpu: Apple M4 Max
 BenchmarkTier1PfxSize/1_000         	       1	       143.5 bytes/route
 BenchmarkTier1PfxSize/1_000         	       1	       145.5 bytes/route
 BenchmarkTier1PfxSize/1_000         	       1	       145.5 bytes/route
@@ -14,24 +14,24 @@ BenchmarkTier1PfxSize/10_000        	       1	       200.3 bytes/route
 BenchmarkTier1PfxSize/10_000        	       1	       200.3 bytes/route
 BenchmarkTier1PfxSize/10_000        	       1	       200.3 bytes/route
 BenchmarkTier1PfxSize/10_000        	       1	       200.3 bytes/route
-BenchmarkTier1PfxSize/100_000       	       1	       164.0 bytes/route
-BenchmarkTier1PfxSize/100_000       	       1	       164.0 bytes/route
-BenchmarkTier1PfxSize/100_000       	       1	       164.0 bytes/route
-BenchmarkTier1PfxSize/100_000       	       1	       164.0 bytes/route
-BenchmarkTier1PfxSize/100_000       	       1	       164.0 bytes/route
-BenchmarkTier1PfxSize/100_000       	       1	       164.0 bytes/route
-BenchmarkTier1PfxSize/200_000       	       1	       163.9 bytes/route
-BenchmarkTier1PfxSize/200_000       	       1	       163.9 bytes/route
-BenchmarkTier1PfxSize/200_000       	       1	       163.9 bytes/route
-BenchmarkTier1PfxSize/200_000       	       1	       163.9 bytes/route
-BenchmarkTier1PfxSize/200_000       	       1	       163.9 bytes/route
-BenchmarkTier1PfxSize/200_000       	       1	       163.9 bytes/route
-BenchmarkTier1PfxSize/500_000       	       1	       144.5 bytes/route
-BenchmarkTier1PfxSize/500_000       	       1	       144.5 bytes/route
-BenchmarkTier1PfxSize/500_000       	       1	       144.5 bytes/route
-BenchmarkTier1PfxSize/500_000       	       1	       144.5 bytes/route
-BenchmarkTier1PfxSize/500_000       	       1	       144.5 bytes/route
-BenchmarkTier1PfxSize/500_000       	       1	       144.5 bytes/route
+BenchmarkTier1PfxSize/100_000       	       1	       164.3 bytes/route
+BenchmarkTier1PfxSize/100_000       	       1	       164.3 bytes/route
+BenchmarkTier1PfxSize/100_000       	       1	       164.3 bytes/route
+BenchmarkTier1PfxSize/100_000       	       1	       164.3 bytes/route
+BenchmarkTier1PfxSize/100_000       	       1	       164.3 bytes/route
+BenchmarkTier1PfxSize/100_000       	       1	       164.3 bytes/route
+BenchmarkTier1PfxSize/200_000       	       1	       164.1 bytes/route
+BenchmarkTier1PfxSize/200_000       	       1	       164.2 bytes/route
+BenchmarkTier1PfxSize/200_000       	       1	       164.2 bytes/route
+BenchmarkTier1PfxSize/200_000       	       1	       164.2 bytes/route
+BenchmarkTier1PfxSize/200_000       	       1	       164.2 bytes/route
+BenchmarkTier1PfxSize/200_000       	       1	       164.2 bytes/route
+BenchmarkTier1PfxSize/500_000       	       1	       144.2 bytes/route
+BenchmarkTier1PfxSize/500_000       	       1	       144.2 bytes/route
+BenchmarkTier1PfxSize/500_000       	       1	       144.2 bytes/route
+BenchmarkTier1PfxSize/500_000       	       1	       144.2 bytes/route
+BenchmarkTier1PfxSize/500_000       	       1	       144.2 bytes/route
+BenchmarkTier1PfxSize/500_000       	       1	       144.2 bytes/route
 BenchmarkTier1PfxSize/1_000_000     	       1	       144.2 bytes/route
 BenchmarkTier1PfxSize/1_000_000     	       1	       144.2 bytes/route
 BenchmarkTier1PfxSize/1_000_000     	       1	       144.2 bytes/route
@@ -62,18 +62,18 @@ BenchmarkRandomPfx4Size/200_000     	       1	       139.8 bytes/route
 BenchmarkRandomPfx4Size/200_000     	       1	       139.8 bytes/route
 BenchmarkRandomPfx4Size/200_000     	       1	       139.8 bytes/route
 BenchmarkRandomPfx4Size/200_000     	       1	       139.8 bytes/route
-BenchmarkRandomPfx4Size/500_000     	       1	       139.6 bytes/route
-BenchmarkRandomPfx4Size/500_000     	       1	       139.7 bytes/route
-BenchmarkRandomPfx4Size/500_000     	       1	       139.7 bytes/route
-BenchmarkRandomPfx4Size/500_000     	       1	       139.7 bytes/route
-BenchmarkRandomPfx4Size/500_000     	       1	       139.7 bytes/route
-BenchmarkRandomPfx4Size/500_000     	       1	       139.7 bytes/route
-BenchmarkRandomPfx4Size/1_000_000   	       1	       139.6 bytes/route
-BenchmarkRandomPfx4Size/1_000_000   	       1	       139.6 bytes/route
-BenchmarkRandomPfx4Size/1_000_000   	       1	       139.6 bytes/route
-BenchmarkRandomPfx4Size/1_000_000   	       1	       139.6 bytes/route
-BenchmarkRandomPfx4Size/1_000_000   	       1	       139.6 bytes/route
-BenchmarkRandomPfx4Size/1_000_000   	       1	       139.6 bytes/route
+BenchmarkRandomPfx4Size/500_000     	       1	       139.8 bytes/route
+BenchmarkRandomPfx4Size/500_000     	       1	       139.8 bytes/route
+BenchmarkRandomPfx4Size/500_000     	       1	       139.8 bytes/route
+BenchmarkRandomPfx4Size/500_000     	       1	       139.8 bytes/route
+BenchmarkRandomPfx4Size/500_000     	       1	       139.8 bytes/route
+BenchmarkRandomPfx4Size/500_000     	       1	       139.8 bytes/route
+BenchmarkRandomPfx4Size/1_000_000   	       1	       139.7 bytes/route
+BenchmarkRandomPfx4Size/1_000_000   	       1	       139.7 bytes/route
+BenchmarkRandomPfx4Size/1_000_000   	       1	       139.7 bytes/route
+BenchmarkRandomPfx4Size/1_000_000   	       1	       139.7 bytes/route
+BenchmarkRandomPfx4Size/1_000_000   	       1	       139.7 bytes/route
+BenchmarkRandomPfx4Size/1_000_000   	       1	       139.7 bytes/route
 BenchmarkRandomPfx6Size/1_000       	       1	       155.3 bytes/route
 BenchmarkRandomPfx6Size/1_000       	       1	       157.3 bytes/route
 BenchmarkRandomPfx6Size/1_000       	       1	       157.3 bytes/route
@@ -147,4 +147,4 @@ BenchmarkRandomPfxSize/1_000_000    	       1	       144.0 bytes/route
 BenchmarkRandomPfxSize/1_000_000    	       1	       144.0 bytes/route
 BenchmarkRandomPfxSize/1_000_000    	       1	       144.0 bytes/route
 PASS
-ok  	local/iprbench/kentik-patricia	55.381s
+ok  	local/iprbench/kentik-patricia	25.273s

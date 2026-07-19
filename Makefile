@@ -8,46 +8,46 @@ dep:
 
 size: bart/size.bm lite/size.bm fast/size.bm netipds/size.bm critbitgo/size.bm lpmtrie/size.bm kentik-patricia/size.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/size.bm   lite/size.bm
+	@go tool benchstat -ignore=pkg lite/size.bm   bart/size.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/size.bm   fast/size.bm
+	@go tool benchstat -ignore=pkg lite/size.bm   fast/size.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/size.bm   netipds/size.bm
+	@go tool benchstat -ignore=pkg lite/size.bm   netipds/size.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/size.bm   critbitgo/size.bm
+	@go tool benchstat -ignore=pkg lite/size.bm   critbitgo/size.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/size.bm   lpmtrie/size.bm
+	@go tool benchstat -ignore=pkg lite/size.bm   lpmtrie/size.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/size.bm   kentik-patricia/size.bm
+	@go tool benchstat -ignore=pkg lite/size.bm   kentik-patricia/size.bm
 
 lpm: bart/lpm.bm lite/lpm.bm fast/lpm.bm netipds/lpm.bm critbitgo/lpm.bm lpmtrie/lpm.bm kentik-patricia/lpm.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/lpm.bm   lite/lpm.bm
+	@go tool benchstat -ignore=pkg fast/lpm.bm   lite/lpm.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/lpm.bm   fast/lpm.bm
+	@go tool benchstat -ignore=pkg fast/lpm.bm   bart/lpm.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/lpm.bm   netipds/lpm.bm
+	@go tool benchstat -ignore=pkg fast/lpm.bm   netipds/lpm.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/lpm.bm   critbitgo/lpm.bm
+	@go tool benchstat -ignore=pkg fast/lpm.bm   critbitgo/lpm.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/lpm.bm   lpmtrie/lpm.bm
+	@go tool benchstat -ignore=pkg fast/lpm.bm   lpmtrie/lpm.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/lpm.bm   kentik-patricia/lpm.bm
+	@go tool benchstat -ignore=pkg fast/lpm.bm   kentik-patricia/lpm.bm
 
 
 update: bart/update.bm lite/update.bm fast/update.bm netipds/update.bm critbitgo/update.bm lpmtrie/update.bm kentik-patricia/update.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/update.bm    lite/update.bm
+	@go tool benchstat -ignore=pkg lite/update.bm    bart/update.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/update.bm    fast/update.bm
+	@go tool benchstat -ignore=pkg lite/update.bm    fast/update.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/update.bm    netipds/update.bm
+	@go tool benchstat -ignore=pkg lite/update.bm    netipds/update.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/update.bm    critbitgo/update.bm
+	@go tool benchstat -ignore=pkg lite/update.bm    critbitgo/update.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/update.bm    lpmtrie/update.bm
+	@go tool benchstat -ignore=pkg lite/update.bm    lpmtrie/update.bm
 	@echo
-	@go tool benchstat -ignore=pkg bart/update.bm    kentik-patricia/update.bm
+	@go tool benchstat -ignore=pkg lite/update.bm    kentik-patricia/update.bm
 
 #
 # benchmarks for lpm

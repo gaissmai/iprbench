@@ -1,7 +1,7 @@
-goos: linux
-goarch: amd64
+goos: darwin
+goarch: arm64
 pkg: local/iprbench/critbitgo
-cpu: AMD Ryzen 7 PRO 4750U with Radeon Graphics
+cpu: Apple M4 Max
 BenchmarkTier1PfxSize/1_000         	       1	       117.7 bytes/route
 BenchmarkTier1PfxSize/1_000         	       1	       119.7 bytes/route
 BenchmarkTier1PfxSize/1_000         	       1	       119.7 bytes/route
@@ -147,4 +147,4 @@ BenchmarkRandomPfxSize/1_000_000    	       1	       115.2 bytes/route
 BenchmarkRandomPfxSize/1_000_000    	       1	       115.2 bytes/route
 BenchmarkRandomPfxSize/1_000_000    	       1	       115.2 bytes/route
 PASS
-ok  	local/iprbench/critbitgo	80.468s
+ok  	local/iprbench/critbitgo	31.463s
