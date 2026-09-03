@@ -12,12 +12,12 @@ import (
 func BenchmarkLpmTier1Pfxs(b *testing.B) {
 	benchmarks := []struct {
 		name string
-		fn   func([]netip.Prefix) netip.Addr
+		fn   func(int, []netip.Prefix) []netip.Addr
 	}{
-		{"RandomMatchIP4", common.MatchIP4},
-		{"RandomMatchIP6", common.MatchIP6},
-		{"RandomMissIP4", common.MissIP4},
-		{"RandomMissIP6", common.MissIP6},
+		{"RandomMatchIP4", common.MatchManyIP4},
+		{"RandomMatchIP6", common.MatchManyIP6},
+		{"RandomMissIP4", common.MissManyIP4},
+		{"RandomMissIP6", common.MissManyIP6},
 	}
 
 	psb := new(netipds.PrefixSetBuilder)
@@ -28,11 +28,15 @@ func BenchmarkLpmTier1Pfxs(b *testing.B) {
 
 	for _, bm := range benchmarks {
 		b.Run(bm.name, func(b *testing.B) {
-			ip := bm.fn(tier1Routes)
-			pfx := netip.PrefixFrom(ip, ip.BitLen())
+			manyIPs := bm.fn(common.N, tier1Routes)
+			manyPfxs := common.AddrsToPfxs(manyIPs)
+
+			i := 0
 			for b.Loop() {
-				ps.Encompasses(pfx)
+				ps.Encompasses(manyPfxs[i&common.Mask])
+				i++
 			}
+
 		})
 	}
 }
@@ -40,12 +44,12 @@ func BenchmarkLpmTier1Pfxs(b *testing.B) {
 func BenchmarkLpmRandomPfxs(b *testing.B) {
 	benchmarks := []struct {
 		name string
-		fn   func([]netip.Prefix) netip.Addr
+		fn   func(int, []netip.Prefix) []netip.Addr
 	}{
-		{"RandomMatchIP4", common.MatchIP4},
-		{"RandomMatchIP6", common.MatchIP6},
-		{"RandomMissIP4", common.MissIP4},
-		{"RandomMissIP6", common.MissIP6},
+		{"RandomMatchIP4", common.MatchManyIP4},
+		{"RandomMatchIP6", common.MatchManyIP6},
+		{"RandomMissIP4", common.MissManyIP4},
+		{"RandomMissIP6", common.MissManyIP6},
 	}
 
 	for _, k := range []int{1_000, 10_000, 100_000} {
@@ -58,11 +62,15 @@ func BenchmarkLpmRandomPfxs(b *testing.B) {
 			ps := psb.PrefixSet()
 
 			b.Run(common.IntMap[k]+"/"+bm.name, func(b *testing.B) {
-				ip := bm.fn(randomRoutes[:k]) // get a random matching or missing ip
-				pfx := netip.PrefixFrom(ip, ip.BitLen())
+				manyIPs := bm.fn(common.N, randomRoutes[:k])
+				manyPfxs := common.AddrsToPfxs(manyIPs)
+
+				i := 0
 				for b.Loop() {
-					ps.Encompasses(pfx)
+					ps.Encompasses(manyPfxs[i&common.Mask])
+					i++
 				}
+
 			})
 		}
 	}

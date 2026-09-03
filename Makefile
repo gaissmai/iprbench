@@ -53,25 +53,25 @@ update: bart/update.bm lite/update.bm fast/update.bm netipds/update.bm critbitgo
 # benchmarks for lpm
 #
 bart/lpm.bm:
-	cd bart &&             go test -run=XX -count=20 -cpu=1 -bench=Lpm -timeout=25m | tee lpm.bm
+	cd bart &&             go test -run=XX -count=10 -cpu=1 -bench=Lpm -timeout=25m | tee lpm.bm
 
 lite/lpm.bm:
-	cd lite &&             go test -run=XX -count=20 -cpu=1 -bench=Lpm -timeout=25m | tee lpm.bm
+	cd lite &&             go test -run=XX -count=10 -cpu=1 -bench=Lpm -timeout=25m | tee lpm.bm
 
 fast/lpm.bm:
-	cd fast &&             go test -run=XX -count=20 -cpu=1 -bench=Lpm -timeout=25m | tee lpm.bm
+	cd fast &&             go test -run=XX -count=10 -cpu=1 -bench=Lpm -timeout=25m | tee lpm.bm
 
 netipds/lpm.bm:
-	cd netipds &&          go test -run=XX -count=20 -cpu=1 -bench=Lpm -timeout=25m | tee lpm.bm
+	cd netipds &&          go test -run=XX -count=10 -cpu=1 -bench=Lpm -timeout=25m | tee lpm.bm
 
 critbitgo/lpm.bm:
-	cd critbitgo &&        go test -run=XX -count=20 -cpu=1 -bench=Lpm -timeout=25m | tee lpm.bm
+	cd critbitgo &&        go test -run=XX -count=10 -cpu=1 -bench=Lpm -timeout=25m | tee lpm.bm
 
 lpmtrie/lpm.bm:
-	cd lpmtrie &&          go test -run=XX -count=20 -cpu=1 -bench=Lpm -timeout=25m | tee lpm.bm
+	cd lpmtrie &&          go test -run=XX -count=10 -cpu=1 -bench=Lpm -timeout=25m | tee lpm.bm
 
 kentik-patricia/lpm.bm:
-	cd kentik-patricia &&  go test -run=XX -count=20 -cpu=1 -bench=Lpm -timeout=25m | tee lpm.bm
+	cd kentik-patricia &&  go test -run=XX -count=10 -cpu=1 -bench=Lpm -timeout=25m | tee lpm.bm
 
 #
 # benchmarks for tree/trie sizes, deterministic -> -benchtime=1x
