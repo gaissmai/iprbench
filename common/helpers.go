@@ -92,6 +92,11 @@ func MatchIP4(routes []netip.Prefix) netip.Addr {
 
 	i := 0
 	for {
+		i++
+		if i > 500_000_000 {
+			panic("couldn't find a matching IP, giving up!")
+		}
+
 		// choose a random route from input
 		pfx := routes[prng.IntN(len(routes))]
 		ip := pfx.Addr()
@@ -103,10 +108,6 @@ func MatchIP4(routes []netip.Prefix) netip.Addr {
 		ip = ip.Next()
 		if ok := rt.Contains(ip); ok {
 			return ip
-		}
-		i++
-		if i > 500_000_000 {
-			panic("couldn't find a matching IP, giving up!")
 		}
 	}
 }
@@ -123,6 +124,11 @@ func MatchManyIP4(n int, routes []netip.Prefix) []netip.Addr {
 
 	i := 0
 	for {
+		i++
+		if i > 500_000_000 {
+			panic(fmt.Sprintf("couldn't find %d matching IPv4s, found %d, giving up after %d tries", n, len(result), i))
+		}
+
 		// choose a random route from input
 		pfx := routes[prng.IntN(len(routes))]
 		ip := pfx.Addr()
@@ -138,11 +144,6 @@ func MatchManyIP4(n int, routes []netip.Prefix) []netip.Addr {
 		if len(result) >= n {
 			return result
 		}
-
-		i++
-		if i > 500_000_000 {
-			panic(fmt.Sprintf("couldn't find %d matching IPv4s, found %d, giving up after %d tries", n, len(result), i))
-		}
 	}
 }
 
@@ -157,6 +158,11 @@ func MatchIP6(routes []netip.Prefix) netip.Addr {
 
 	i := 0
 	for {
+		i++
+		if i > 500_000_000 {
+			panic("couldn't find a matching IP, giving up!")
+		}
+
 		// choose a random route from input
 		pfx := routes[prng.IntN(len(routes))]
 		ip := pfx.Addr()
@@ -168,10 +174,6 @@ func MatchIP6(routes []netip.Prefix) netip.Addr {
 		ip = ip.Next()
 		if ok := rt.Contains(ip); ok {
 			return ip
-		}
-		i++
-		if i > 500_000_000 {
-			panic("couldn't find a matching IP, giving up!")
 		}
 	}
 }
@@ -188,6 +190,11 @@ func MatchManyIP6(n int, routes []netip.Prefix) []netip.Addr {
 
 	i := 0
 	for {
+		i++
+		if i > 500_000_000 {
+			panic(fmt.Sprintf("couldn't find %d matching IPv6s, found %d, giving up after %d tries", n, len(result), i))
+		}
+
 		// choose a random route from input
 		pfx := routes[prng.IntN(len(routes))]
 		ip := pfx.Addr()
@@ -204,10 +211,6 @@ func MatchManyIP6(n int, routes []netip.Prefix) []netip.Addr {
 			return result
 		}
 
-		i++
-		if i > 500_000_000 {
-			panic(fmt.Sprintf("couldn't find %d matching IPv6s, found %d, giving up after %d tries", n, len(result), i))
-		}
 	}
 }
 
@@ -222,6 +225,11 @@ func MissIP4(routes []netip.Prefix) netip.Addr {
 
 	i := 0
 	for {
+		i++
+		if i > 500_000_000 {
+			panic("couldn't find a missing IP, giving up!")
+		}
+
 		// choose a random route from input
 		pfx := routes[prng.IntN(len(routes))]
 		ip := pfx.Addr()
@@ -239,10 +247,6 @@ func MissIP4(routes []netip.Prefix) netip.Addr {
 
 		if ok := rt.Contains(ip); !ok {
 			return ip
-		}
-		i++
-		if i > 500_000_000 {
-			panic("couldn't find a missing IP, giving up!")
 		}
 	}
 }
@@ -260,6 +264,11 @@ func MissManyIP4(n int, routes []netip.Prefix) []netip.Addr {
 
 	i := 0
 	for {
+		i++
+		if i > 500_000_000 {
+			panic(fmt.Sprintf("couldn't find %d missing IPv4s, found %d, giving up after %d tries", n, len(result), i))
+		}
+
 		// choose a random route from input
 		pfx := routes[prng.IntN(len(routes))]
 		ip := pfx.Addr()
@@ -281,11 +290,6 @@ func MissManyIP4(n int, routes []netip.Prefix) []netip.Addr {
 		if len(result) >= n {
 			return result
 		}
-
-		i++
-		if i > 500_000_000 {
-			panic(fmt.Sprintf("couldn't find %d missing IPv4s, found %d, giving up after %d tries", n, len(result), i))
-		}
 	}
 }
 
@@ -300,6 +304,11 @@ func MissIP6(routes []netip.Prefix) netip.Addr {
 
 	i := 0
 	for {
+		i++
+		if i > 500_000_000 {
+			panic("couldn't find a missing IP, giving up!")
+		}
+
 		// choose a random route from input
 		pfx := routes[prng.IntN(len(routes))]
 		ip := pfx.Addr()
@@ -318,10 +327,6 @@ func MissIP6(routes []netip.Prefix) netip.Addr {
 		if ok := rt.Contains(ip); !ok {
 			return ip
 		}
-		i++
-		if i > 500_000_000 {
-			panic("couldn't find a missing IP, giving up!")
-		}
 	}
 }
 
@@ -338,6 +343,11 @@ func MissManyIP6(n int, routes []netip.Prefix) []netip.Addr {
 
 	i := 0
 	for {
+		i++
+		if i > 500_000_000 {
+			panic(fmt.Sprintf("couldn't find %d missing IPv6s, found %d, giving up after %d tries", n, len(result), i))
+		}
+
 		// choose a random route from input
 		pfx := routes[prng.IntN(len(routes))]
 		ip := pfx.Addr()
@@ -358,11 +368,6 @@ func MissManyIP6(n int, routes []netip.Prefix) []netip.Addr {
 		}
 		if len(result) >= n {
 			return result
-		}
-
-		i++
-		if i > 500_000_000 {
-			panic(fmt.Sprintf("couldn't find %d missing IPv6s, found %d, giving up after %d tries", n, len(result), i))
 		}
 	}
 }
