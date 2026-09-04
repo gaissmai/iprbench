@@ -147,4 +147,4 @@ BenchmarkRandomPfxSize/1_000_000    	       1	        74.51 bytes/route
 BenchmarkRandomPfxSize/1_000_000    	       1	        74.51 bytes/route
 BenchmarkRandomPfxSize/1_000_000    	       1	        74.51 bytes/route
 PASS
-ok  	local/iprbench/fast	34.598s
+ok  	local/iprbench/fast	35.117s
