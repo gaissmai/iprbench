@@ -147,4 +147,4 @@ BenchmarkRandomPfxSize/1_000_000    	       1	       181.4 bytes/route
 BenchmarkRandomPfxSize/1_000_000    	       1	       181.4 bytes/route
 BenchmarkRandomPfxSize/1_000_000    	       1	       181.4 bytes/route
 PASS
-ok  	local/iprbench/lpmtrie	112.789s
+ok  	local/iprbench/lpmtrie	115.287s
