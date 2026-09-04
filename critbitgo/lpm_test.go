@@ -29,11 +29,12 @@ func BenchmarkLpmTier1Pfxs(b *testing.B) {
 			manyIPs := common.AddrsToIPs(manyNetIPs)
 
 			i := 0
+			ok := false
 			for b.Loop() {
-				rt.Contains(manyIPs[i&common.Mask])
+				ok = rt.Contains(manyIPs[i&common.Mask])
 				i++
 			}
-
+			common.Sink = ok
 		})
 	}
 }
@@ -62,11 +63,12 @@ func BenchmarkLpmRandomPfxs(b *testing.B) {
 				manyIPs := common.AddrsToIPs(manyNetIPs)
 
 				i := 0
+				ok := false
 				for b.Loop() {
-					rt.Contains(manyIPs[i&common.Mask])
+					ok = rt.Contains(manyIPs[i&common.Mask])
 					i++
 				}
-
+				common.Sink = ok
 			})
 		}
 	}

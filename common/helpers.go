@@ -15,6 +15,8 @@ import (
 	"github.com/gaissmai/extnetip"
 )
 
+var Sink any
+
 var IntMap = map[int]string{
 	1:         "1",
 	2:         "2",
