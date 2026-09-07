@@ -6,7 +6,7 @@ require (
 	github.com/Asphaltt/lpmtrie v0.0.0-20220205153150-3d814250b8ab
 	github.com/aromatt/netipds v0.1.9
 	github.com/gaissmai/bart v0.29.0
-	github.com/gaissmai/extnetip v1.3.1
+	github.com/gaissmai/extnetip v1.3.2
 	github.com/k-sone/critbitgo v1.4.0
 	github.com/kentik/patricia v1.2.2
 )
