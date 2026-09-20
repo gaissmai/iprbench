@@ -27,11 +27,9 @@ func BenchmarkLpmTier1Pfxs(b *testing.B) {
 		b.Run(bm.name, func(b *testing.B) {
 			manyIPs := bm.fn(common.N, tier1Routes)
 
-			i := 0
 			ok := false
-			for b.Loop() {
+			for i := 0; b.Loop(); i++ {
 				_, ok = rt.Lookup(manyIPs[i&common.Mask])
-				i++
 			}
 			common.Sink = ok
 		})
@@ -60,11 +58,9 @@ func BenchmarkLpmRandomPfxs(b *testing.B) {
 			b.Run(common.IntMap[k]+"/"+bm.name, func(b *testing.B) {
 				manyIPs := bm.fn(common.N, randomRoutes[:k])
 
-				i := 0
 				ok := false
-				for b.Loop() {
+				for i := 0; b.Loop(); i++ {
 					_, ok = rt.Lookup(manyIPs[i&common.Mask])
-					i++
 				}
 				common.Sink = ok
 			})
